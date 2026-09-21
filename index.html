@@ -197,7 +197,7 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
           <div class="cd-cell"><span class="cd-num" id="cd-m">00</span><span class="cd-lab">min</span></div>
           <div class="cd-cell"><span class="cd-num" id="cd-s">00</span><span class="cd-lab">sec</span></div>
         </div>
-        <p class="deadline" id="deadline">Registration closes Monday 21 September, 11:59 pm Cyprus time.</p>
+        <p class="deadline" id="deadline">Registration closes Wednesday 23 September, 12:00 am Cyprus time.</p>
         <a class="btn gold" href="#register">Register</a>
       </aside>
     </div>
@@ -317,8 +317,8 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
   // Paste the Google Form link here
   var FORM_URL = "https://forms.gle/DvA26FPFZrqEytG38";
 
-  // Countdown to the registration deadline (21 Sep 2026, 23:59 Cyprus time = 20:59 UTC)
-  var DEADLINE = Date.UTC(2026, 8, 21, 20, 59, 0);
+  // Countdown to the registration deadline (23 Sep 2026, 00:00 Cyprus time = 21:00 UTC on 22 Sep)
+  var DEADLINE = Date.UTC(2026, 8, 22, 21, 0, 0);
   var cd = document.getElementById("countdown");
   var cdTitle = document.getElementById("cd-title");
   var cdD = document.getElementById("cd-d"), cdH = document.getElementById("cd-h"),
