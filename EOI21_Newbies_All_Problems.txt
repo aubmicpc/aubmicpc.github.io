@@ -1,0 +1,4285 @@
+1. Tell them C++ is the best language in "Basic Data Types" not just the one the course follows
+
+
+================================================================================
+  EOI'21 Newbies - All Problems
+  Codeforces group: codeforces.com/group/NpnzvxpuMo/contests
+  26 contests, 104 problems (ordered Day 1 -> Day 14)
+================================================================================
+
+TABLE OF CONTENTS
+
+  EOI21 Day 1 Practice  (1 problem)
+      A. Hello World
+
+  EOI21 Day 1 Homework  (1 problem)
+      A. Solid Programmer
+
+  EOI21 Day 2 Practice  (3 problems)
+      A. Basic Data Types
+      D. Digits Summation
+      E. Difference
+
+  EOI21 Day 2 Homework  (3 problems)
+      D. Comparison
+      E. First digit !
+      F. Welcome for you with Conditions
+
+  EOI21 Day 3 Practice  (5 problems)
+      A. Summation from 1 to N
+      B. Mathematical Expression
+      C. The Middel Digit
+      D. Age in Days
+      E. Max and Min
+
+  EOI21 Day 3 Homework  (4 problems)
+      A. SpongeBob's Exam
+      B. PokeMon
+      C. In the Chairman's office
+      D. Calculator
+
+  EOI21 Day 4 Practice  (3 problems)
+      A. Palindrome
+      B. Factorial
+      C. 1 to N
+
+  EOI21 Day 4 Homework  (3 problems)
+      A. One Prime
+      B. Even Numbers
+      C. Max
+
+  EOI21 Day 5 Practice  (5 problems)
+      A. Three Numbers
+      B. Sum of Consecutive Odd Numbers
+      C. Digits
+      D. GCD
+      E. Divisors
+
+  EOI21 Day 5 Homework  (4 problems)
+      A. Primes from 1 to n
+      B. PUM
+      C. Shape1
+      D. Pyramid
+
+  EOI21 Day 6 Practice  (4 problems)
+      A. Summation
+      B. Searching
+      C. Replacement
+      D. Reversing
+
+  EOI21 Day 6 Homework  (3 problems)
+      A. Positions in array
+      B. Lowest Number
+      C. Lucky Numbers
+
+  EOI21 Day 7 Practice  (4 problems)
+      A. The Bottles
+      B. Minimize Number
+      C. Matrix
+      D. Palindrome Array
+
+  EOI21 Day 7 Homework  (2 problems)
+      A. Search In Matrix
+      B. Fibonacci
+
+  EOI21 Day 8 Practice  (4 problems)
+      A. Missing Area
+      B. Unique Game
+      C. Magic Cells
+      D. Back to school
+
+  EOI21 Day 8 Homework  (3 problems)
+      A. Convert Grid
+      B. Just LET ME MEAN
+      C. Construct The Sum
+
+  EOI21 Day 10 Practice  (2 problems)
+      A. Binary Search
+      B. binary search STL
+
+  EOI21 Day 10 Homework  (2 problems)
+      A. Binary Search 101
+      B. Prime
+
+  EOI21 Day 11 Practice  (4 problems)
+      A. Count numbers
+      B. Count characters
+      C. Range sum query
+      D. Sort the array
+
+  EOI21 Day 11 Homework  (3 problems)
+      A. The first missing number
+      B. Pangram
+      C. Kuriyama Mirai's Stones
+
+  EOI21 Day 12 Practice  (8 problems)
+      B. EOI Tshirts
+      C. Interesting drink
+      D. Train
+      E. Worms
+      F. Sereja and Suffixes
+      G. Range Sum 2D
+      H. Count a's
+      I. Aggressive cows
+
+  EOI21 Day 12 Homework  (8 problems)
+      A. Difference problem
+      B. Creating a Character
+      C. Megacity
+      D. Game
+      E. Queries about less or equal elements
+      F. It's Very Easy
+      G. The Da Vinci Code
+      H. Polycarp's Practice
+
+  EOI21 Day 13 Practice  (5 problems)
+      A. Stack
+      B. Queue
+      C. set
+      D. Frinds and money
+      E. String Functions
+
+  EOI21 Day 13 Homework  (4 problems)
+      A. Regular Bracket Sequence
+      B. Restoring Password
+      C. Aymoon and Books
+      D. Sort range
+
+  EOI21 Day 14 Practice  (10 problems)
+      A. Base Conversion
+      B. Mina and Numbers
+      C. Ayman and Books
+      D. Queries
+      E. Numbers Histogram
+      F. Convert To Decimal 2
+      G. Vasya and Power
+      H. Count Vowels
+      I. Help Habiba
+      J. Habiba
+
+  EOI21 Day 14 Homework  (6 problems)
+      A. Sereja and Dima
+      B. Bombing the City
+      C. Geometry
+      D. Salem
+      E. Power Of Two
+      F. The Game
+
+
+
+################################################################################
+#  EOI21 DAY 1 PRACTICE
+#  Contest ID 333950 - 1 problem
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Hello World    [EOI21 Day 1 Practice]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Hello, Champy.
+
+  Print "Hello World" without quotes.
+
+INPUT
+  This problem has no input =(
+
+OUTPUT
+  Print "Hello World" without quotes.
+
+SAMPLES
+  (none)
+
+
+################################################################################
+#  EOI21 DAY 1 HOMEWORK
+#  Contest ID 333951 - 1 problem
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Solid Programmer    [EOI21 Day 1 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You want to be a Solid Programmer. Print "I'll Be a Solid Programmer" to prove that.
+
+  Watch out!! Print it in the same way it is written =D
+
+INPUT
+  There is no input in this problem, too.
+
+OUTPUT
+  Print "I'll Be a Solid Programmer", without quotes.
+
+SAMPLES
+  (none)
+
+
+################################################################################
+#  EOI21 DAY 2 PRACTICE
+#  Contest ID 333952 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Basic Data Types    [EOI21 Day 2 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  The following lines show some C++ data types, their format specifiers and their most common bit widths:
+
+    - int : 32 Bit integer.
+    - long long : 64 bit integer
+    - Char : 8 bit Characters & symbols
+    - Float : 32 bit real value
+    - Double : 64 bit real value
+
+  Reading
+
+  To read a data type, use the following syntax:
+
+     cin >> VariableName;
+  For example, to read a character followed by a double:
+
+    char ch;  double d;  cin >> ch >> d;
+
+  Printing
+
+  To print a data type, use the following syntax:
+
+  cout << VariableName;
+  For example, to print a character followed by a double:
+  char ch = 'd';double d = 234.432;cout << ch << " "<< d;
+
+INPUT
+  Only one line containing the following space-separated values: int, long long, char, float and double respectively.
+
+OUTPUT
+  Print each element on a new line in the same order it was received as input.
+
+  Don't print any extra spaces.
+
+SAMPLE 1
+  Input:
+    3 12345678912345 a 334.23 14049.30493
+  Output:
+    3
+    12345678912345
+    a
+    334.23
+    14049.3
+
+--------------------------------------------------------------------------------
+D. Digits Summation    [EOI21 Day 2 Practice]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers N and M. Print the summation of their last digits.
+
+INPUT
+  Only one line containing two numbers N, M (0 ≤ N, M ≤ 10^18).
+
+OUTPUT
+  Print the answer of the problem.
+
+SAMPLE 1
+  Input:
+    13 12
+  Output:
+    5
+
+NOTE
+  First Example :
+
+  last digit in the first number is 3 and last digit in the second number is 2.
+
+  So the answer is: (3 + 2 = 5)
+
+--------------------------------------------------------------------------------
+E. Difference    [EOI21 Day 2 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given four numbers A, B, C and D. Print the result of the following equation :
+
+  [image: https://espresso.codeforces.com/a2aa7842885d683778d338bc14f0e55576284507.png]  X = (A * B) - (C * D).
+
+INPUT
+  Only one line containing 4 separated numbers A, B, C and D ( - 10^5  ≤  A, B, C, D  ≤  10^5).
+
+OUTPUT
+  Print "Difference  =  " without quotes followed by the equation result.
+
+SAMPLE 1
+  Input:
+    1 2 3 4
+  Output:
+    Difference = -10
+
+SAMPLE 2
+  Input:
+    2 3 4 5
+  Output:
+    Difference = -14
+
+SAMPLE 3
+  Input:
+    4 5 2 3
+  Output:
+    Difference = 14
+
+
+################################################################################
+#  EOI21 DAY 2 HOMEWORK
+#  Contest ID 333953 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+D. Comparison    [EOI21 Day 2 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a comparison symbol S between two numbers A and B. Determine whether it is Right or Wrong.
+
+  The comparison is as follows: A < B, A > B, A = B.
+
+  Where A, B are two integer numbers and S refers to the sign between them.
+
+INPUT
+  Only one line containing A, S and B respectively (-100  ≤  A, B  ≤  100), S can be ('<', '>','=') without the quotes.
+
+OUTPUT
+  Print "Right" if the comparison is true, "Wrong" otherwise.
+
+SAMPLE 1
+  Input:
+    5 > 4
+  Output:
+    Right
+
+SAMPLE 2
+  Input:
+    9 < 1
+  Output:
+    Wrong
+
+SAMPLE 3
+  Input:
+    4 = 4
+  Output:
+    Right
+
+--------------------------------------------------------------------------------
+E. First digit !    [EOI21 Day 2 Homework]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number X. Print "EVEN" if the first digit of X is even number. Otherwise print "ODD".
+
+  For example: In 4569 the first digit is 4, the second digit is 5, the third digit is 6 and the fourth digit is 9.
+
+INPUT
+  Only one line containing a number X (999 < X  ≤  9999)
+
+OUTPUT
+  If the first digit is even print "EVEN" otherwise print "ODD".
+
+SAMPLE 1
+  Input:
+    4569
+  Output:
+    EVEN
+
+SAMPLE 2
+  Input:
+    3569
+  Output:
+    ODD
+
+NOTE
+  Second Example  :
+
+  In 3569 the first digit is 3 and its ODD.
+
+--------------------------------------------------------------------------------
+F. Welcome for you with Conditions    [EOI21 Day 2 Homework]
+  Time limit: 1 second   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers A and B. Print "Yes" if A is greater than or equal to B. Otherwise print "No".
+
+INPUT
+  Only one line containing two numbers A and B (0  ≤  A, B  ≤  100).
+
+OUTPUT
+  Print "Yes" or "No" according to the statement.
+
+SAMPLE 1
+  Input:
+    10 9
+  Output:
+    Yes
+
+SAMPLE 2
+  Input:
+    5 5
+  Output:
+    Yes
+
+SAMPLE 3
+  Input:
+    5 7
+  Output:
+    No
+
+
+################################################################################
+#  EOI21 DAY 3 PRACTICE
+#  Contest ID 333954 - 5 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Summation from 1 to N    [EOI21 Day 3 Practice]
+  Time limit: 0.25 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print the summation of the numbers that is between 1 and N (inclusive).
+
+  .sum_(i=1)^N i
+
+INPUT
+  Only one line containing a number N ( 1 <= N <= 10^9)
+
+OUTPUT
+  Print the summation of the numbers that are between 1 and N (inclusive).
+
+SAMPLE 1
+  Input:
+    3
+  Output:
+    6
+
+SAMPLE 2
+  Input:
+    10
+  Output:
+    55
+
+NOTE
+  First Example :
+
+  the numbers between 1 and 3 are  1,2,3 .
+
+  So the answer is: (1 + 2 + 3 = 6)
+
+  Second Example :
+
+  the numbers between 1 and 10 are  1,2,3,4,5,6,7,8,9,10.
+
+  So the answer is: (1 + 2 + 3 + 4 + 5 + 6 +7 +8 + 9 + 10 = 55)
+
+--------------------------------------------------------------------------------
+B. Mathematical Expression    [EOI21 Day 3 Practice]
+  Time limit: 0.25 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a mathematical expression. The expression will be one of the following expressions:
+
+  A + B = C, A - B = C and A * B = C
+
+  where A, B, C are three numbers, S is the sign between A and B, and Q the '=' sign
+
+  Print "Yes" If the expression is Right , Otherwise print the right answer of the expression.
+
+INPUT
+  Only one line containing the expression: A, S, B, Q, C respectively (0 ≤ A, B ≤ 100, - 10^5 ≤ C ≤ 10^5) and S can be ('+', '-', '*') without the quotation.
+
+OUTPUT
+  Output either "Yes" (without the quotation) or the right answer depending on the statement.
+
+SAMPLE 1
+  Input:
+    5 + 10 = 15
+  Output:
+    Yes
+
+SAMPLE 2
+  Input:
+    3 - 1 = 2
+  Output:
+    Yes
+
+SAMPLE 3
+  Input:
+    2 * 10 = 19
+  Output:
+    20
+
+--------------------------------------------------------------------------------
+C. The Middel Digit    [EOI21 Day 3 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Habiba has two Numbers X,Y, and she wants to substract 2 from the second digit of X, And calculate X-Y .
+
+  Always the second digit from X >=2
+
+  for example X= 123 ,Y = 3 and after substract 2 from the second digit of X it will become 103 and X- Y = 103 - 3 = 100.
+
+  Can you help her?
+
+INPUT
+  One line contains two integers X,Y ( 120 ≤ X ≤ 999) ,(0 ≤ Y ≤ 1000).
+
+OUTPUT
+  Print answer of the problem.
+
+SAMPLE 1
+  Input:
+    777 757
+  Output:
+    0
+
+SAMPLE 2
+  Input:
+    365 1
+  Output:
+    344
+
+NOTE
+  the first test:
+
+  X = 777 , Y=757 after substract 2 from the second digit in X ,it became 757 the X - Y = 757 - 757 = 0.
+
+--------------------------------------------------------------------------------
+D. Age in Days    [EOI21 Day 3 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a Number N corresponding to a person's age (in days). Print his age in years, months and days, followed by its respective message "years", "months", "days".
+
+  Note: consider the whole year has 365 days and 30 days per month.
+
+INPUT
+  Only one line containing a number N (0 ≤ N ≤ 10^6).
+
+OUTPUT
+  Print the output, like the following examples.
+
+SAMPLE 1
+  Input:
+    400
+  Output:
+    1 years
+    1 months
+    5 days
+
+SAMPLE 2
+  Input:
+    800
+  Output:
+    2 years
+    2 months
+    10 days
+
+SAMPLE 3
+  Input:
+    30
+  Output:
+    0 years
+    1 months
+    0 days
+
+--------------------------------------------------------------------------------
+E. Max and Min    [EOI21 Day 3 Practice]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given 3 numbers A, B and C, Print the minimum and the maximum numbers.
+
+INPUT
+  Only one line containing 3 numbers A, B and C ( - 10^5 ≤ A, B, C ≤ 10^5)
+
+OUTPUT
+  Print the minimum number followed by a single space then print the maximum number.
+
+SAMPLE 1
+  Input:
+    1 2 3
+  Output:
+    1 3
+
+SAMPLE 2
+  Input:
+    -1 -2 -3
+  Output:
+    -3 -1
+
+SAMPLE 3
+  Input:
+    10 20 -5
+  Output:
+    -5 20
+
+
+################################################################################
+#  EOI21 DAY 3 HOMEWORK
+#  Contest ID 333955 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. SpongeBob's Exam    [EOI21 Day 3 Homework]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  One day in Bikini Bottom, SpongeBob had an exam in his school, he got T degrees at this exam.
+
+  But he discovered that the minimum degree to pass in that exam was N.
+
+  Can you tell him if he passed the exam or not?
+
+  [image: https://espresso.codeforces.com/d044fc7674dda77871f9e174ec312a6394594e5b.png]
+
+INPUT
+  The input consists of one line containing two separated integers T (0 ≤ T ≤ 100) and N (1 ≤ N ≤ 100).
+
+OUTPUT
+  Print "Passed :)" (without the quotes) if SpongeBob passed the exam and "Failed :(" (without the quotes) if he did not.
+
+SAMPLE 1
+  Input:
+    15 20
+  Output:
+    Failed :(
+
+SAMPLE 2
+  Input:
+    20 15
+  Output:
+    Passed :)
+
+--------------------------------------------------------------------------------
+B. PokeMon    [EOI21 Day 3 Homework]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  PokeMon asked him task but he is not very good mathematics,can you help him in his task.
+
+  [image: https://espresso.codeforces.com/014556e7f99906661a7eb1f624931ee73e0b377c.png]
+
+  the task is to calculate the summation of the even numbers from 1 to N.
+
+INPUT
+  there is only one line contains an Integer N (1 < = N < =  10^9).
+
+OUTPUT
+  the answer to the problem.
+
+SAMPLE 1
+  Input:
+    6
+  Output:
+    12
+
+SAMPLE 2
+  Input:
+    3
+  Output:
+    2
+
+--------------------------------------------------------------------------------
+C. In the Chairman's office    [EOI21 Day 3 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Dr. Wail Mardini is the chairman of computer science department. Today he wants to distribute the graduation project groups between the supervisors in the department.
+
+  Dr. Wail wants to achieve a fair distribution, and this can be achieved by splitting the groups between the supervisors equally (i.e. each supervisor must take the same number of groups).
+
+  Dr. Wail is very busy currently, and you are visiting the department, so he gives you the number of supervisors and the number of graduation project groups, and he asked you to check if he can reach a fair distribution or not. Can you?
+
+INPUT
+  The first line contains two integers n and m (1  ≤  n, m  ≤  10^3), where n is the number of supervisors, and m is the number of graduation project groups.
+
+OUTPUT
+  If Dr. Wail can divide the groups between the supervisors equally print "YES" (without quotes). Otherwise, print "NO" (without quotes).
+
+SAMPLE 1
+  Input:
+    4 8
+  Output:
+    YES
+
+SAMPLE 2
+  Input:
+    7 5
+  Output:
+    NO
+
+NOTE
+  In the first test case there is 8 groups and 4 supervisors. Each supervisor can take an equal number of groups (which is 2 groups), so the distribution is fair, and the answer is "YES".
+
+  In the second test case you cannot divide 5 groups between 7 supervisors equally, so the answer is "NO".
+
+--------------------------------------------------------------------------------
+D. Calculator    [EOI21 Day 3 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a mathematical expression. The expression will be one of the following expressions: A+B, A-B, A*B and A/B.
+
+  Print the result of the mathematical expression.
+
+INPUT
+  Only one line contains A, S and B (1 <= A, B <= 10^4), S is either (+,-,* , /).
+
+OUTPUT
+  Print the result of the mathematical expression.
+
+SAMPLE 1
+  Input:
+    7+54
+  Output:
+    61
+
+SAMPLE 2
+  Input:
+    17*10
+  Output:
+    170
+
+NOTE
+  For the dividing operation you should print the division without any fractions.
+
+
+################################################################################
+#  EOI21 DAY 4 PRACTICE
+#  Contest ID 333956 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Palindrome    [EOI21 Day 4 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print 2 lines that contain the following respectively:
+
+    - Print N in a reversed order and not leading zeroes.
+    - If N is a palindrome number print "YES" otherwise, print "NO.
+
+  Note:
+
+  A palindrome number is a number that reads the same forward or backward.
+
+  For example: 12321, 101 are palindrome numbers, while 1201, 221 are not.
+
+  A leading zero is any 0 digit that comes before the first nonzero digit in a number for example : numbers  (005 , 01 , 0123 , 02 , 000250 )  are leading zeroes but  ( 5 , 123 , 20 ,2500 )  not leading zeroes numbers .
+
+INPUT
+  Only one line containing a number N (1 <= N <= 10^7).
+
+OUTPUT
+  Print the answer required above.
+
+SAMPLE 1
+  Input:
+    12121
+  Output:
+    12121
+    YES
+
+SAMPLE 2
+  Input:
+    160
+  Output:
+    61
+    NO
+
+--------------------------------------------------------------------------------
+B. Factorial    [EOI21 Day 4 Practice]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print the factorial of number N.
+
+INPUT
+  First line contains a number T (1 ≤ T ≤ 15) number of test cases.
+
+  Next T lines will contain a number N (0 ≤ N ≤ 20)
+
+OUTPUT
+  For each test case print a single line contains the factorial of N.
+
+SAMPLE 1
+  Input:
+    2
+    5
+    3
+  Output:
+    120
+    6
+
+NOTE
+  Factorial, in mathematics, the product of all positive integers less than or equal to a given positive integer and denoted by that integer and an exclamation point.
+
+  Thus, factorial seven is written 7!, meaning 1 * 2 * 3 * 4 * 5 * 6 * 7 = 5040 .
+
+  Factorial zero is defined as equal to 1.
+
+  In first test case for N = 5 , 5! = 1 * 2 * 3 * 4 * 5 = 120 so the answer is 120.
+
+  In Second test case for N = 3 , 3! = 1 * 2 * 3 = 6 so the answer is 6.
+
+--------------------------------------------------------------------------------
+C. 1 to N    [EOI21 Day 4 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print numbers from 1 to N in separate lines.
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 10^3).
+
+OUTPUT
+  Print N lines according to the required above.
+
+SAMPLE 1
+  Input:
+    5
+  Output:
+    1
+    2
+    3
+    4
+    5
+
+
+################################################################################
+#  EOI21 DAY 4 HOMEWORK
+#  Contest ID 333957 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. One Prime    [EOI21 Day 4 Homework]
+  Time limit: 3 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number X. Determine if the number is prime or not
+
+  Note:
+
+  A prime number is a number that is greater than 1 and has only two factors which are 1 and itself.
+
+  In other words : prime number divisible only by 1 and itself.
+
+  Be careful that 1 is not prime .
+
+  The first few prime numbers are
+
+  [image: https://espresso.codeforces.com/841e6480168f69cb952ba01bf514dc3c41c3a6de.png]
+
+INPUT
+  Only one line containing a number X (2 ≤ X ≤ 10^5).
+
+OUTPUT
+  print "YES" if the number is prime and "NO" otherwise.
+
+SAMPLE 1
+  Input:
+    7
+  Output:
+    YES
+
+SAMPLE 2
+  Input:
+    15
+  Output:
+    NO
+
+NOTE
+  First Example :
+
+  7 is prime because it is not divisible by  2,3,4,5,6, and only divisible by 1 and itself, so the answer is YES.
+
+  Second Example :
+
+  15 not is prime because it is divisible by 3 ,5, so the answer is NO.
+
+--------------------------------------------------------------------------------
+B. Even Numbers    [EOI21 Day 4 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 10^3).
+
+OUTPUT
+  Print the answer according to the required above. If there are no even numbers print -1.
+
+SAMPLE 1
+  Input:
+    10
+  Output:
+    2
+    4
+    6
+    8
+    10
+
+SAMPLE 2
+  Input:
+    5
+  Output:
+    2
+    4
+
+--------------------------------------------------------------------------------
+C. Max    [EOI21 Day 4 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N, and N numbers, find maximum number in these N numbers.
+
+INPUT
+  First line contains a number N (1 ≤ N ≤ 10^3).
+
+  Second line contains N numbers X_i (0 ≤ X_i ≤ 10^9).
+
+OUTPUT
+  Print the maximum number.
+
+SAMPLE 1
+  Input:
+    5
+    1 8 5 7 5
+  Output:
+    8
+
+
+################################################################################
+#  EOI21 DAY 5 PRACTICE
+#  Contest ID 333958 - 5 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Three Numbers    [EOI21 Day 5 Practice]
+  Time limit: 3 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers K and S. Determine how many different values of X, Y and Z such that (0 <= X, Y, Z <= K) and X + Y + Z = S.
+
+INPUT
+  Only one line containing two numbers K and S (0 <= K <= 3000, 0 <= S <= 3K).
+
+OUTPUT
+  Print the answer required above.
+
+SAMPLE 1
+  Input:
+    2 1
+  Output:
+    3
+
+SAMPLE 2
+  Input:
+    9 4
+  Output:
+    15
+
+NOTE
+  In the first test case all values of X, Y, Z that satisfy the conditions are :
+
+  0 0 1
+
+  0 1 0
+
+  1 0 0
+
+  In the second test case all values of X, Y, Z that satisfy the conditions are :
+
+  [image: https://espresso.codeforces.com/e8bca52cfc0dbcc7f6fcb32b2d53adf44f1e546e.png]
+
+--------------------------------------------------------------------------------
+B. Sum of Consecutive Odd Numbers    [EOI21 Day 5 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers X and Y. Print the sum of all odd numbers between them, excluding X and Y.
+
+INPUT
+  First line contains a number T (1 ≤ T ≤ 10) number of test cases.
+
+  Next T lines will contain two numbers X and Y (0 ≤ X, Y ≤ 10^4).
+
+OUTPUT
+  Print the sum of all odd numbers between X and Y (excluding X and Y).
+
+SAMPLE 1
+  Input:
+    3
+    5 6
+    10 4
+    4 9
+  Output:
+    0
+    21
+    12
+
+--------------------------------------------------------------------------------
+C. Digits    [EOI21 Day 5 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print the digits of that number from right to left separated by space.
+
+INPUT
+  First line contains a number T (1 ≤ T ≤ 10) number of test cases.
+
+  Next T lines will contain a number N (0 ≤ N ≤ 10^9)
+
+OUTPUT
+  For each test case print a single line contains the digits of the number separated by space.
+
+SAMPLE 1
+  Input:
+    4
+    121
+    39
+    123456
+    1200
+  Output:
+    1 2 1
+    9 3
+    6 5 4 3 2 1
+    0 0 2 1
+
+--------------------------------------------------------------------------------
+D. GCD    [EOI21 Day 5 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers A and B. Print the greatest common divisor between (A, B).
+
+  Note: The greatest common divisor (GCD) of two or more integers, which are not all zeroes, is the largest positive integer that divides each of the integers.
+
+  For example:
+
+  the GCD of 8 and 12 is 4.
+
+  because the numbers that divides both 8 and 12 are (1,2,4) and 4 is the largest one .
+
+INPUT
+  Only one line containing two numbers A and B (1 ≤ A, B ≤ 10^3).
+
+OUTPUT
+  Print the GCD of A and B.
+
+SAMPLE 1
+  Input:
+    12 8
+  Output:
+    4
+
+SAMPLE 2
+  Input:
+    3 7
+  Output:
+    1
+
+SAMPLE 3
+  Input:
+    3 7
+  Output:
+    1
+
+SAMPLE 4
+  Input:
+    5 10
+  Output:
+    5
+
+NOTE
+  What is the greatest common divisor of 54 and 24?
+
+  *The number 54 can be expressed as a product of two integers in several different ways:
+
+  54 * 1 = 27 * 2 = 18 * 3 = 9 * 6 .....
+
+  Thus the divisors of 54  are: 1,2,3,6,9,18,27,54
+
+  Similarly, the divisors of 24 are: 1,2,3,4,6,8,12,24
+
+  The numbers that these two lists share in common are the common divisors of 54 and 24:
+
+  1,2,3,6
+
+  The greatest of these is 6. That is, the greatest common divisor of 54 and 24. One writes:
+
+  gcd(54,24) = 6.
+
+--------------------------------------------------------------------------------
+E. Divisors    [EOI21 Day 5 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print all the divisors of N in ascending order.
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 10^4).
+
+OUTPUT
+  Print all positive divisors of N, one number per line.
+
+SAMPLE 1
+  Input:
+    6
+  Output:
+    1
+    2
+    3
+    6
+
+SAMPLE 2
+  Input:
+    7
+  Output:
+    1
+    7
+
+SAMPLE 3
+  Input:
+    4
+  Output:
+    1
+    2
+    4
+
+NOTE
+  Divisor of Number is  A number that divides the integer exactly (no remainder).
+
+  In other words the division works perfectly with no fractions or remainders involved.
+
+  Examples:
+
+    - 3 is a divisor of 12, because 12 ÷ 3 = 4 exactly
+    - 4 is a divisor of 12, because 12 ÷ 4 = 3 exactly.
+    - 5 is not a divisor of 12, because 12 ÷ 5 = 2 with a remainder of 2.
+
+  a divisor is also a factor of the original integer.
+
+
+################################################################################
+#  EOI21 DAY 5 HOMEWORK
+#  Contest ID 333959 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Primes from 1 to n    [EOI21 Day 5 Homework]
+  Time limit: 3 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print all prime numbers between 1 and N inclusive.
+
+  A prime number is a number that is greater than 1 and has only two factors which are 1 and itself.
+
+  In other words : prime number divisible only by 1 and itself.
+
+  Be careful that 1 is not prime .
+
+  The first few prime numbers are
+
+  [image: https://espresso.codeforces.com/841e6480168f69cb952ba01bf514dc3c41c3a6de.png]
+
+INPUT
+  Only one line containing a number N (2 <= N <= 10^3).
+
+OUTPUT
+  Print all prime numbers between 1 and N (inclusive) separated by a space.
+
+SAMPLE 1
+  Input:
+    10
+  Output:
+    2 3 5 7
+
+--------------------------------------------------------------------------------
+B. PUM    [EOI21 Day 5 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print N lines that describes PUM game.
+
+  For more clarification see the examples.
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 20).
+
+OUTPUT
+  Print the answer according to the required above.
+
+SAMPLE 1
+  Input:
+    7
+  Output:
+    1 2 3 PUM
+    5 6 7 PUM
+    9 10 11 PUM
+    13 14 15 PUM
+    17 18 19 PUM
+    21 22 23 PUM
+    25 26 27 PUM
+
+SAMPLE 2
+  Input:
+    3
+  Output:
+    1 2 3 PUM
+    5 6 7 PUM
+    9 10 11 PUM
+
+NOTE
+  Don't print any extra spaces.
+
+--------------------------------------------------------------------------------
+C. Shape1    [EOI21 Day 5 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print a face down right angled triangle that has N rows.
+
+  For more clarification see the example below.
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 99).
+
+OUTPUT
+  Print the answer according to the required above.
+
+SAMPLE 1
+  Input:
+    4
+  Output:
+    ****
+    ***
+    **
+    *
+
+NOTE
+  Don't print any extra spaces after symbol " * ".
+
+--------------------------------------------------------------------------------
+D. Pyramid    [EOI21 Day 5 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print a left angled triangle that has N rows.
+
+  For more clarification see the example below.
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 99).
+
+OUTPUT
+  Print the answer according to the required above.
+
+SAMPLE 1
+  Input:
+    4
+  Output:
+    *
+    **
+    ***
+    ****
+
+NOTE
+  Don't print any extra spaces after symbol " * ".
+
+
+################################################################################
+#  EOI21 DAY 6 PRACTICE
+#  Contest ID 333960 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Summation    [EOI21 Day 6 Practice]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Print the absolute summation of these numbers.
+
+  absolute value : means to remove any negative sign in front of a number .
+
+  EX : |-5| = 5 , |7| = 7
+
+INPUT
+  First line contains a number N (1 ≤ N ≤ 10^5) number of elements.
+
+  Second line contains N numbers (-10^9  ≤  A_i  ≤  10^9).
+
+OUTPUT
+  Print the absolute summation of these numbers.
+
+SAMPLE 1
+  Input:
+    4
+    7 2 1 3
+  Output:
+    13
+
+SAMPLE 2
+  Input:
+    3
+    -1 2 -3
+  Output:
+    2
+
+NOTE
+  Second Example  :
+
+  -1 + 2 + -3 = -2  and it absolute is 2 so the answer is 2.
+
+--------------------------------------------------------------------------------
+B. Searching    [EOI21 Day 6 Practice]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Determine if the number X exists in array A or not and print its position (0-index).
+
+  Note: X may be found once or more than once and may not be found.
+
+INPUT
+  First line contains a number N (1 ≤ N ≤ 10^5) number of elements.
+
+  Second line contains N numbers (0 ≤ A_i ≤ 10^9).
+
+  Third line contains a number X (0 ≤ X ≤ 10^9).
+
+OUTPUT
+  Print the position of X in the first time you find it. If it doesn't exist print -1.
+
+SAMPLE 1
+  Input:
+    3
+    3 0 1
+    0
+  Output:
+    1
+
+SAMPLE 2
+  Input:
+    5
+    1 3 0 4 5
+    10
+  Output:
+    -1
+
+SAMPLE 3
+  Input:
+    4
+    2 3 2 1
+    2
+  Output:
+    0
+
+--------------------------------------------------------------------------------
+C. Replacement    [EOI21 Day 6 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Print the array after doing the following operations:
+
+    - Replace every positive number by 1.
+    - Replace every negative number by 2.
+
+INPUT
+  First line contains a number N (2 ≤ N ≤ 1000) number of elements.
+
+  Second line contains N numbers (-10^5  ≤  A_i  ≤  10^5).
+
+OUTPUT
+  Print the array after the replacement and it's values separated by space.
+
+SAMPLE 1
+  Input:
+    5
+    1 -2 0 3 4
+  Output:
+    1 2 0 1 1
+
+--------------------------------------------------------------------------------
+D. Reversing    [EOI21 Day 6 Practice]
+  Time limit: 1 second   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Print the array in a reversed order.
+
+  Note:
+
+  *Don't use built-in-functions.
+
+INPUT
+  First line contains a number N (1 ≤ N ≤ 10^3) number of elements.
+
+  Second line contains N numbers (0 ≤ A_i ≤ 10^9).
+
+OUTPUT
+  Print the array in a reversed order.
+
+SAMPLE 1
+  Input:
+    4
+    5 1 3 2
+  Output:
+    2 3 1 5
+
+SAMPLE 2
+  Input:
+    5
+    1 2 3 4 5
+  Output:
+    5 4 3 2 1
+
+
+################################################################################
+#  EOI21 DAY 6 HOMEWORK
+#  Contest ID 333961 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Positions in array    [EOI21 Day 6 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Print all array positions that store a number less than or equal to 10 and the number stored in that position.
+
+INPUT
+  First line contains a number N (2 ≤ N ≤ 1000) number of elements.
+
+  Second line contains N numbers (-10^5  ≤  A_i  ≤  10^5).
+
+  it's guaranteed that there is at least one number in array less than or equal to 10.
+
+OUTPUT
+  For each number in the array that is equal to or less than 10 print a single line contains "A[i] = X", where i is the position in the array and X is the number stored in the position.
+
+SAMPLE 1
+  Input:
+    5
+    1 2 100 0 30
+  Output:
+    A[0] = 1
+    A[1] = 2
+    A[3] = 0
+
+--------------------------------------------------------------------------------
+B. Lowest Number    [EOI21 Day 6 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Print the lowest number and its position.
+
+  Note: if there are more than one answer print first one's position.
+
+INPUT
+  First line contains a number N (2 ≤ N ≤ 1000) number of elements.
+
+  Second line contains N numbers (-10^5  ≤  A_i  ≤  10^5).
+
+OUTPUT
+  Print the lowest number and its position (1-index).
+
+SAMPLE 1
+  Input:
+    3
+    1 2 3
+  Output:
+    1 1
+
+SAMPLE 2
+  Input:
+    5
+    5 6 2 3 2
+  Output:
+    2 3
+
+--------------------------------------------------------------------------------
+C. Lucky Numbers    [EOI21 Day 6 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Everybody knows that positive integers are lucky if their decimal representation doesn't contain digits other than 4 and 7. For example, numbers 47, 747, 4 are lucky and 5, 17, 467 are not. It is well-known that 7 is luckier than 4.
+
+  Hafez has an array of N integers and wants your help to know lucky numbers in this array.
+
+INPUT
+  The first line contains N (1 ≤ N ≤ 10^5) – the size of the array.
+
+  Second line of input contains N space integers P_1, P_2, P_3, ..., P_N (0 ≤ P_i ≤ 10^18)
+
+OUTPUT
+  In the first line Print one integer the number of lucky numbers in the array.Then output all lucky numbers in one line (separated by a space).
+
+SAMPLE 1
+  Input:
+    5
+    2 4 7 3 14
+  Output:
+    2
+    4 7
+
+SAMPLE 2
+  Input:
+    6
+    44 55 74 47 4 73
+  Output:
+    4
+    44 74 47 4
+
+
+################################################################################
+#  EOI21 DAY 7 PRACTICE
+#  Contest ID 333962 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. The Bottles    [EOI21 Day 7 Practice]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Yesterday Farida and Sarah were having a party,while they were tidying up they collected n bottles.They decided to play a quick game.Farida will arrange the bottles on a line then tell Sarah two numbers, Sarah should swap the 2 bottles in the given indices.
+
+INPUT
+  You will be given 2 integers n and q(0<n<1000,1<q<1000), the number of bottles and number of quries. The second line contains n integers, then follows q lines each has 2 integers x and y the 2 numbers(1<=x,y<=n).
+
+OUTPUT
+  For every query output the resulted arrangment.
+
+SAMPLE 1
+  Input:
+    5 3
+    1 3 2 4 5
+    1 2
+    4 5
+    3 4
+  Output:
+    3 1 2 4 5
+    3 1 2 5 4
+    3 1 5 2 4
+
+SAMPLE 2
+  Input:
+    4 1
+    4 3 2 1
+    1 4
+  Output:
+    1 3 2 4
+
+--------------------------------------------------------------------------------
+B. Minimize Number    [EOI21 Day 7 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N positive numbers. Print maximum possible operations that can be performed.
+
+  The operation is as follows: if all numbers are even then divide each of them by 2 otherwise, you can not perform any more operations.
+
+INPUT
+  First line contains a number N (1 ≤ N ≤ 200) number of elements.
+
+  Second line contains N numbers (1  ≤  A_i  ≤  10^9).
+
+OUTPUT
+  Print the maximum possible number of operations that can be performed.
+
+SAMPLE 1
+  Input:
+    3
+    8 12 40
+  Output:
+    2
+
+SAMPLE 2
+  Input:
+    4
+    5 6 8 10
+  Output:
+    0
+
+NOTE
+  First example:
+
+  Initially, [8,12,40] are written on the blackboard. Since all those integers are even, You can perform the operation.
+
+  After the operation is performed once, [4,6,20] are written on the blackboard. Since all those integers are again even, You can perform the operation.
+
+  After the operation is performed twice, [2,3,10] are written on the blackboard. Now, there is an odd number 3 on the blackboard, so you cannot perform the operation any more.
+
+  Thus, you can perform the operation at most twice.
+
+  Second example:
+
+  Since there is an odd number 5 on the blackboard already in the beginning, You cannot perform the operation at all.
+
+--------------------------------------------------------------------------------
+C. Matrix    [EOI21 Day 7 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and a 2D array A of size N * N. Print the absolute difference between the summation of its two diagonals (primary diagonal and secondary diagonal).
+
+INPUT
+  First line contains a number N (1 ≤ N ≤ 100) described above.
+
+  Each of the next N lines will contain N numbers ( - 100 ≤ A_i ≤ 100).
+
+OUTPUT
+  Print the absolute difference between the summation of the matrix main diagonals.
+
+SAMPLE 1
+  Input:
+    4
+    1 5 12 1
+    2 -4 6 7
+    3 8 5 9
+    3 5 23 -6
+  Output:
+    22
+
+NOTE
+  First Example :
+
+  [image: https://espresso.codeforces.com/124e356953fcc4728e1b25feb36114153f8b15b7.png]
+
+--------------------------------------------------------------------------------
+D. Palindrome Array    [EOI21 Day 7 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N and an array A of N numbers. Determine if it's palindrome or not.
+
+  Note:
+
+  An array is called palindrome if it reads the same backward and forward, for example, arrays { 1 } and { 1,2,3,2,1 } are palindromes, while arrays { 1,12 } and { 4,7,5,4 } are not.
+
+INPUT
+  First line contains a number N (1 <= N <= 10^5) number of elements.
+
+  Second line contains N numbers (1 <= A_i <= 10^9).
+
+OUTPUT
+  Print "YES" (without quotes) if A is a palindrome array, otherwise, print "NO" (without quotes).
+
+SAMPLE 1
+  Input:
+    5
+    1 3 2 3 1
+  Output:
+    YES
+
+SAMPLE 2
+  Input:
+    4
+    1 2 3 4
+  Output:
+    NO
+
+
+################################################################################
+#  EOI21 DAY 7 HOMEWORK
+#  Contest ID 333963 - 2 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Search In Matrix    [EOI21 Day 7 Homework]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers N and M, a 2D array of size N * M and a number X. Determine whether X exists in the 2D array A or not.
+
+INPUT
+  First line contains two numbers N, M (2 ≤ N, M ≤ 100) N donates number of rows and M donates number of columns.
+
+  Each of the next N lines will contain M numbers (1 ≤ A_i ≤ 10^5).
+
+  Last line contains a number X (0 ≤ X ≤ 10^5) described above.
+
+OUTPUT
+  Print "will take number" if the number doesn't exist in the 2D array otherwise, print "will not take number".
+
+SAMPLE 1
+  Input:
+    2 2
+    1 2
+    3 4
+    3
+  Output:
+    will not take number
+
+SAMPLE 2
+  Input:
+    2 2
+    1 2
+    3 4
+    10
+  Output:
+    will take number
+
+--------------------------------------------------------------------------------
+B. Fibonacci    [EOI21 Day 7 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print the Fibonacci number of N.
+
+  Note: In order to create the Fibonacci sequence use the following function:
+
+    - fib(1) = 0.
+    - fib(2) = 1.
+    - fib(n) = fib(n - 1) + fib(n - 2).
+
+INPUT
+  Only one line containing a number N (1 ≤ N ≤ 50).
+
+OUTPUT
+  Print the Fibonacci number of N.
+
+SAMPLE 1
+  Input:
+    1
+  Output:
+    0
+
+SAMPLE 2
+  Input:
+    5
+  Output:
+    3
+
+NOTE
+  For more information visit Fibonacci: https://www.mathsisfun.com/numbers/fibonacci-sequence.html.
+
+
+################################################################################
+#  EOI21 DAY 8 PRACTICE
+#  Contest ID 333965 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Missing Area    [EOI21 Day 8 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  In the following shape:
+
+  [image: https://espresso.codeforces.com/c38a88490466590909d973c09256d2bf854cc4ca.png]
+
+  Each variable representing a specific area of the circle as showen above.
+
+  Given areas of parts A, B and C and the total area of the whole circle X, we need to find the area of part D.
+
+  NOTE:  All the four parts may not be equal, the figure is for illustration.
+
+INPUT
+  The first line contains one integer number X. The area of the circle.
+
+  The second line contains three integers A, B and C, representing the areas as described in the statement. (A + B + C < X)
+
+OUTPUT
+  Output only one integer the area of the part D.
+
+SAMPLE 1
+  Input:
+    21
+    3 5 2
+  Output:
+    11
+
+--------------------------------------------------------------------------------
+B. Unique Game    [EOI21 Day 8 Practice]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You are playing a game with your young brother. He will give you N cards, each of them has an integer written on it. He asks you to tell him what are the maximum 2 unique numbers on all the cards.
+
+INPUT
+  First line will contain only one number N. The number of the cards.
+
+  Second line will contain N numbers the values written on the cards.
+
+OUTPUT
+  Print only two numbers, the first maximum and the second maximum respectively (they must be not equal).
+
+  NOTE: It's guaranteed that there is an answer exists.
+
+SAMPLE 1
+  Input:
+    5
+    4 4 1 1 2
+  Output:
+    4
+    2
+
+--------------------------------------------------------------------------------
+C. Magic Cells    [EOI21 Day 8 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You are given a 2D grid of size N x M. Rows are numbered from 1 to N from top to bottom and columns are numbered from 1 to M from left ro right.
+
+  You are located at cell (1, 1) and wanted to reach to cell (N, M). In each step you can only walk one step down or one step right, more formally if you are currently on cell (i, j) such that 1 <= i <= N and 1 <= j <= M then you can move either to cell (i + 1, j) or cell (i, j + 1) such that i + 1 <= N and j + 1 <= M.
+
+  There are some magic cells in the grid that if you steped on any of them you can magiclly travel through time and reach cell (N, M) immediatly.
+
+  We want to know the minimum number of steps you should walk to reach cell (N, M).
+
+INPUT
+  The first line contains two numbers N and M. The dimensions of the grid.
+
+  Then N lines follows, each of them will contain M numbers either 1 or 0.
+
+    - A cell have a value of 1 means that this is a magic cell.
+    - A cell have a value of 0 mean that this is a normal cell.
+
+  Its guaranteed that cells (1, 1) and (N, M) will be always normal on all subtasks.
+
+OUTPUT
+  Only one line containing the minimum number of steps to reach to cell (N, M).
+
+SAMPLE 1
+  Input:
+    4 4
+    0 0 0 0
+    0 0 0 1
+    1 0 1 0
+    0 0 1 0
+  Output:
+    2
+
+--------------------------------------------------------------------------------
+D. Back to school    [EOI21 Day 8 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Your teacher decided to make Pop quiz during your first day after a long summer vacation.
+
+  Given array A and number X, determine if X is a good number or not.
+
+  A good number is a number that can be formed from sum of 2 different elements from array A.
+
+  To clarify more X will be a good number if and only if A_i + A_j = X and (i != j)
+
+  For example, if the given array is {1 , 2 , 5}
+
+  3 is good number as 1 + 2 = 3 (A_0 + A_1)
+
+  6 is good number as 1 + 5 = 6 (A_0 + A_2)
+
+  But 4 isn't good number and 5 isn't good number.
+
+INPUT
+  The first line will contain T ( 1 <= T <= 20) the number of test cases.
+
+  Each test case will begin with a line contains 2 positive integers N length of the array, X ( 1 <= X <= 10^9) number you are asked to check if it is good or not.
+
+  Then second line containing N integers A_0 , A_1, .... ,A_(n-1) ( 1 <= A_i <= 10^9)
+
+OUTPUT
+  Output YES if X is a good number otherwise ouput NO
+
+SAMPLE 1
+  Input:
+    2
+    2 5
+    2 3
+    2 5
+    2 2
+  Output:
+    YES
+    NO
+
+SAMPLE 2
+  Input:
+    4
+    3 3
+    1 2 5
+    3 4
+    1 2 5
+    3 6
+    1 2 5
+    3 5
+    1 2 5
+  Output:
+    YES
+    NO
+    YES
+    NO
+
+NOTE
+  First sample: we have 2 Test cases
+
+  In first test case N = 2 and X = 5 and the array A = {2 , 3} So, the answer is 'Yes' because X is good number as it is the equal to 2 + 3 (A_0 + A_1)
+
+  In second test case N = 2 and X = 5 and the array A = {2 , 2} So, the answer is 'No' because X isn't good number.
+
+  Second sample is the same example given in the statement.
+
+
+################################################################################
+#  EOI21 DAY 8 HOMEWORK
+#  Contest ID 333966 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Convert Grid    [EOI21 Day 8 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Hussien have 2 grids A and B of size N x M that each of them contains N * M integer numbers.
+
+  Hussien can make the following operations for infinity:
+
+    - Select one number from grid A and replace it with one of its divisors.
+    - Select one number from grid A and multiply it by -1.
+
+  Can you help Hussien to check if he can convert grid A to grid B or not?
+
+INPUT
+  The first line contains two integers N and M. The size of grid A and B.
+
+  The next N lines contains grid A, that each line contains M integers.
+
+  The next N lines contains grid B, that each line contains M integers.
+
+  NOTE: It's guaranteed that there will be no zeros in the input.
+
+OUTPUT
+  Output "YES" if Hussien can convert grid A to B, "NO" otherwise.
+
+SAMPLE 1
+  Input:
+    3 3
+    3 8 10
+    2 7 9
+    12 2 15
+    5 4 7
+    1 3 1
+    1 5 10
+  Output:
+    NO
+
+SAMPLE 2
+  Input:
+    3 3
+    3 8 10
+    2 7 9
+    12 2 15
+    1 4 10
+    1 1 1
+    1 2 15
+  Output:
+    YES
+
+SAMPLE 3
+  Input:
+    2 2
+    25 -10
+    3 -8
+    5 -2
+    -1 8
+  Output:
+    YES
+
+NOTE
+  Large Input/Output files, please use fast IO methods.
+
+--------------------------------------------------------------------------------
+B. Just LET ME MEAN    [EOI21 Day 8 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Anany will get an array a for his birthday. Anany once told us that he likes the number x. To make him happy in his birthday, we want to modify the array so that the mean of the numbers in the array is x. To do that, we can add exactly one new non-negative number to the array.
+
+  Anany's birthday is tomorrow, so we want to prepare the array as soon a possible, can you tell us if we can do that or not?
+
+  The mean of an array of numbers is the sum of all the numbers in the array divided by the number of elements in the array.
+
+  mean(a) = ( sum(a) )/( size(a) )
+
+INPUT
+  The first line of the input file is T, the number of test cases.
+
+  The first line of each test case contains integer numbers n, x.
+
+  The second line of the test case contains n integer numbers a_1, a_2, ..., a_n — the array we have.
+
+OUTPUT
+  Print "YES" without quotations if there is a non-negative number m that we can add to the array to make its mean equal x. Otherwise, print "NO"
+
+SAMPLE 1
+  Input:
+    2
+    3 4
+    1 2 3
+    3 1
+    1 2 3
+  Output:
+    YES
+    NO
+
+NOTE
+  In the first test, we can add 10 to the array so the mean will be ((1+2+3+10))/4=4.
+
+  In the second test, there is no solution.
+
+--------------------------------------------------------------------------------
+C. Construct The Sum    [EOI21 Day 8 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You are given two integers n and s. You are required to find distinct positive integers, less than or equal to n each, such that they sum up to s, or determine that this is impossible.
+
+INPUT
+  The first line of the input contains a single integer T (1 <= T <= 100), the number of the test cases.
+
+  Each of the following T lines contains two space-separated integers n and s. (1 <= n <= 10^5, 1 <= s <= 10^18).
+
+OUTPUT
+  For each test case, if you could find an answer, print k, the number of elements in the answer, followed by k elements of the answer on a single line. If there is no possible answer, print -1 on a single line.
+
+SAMPLE 1
+  Input:
+    3
+    5 3
+    7 10
+    6 4
+  Output:
+    1 3
+    2 7 3
+    1 4
+
+
+################################################################################
+#  EOI21 DAY 10 PRACTICE
+#  Contest ID 333970 - 2 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Binary Search    [EOI21 Day 10 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given 2 numbers N and Q, array A of N numbers and Q queries each one contains a number X.
+
+  For each query print a single line that contains "found" if the number X exists in array A otherwise, print "not found".
+
+INPUT
+  First line contains two numbers N, Q (1 <= N, Q <= 10^5).
+
+  Second line contains N numbers (1 <= A_i <= 10^9).
+
+  Next Q lines contains X (1 <= X <= 10^9).
+
+OUTPUT
+  Print the answer for each query in a single line.
+
+SAMPLE 1
+  Input:
+    5 3
+    1 5 4 3 2
+    5
+    3
+    6
+  Output:
+    found
+    found
+    not found
+
+--------------------------------------------------------------------------------
+B. binary search STL    [EOI21 Day 10 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  you have an array of length n and q query, each query is one of these 3 types :
+
+    - lower_bound x : mean find first element greater than or equal x, if not found print -1.
+    - upper_bound x : mean find first element greater than x, if not found print -1.
+    - binary_search x : mean find x in the array or not.if x in array print "found" otherwise print "not found".
+
+INPUT
+  The first line of input contains two integers n,q (1 <= N,q <= 10^5). The second line contains n numbers a_i (1 <= a_i <= 10^9). The next q lines contains the queries. (1 <= x <= 10^9).
+
+OUTPUT
+  print the answer for each query in one line.
+
+SAMPLE 1
+  Input:
+    5 6
+    1 5 4 3 2
+    binary_search 5
+    lower_bound 5
+    upper_bound 5
+    lower_bound 3
+    upper_bound 3
+    binary_search 6
+  Output:
+    found
+    5
+    -1
+    3
+    4
+    not found
+
+
+################################################################################
+#  EOI21 DAY 10 HOMEWORK
+#  Contest ID 333971 - 2 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Binary Search 101    [EOI21 Day 10 Homework]
+  Time limit: 1 second   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You will be given three integers a, b and k.
+
+  You are asked to determine the number of steps needed to find k in [a, b] using the following algorithm.
+
+    - Get the middle value by adding the beginning and the end of the current range then divide it by 2 (integer division).
+    - If the middle value is less than k, update the beginning of the range with the middle value+ 1 then go-to 1.
+    - If the middle value is greater than k, update the end of the range with the middle value- 1 then go-to 1.
+    - If the middle value equals to k then break.
+
+  One iteration on the previous means you have successfully completed one step in the algorithm.
+
+  Calculate the number of steps needed to finish the algorithm.
+
+INPUT
+  The input consists of three integers a, b and k (1 <= a <= k <= b <= 10^12).
+
+OUTPUT
+  Print an integer, the number of steps.
+
+SAMPLE 1
+  Input:
+    1 10 5
+  Output:
+    1
+
+SAMPLE 2
+  Input:
+    1 10 8
+  Output:
+    2
+
+SAMPLE 3
+  Input:
+    1 10 2
+  Output:
+    2
+
+--------------------------------------------------------------------------------
+B. Prime    [EOI21 Day 10 Homework]
+  Time limit: 2 s.   |   Memory limit: 256 MB
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  A prime number is a number that is greater than 1 and has only two factors which are 1 and itself. The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29.
+
+  Given a number N. Determine whether N is prime or not.
+
+INPUT
+  First line will contain a number T (1 <= T <= 10^3) number of test cases.
+
+  Next T lines will contain a number N (1 <= N <= 10^9).
+
+OUTPUT
+  Print "YES" if the N_th number is prime otherwise, print "NO".
+
+SAMPLE 1
+  Input:
+    3
+    2
+    4
+    8
+  Output:
+    YES
+    NO
+    NO
+
+NOTE
+  Don't use an array.
+
+
+################################################################################
+#  EOI21 DAY 11 PRACTICE
+#  Contest ID 333972 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Count numbers    [EOI21 Day 11 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have an empty array and q queries, each of them in the following format:
+
+    - 1 x : add x in the array
+    - 2 x : print the number of occurrence of x in the array
+
+INPUT
+  The First line of input contains n, q (1 <= n, q <= 10^5)
+
+  The next q lines contain two integers z (1 <= z <= 2), x (1 <= x <= n)
+
+OUTPUT
+  For each query from the second type print the occurrence of the given number.
+
+SAMPLE 1
+  Input:
+    6 7
+    1 1
+    1 6
+    1 3
+    2 1
+    1 3
+    2 3
+    2 5
+  Output:
+    1
+    2
+    0
+
+--------------------------------------------------------------------------------
+B. Count characters    [EOI21 Day 11 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have a string s contains Latin letters in lower and upper case.
+
+  You have to print every character that appears in s and the number of its occurrence.
+
+  You must print the letters sorted and the upper case letters before lower case letters.
+
+INPUT
+  The only line input contains string s (1 <= |s| <= 10^5).
+
+OUTPUT
+  print the answer to the problem.
+
+SAMPLE 1
+  Input:
+    ICPCAssuit
+  Output:
+    A 1
+    C 2
+    I 1
+    P 1
+    i 1
+    s 2
+    t 1
+    u 1
+
+--------------------------------------------------------------------------------
+C. Range sum query    [EOI21 Day 11 Practice]
+  Time limit: 1.5 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given 2 numbers N and Q, an array A of N number and Q number of pairs L, R. For each query Q print a single line that contains the summation of all numbers from index L to index R.
+
+INPUT
+  First line contains two numbers N, Q (1 <= N, Q <= 10^5) where N is number of elements in A and Q is number of query pairs.
+
+  Second line contains N numbers(1 <= A_i <= 10^9).
+
+  Next Q lines contains L,R (1 <= L <= R <= N).
+
+OUTPUT
+  For each query Q print a single line that contains the summation of all numbers from index L to index R.
+
+SAMPLE 1
+  Input:
+    6 3
+    6 4 2 7 2 7
+    1 3
+    3 6
+    1 6
+  Output:
+    12
+    18
+    28
+
+SAMPLE 2
+  Input:
+    4 3
+    5 5 2 3
+    1 3
+    2 3
+    1 4
+  Output:
+    12
+    7
+    15
+
+--------------------------------------------------------------------------------
+D. Sort the array    [EOI21 Day 11 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have an array A of length n.
+
+  You have to print the array sorted in increasing order
+
+INPUT
+  The first line contains n (1 <= n <= 10^6).
+
+  The next line contains n integers (1 <= A_i <= 10^5).
+
+OUTPUT
+  The only line input contains the array sorted in increasing order.
+
+SAMPLE 1
+  Input:
+    7
+    4 2 1 7 9 8 2
+  Output:
+    1 2 2 4 7 8 9
+
+
+################################################################################
+#  EOI21 DAY 11 HOMEWORK
+#  Contest ID 333973 - 3 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. The first missing number    [EOI21 Day 11 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have an array A of N integers.
+
+  You have to find the first integer x (-M <= x <= M) not appears in A.
+
+INPUT
+  The first line of the input contains two integers N, M (1 <= M <= 10^5),(1 <= N < 2*M).
+
+  The next line contains N integersa_i (-M <= a_i <= M).
+
+OUTPUT
+  The only line of the output contains an integer x the answer to the problem.
+
+SAMPLE 1
+  Input:
+    7 5
+    -1 4 -5 3 -2 -3 4
+  Output:
+    -4
+
+--------------------------------------------------------------------------------
+B. Pangram    [EOI21 Day 11 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  A word or a sentence in some language is called a pangram if all the characters of the alphabet of this language appear in it at least once. Pangrams are often used to demonstrate fonts in printing or test the output devices.
+
+  You are given a string consisting of lowercase and uppercase Latin letters. Check whether this string is a pangram. We say that the string contains a letter of the Latin alphabet if this letter occurs in the string in uppercase or lowercase.
+
+INPUT
+  The first line contains a single integer n (1 ≤ n ≤ 100) — the number of characters in the string.
+
+  The second line contains the string. The string consists only of uppercase and lowercase Latin letters.
+
+OUTPUT
+  Output "YES", if the string is a pangram and "NO" otherwise.
+
+SAMPLE 1
+  Input:
+    12
+    toosmallword
+  Output:
+    NO
+
+SAMPLE 2
+  Input:
+    35
+    TheQuickBrownFoxJumpsOverTheLazyDog
+  Output:
+    YES
+
+--------------------------------------------------------------------------------
+C. Kuriyama Mirai's Stones    [EOI21 Day 11 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Kuriyama Mirai has killed many monsters and got many (namely n) stones. She numbers the stones from 1 to n. The cost of the i-th stone is v_i. Kuriyama Mirai wants to know something about these stones so she will ask you two kinds of questions:
+
+    - She will tell you two numbers, l and r (1 ≤ l ≤ r ≤ n), and you should tell her  [image: https://espresso.codeforces.com/6a950b27de2103bb53df10f9ace817ae3df57fa9.png] .
+    - Let u_i be the cost of the i-th cheapest stone (the cost that will be on the i-th place if we arrange all the stone costs in non-decreasing order). This time she will tell you two numbers, l and r (1 ≤ l ≤ r ≤ n), and you should tell her  [image: https://espresso.codeforces.com/9830c0af1b3d14c66843c32f7c106c97428b7d2d.png] .
+
+  For every question you should give the correct answer, or Kuriyama Mirai will say "fuyukai desu" and then become unhappy.
+
+INPUT
+  The first line contains an integer n (1 ≤ n ≤ 10^5). The second line contains n integers: v_1, v_2, ..., v_n (1 ≤ v_i ≤ 10^9) — costs of the stones.
+
+  The third line contains an integer m (1 ≤ m ≤ 10^5) — the number of Kuriyama Mirai's questions. Then follow m lines, each line contains three integers type, l and r (1 ≤ l ≤ r ≤ n; 1 ≤ type ≤ 2), describing a question. If type equal to 1, then you should output the answer for the first question, else you should output the answer for the second one.
+
+OUTPUT
+  Print m lines. Each line must contain an integer — the answer to Kuriyama Mirai's question. Print the answers to the questions in the order of input.
+
+SAMPLE 1
+  Input:
+    6
+    6 4 2 7 2 7
+    3
+    2 3 6
+    1 3 4
+    1 1 6
+  Output:
+    24
+    9
+    28
+
+SAMPLE 2
+  Input:
+    4
+    5 5 2 3
+    10
+    1 2 4
+    2 1 4
+    1 1 1
+    2 1 4
+    2 1 2
+    1 1 1
+    1 3 3
+    1 1 3
+    1 4 4
+    1 2 2
+  Output:
+    10
+    15
+    5
+    15
+    5
+    5
+    2
+    12
+    3
+    5
+
+NOTE
+  Please note that the answers to the questions may overflow 32-bit integer type.
+
+
+################################################################################
+#  EOI21 DAY 12 PRACTICE
+#  Contest ID 333974 - 8 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+B. EOI Tshirts    [EOI21 Day 12 Practice]
+  Time limit: 2 s.   |   Memory limit: 256 MB
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Eslam is the organizer of the greatest community EOI.
+
+  He went to the clothes shop and got a list of size N containing the available sizes of T-shirts.
+
+  The community contains Q member.
+
+  Eslam asked them to tell him their sizes and he will tell them the nearest available size to their size.
+
+  Eslam is too busy so he asked you to tell each member the nearest size to the size he/she will ask for.
+
+INPUT
+  You will be given two integers N and Q (1 <= N, Q <= 10^5), the size of the list and the number of the members in the community respectively.
+
+  The next line contains N distinct numbers a_i (1 <= a_i <= 10^9).
+
+  Then the next Q lines each contains a number b_j (1 <= b_j <= 10^9), the t-shirt size of the j_th member.
+
+OUTPUT
+  Print the nearest size for each member. If there are multiple solutions, print the smallest one.
+
+SAMPLE 1
+  Input:
+    8 4
+    2 5 4 7 1 9 13 3
+    12
+    6
+    1
+    8
+  Output:
+    13
+    5
+    1
+    7
+
+--------------------------------------------------------------------------------
+C. Interesting drink    [EOI21 Day 12 Practice]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Vasiliy likes to rest after a hard work, so you may often meet him in some bar nearby. As all programmers do, he loves the famous drink "Beecola", which can be bought in n different shops in the city. It's known that the price of one bottle in the shop i is equal to x_i coins.
+
+  Vasiliy plans to buy his favorite drink for q consecutive days. He knows, that on the i-th day he will be able to spent m_i coins. Now, for each of the days he want to know in how many different shops he can buy a bottle of "Beecola".
+
+INPUT
+  The first line of the input contains a single integer n (1 ≤ n ≤ 100 000) — the number of shops in the city that sell Vasiliy's favourite drink.
+
+  The second line contains n integers x_i (1 ≤ x_i ≤ 100 000) — prices of the bottles of the drink in the i-th shop.
+
+  The third line contains a single integer q (1 ≤ q ≤ 100 000) — the number of days Vasiliy plans to buy the drink.
+
+  Then follow q lines each containing one integer m_i (1 ≤ m_i ≤ 10^9) — the number of coins Vasiliy can spent on the i-th day.
+
+OUTPUT
+  Print q integers. The i-th of them should be equal to the number of shops where Vasiliy will be able to buy a bottle of the drink on the i-th day.
+
+SAMPLE 1
+  Input:
+    5
+    3 10 8 6 11
+    4
+    1
+    10
+    3
+    11
+  Output:
+    0
+    4
+    1
+    5
+
+NOTE
+  On the first day, Vasiliy won't be able to buy a drink in any of the shops.
+
+  On the second day, Vasiliy can buy a drink in the shops 1, 2, 3 and 4.
+
+  On the third day, Vasiliy can buy a drink only in the shop number 1.
+
+  Finally, on the last day Vasiliy can buy a drink in any shop.
+
+--------------------------------------------------------------------------------
+D. Train    [EOI21 Day 12 Practice]
+  Time limit: 0.5 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  When Moamen was returning from Assiut to Aswan city he knew two friends on the train and fortunately, he found that they are from the same city where he is living. They decided to enter a virtual team contest. Suppose that Moamen can solve any problem in A minutes and the first friend in B minutes and the second friend in C minutes.
+
+  In the beginning, The contest contains N problems. and your task to calculate the minimum time to solve all the problems.(Moamen and his friends solve the problems in parallel ).
+
+INPUT
+  The first lines contain one integer t (1 ≤ t ≤ 2 * 10^5).
+
+  Then ,t lines and each line contains four integer number N,A,B,C (1 ≤ N, A, B, C ≤ 10^9) N,A,B,C described in the statement.
+
+OUTPUT
+  The minimum time needed to solve all problems per test cases.
+
+SAMPLE 1
+  Input:
+    2
+    9 2 2 2
+    5 2 1 1
+  Output:
+    6
+    2
+
+NOTE
+  first test
+
+  after 6 minutes the first solve 3 problems, the second solve 3 problems, the third solve 3 problems and the total problems = 9.
+
+--------------------------------------------------------------------------------
+E. Worms    [EOI21 Day 12 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  It is lunch time for Mole. His friend, Marmot, prepared him a nice game for lunch.
+
+  Marmot brought Mole n ordered piles of worms such that i-th pile contains a_i worms. He labeled all these worms with consecutive integers: worms in first pile are labeled with numbers 1 to a_1, worms in second pile are labeled with numbers a_1 + 1 to a_1 + a_2 and so on. See the example for a better understanding.
+
+  Mole can't eat all the worms (Marmot brought a lot) and, as we all know, Mole is blind, so Marmot tells him the labels of the best juicy worms. Marmot will only give Mole a worm if Mole says correctly in which pile this worm is contained.
+
+  Poor Mole asks for your help. For all juicy worms said by Marmot, tell Mole the correct answers.
+
+INPUT
+  The first line contains a single integer n (1 ≤ n ≤ 10^5), the number of piles.
+
+  The second line contains n integers a_1, a_2, ..., a_n (1 ≤ a_i ≤ 10^3, a_1 + a_2 + ... + a_n ≤ 10^6), where a_i is the number of worms in the i-th pile.
+
+  The third line contains single integer m (1 ≤ m ≤ 10^5), the number of juicy worms said by Marmot.
+
+  The fourth line contains m integers q_1, q_2, ..., q_m (1 ≤ q_i ≤ a_1 + a_2 + ... + a_n), the labels of the juicy worms.
+
+OUTPUT
+  Print m lines to the standard output. The i-th line should contain an integer, representing the number of the pile where the worm labeled with the number q_i is.
+
+SAMPLE 1
+  Input:
+    5
+    2 7 3 4 9
+    3
+    1 25 11
+  Output:
+    1
+    5
+    3
+
+NOTE
+  For the sample input:
+
+    - The worms with labels from [1, 2] are in the first pile.
+    - The worms with labels from [3, 9] are in the second pile.
+    - The worms with labels from [10, 12] are in the third pile.
+    - The worms with labels from [13, 16] are in the fourth pile.
+    - The worms with labels from [17, 25] are in the fifth pile.
+
+--------------------------------------------------------------------------------
+F. Sereja and Suffixes    [EOI21 Day 12 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Sereja has an array a, consisting of n integers a_1, a_2, ..., a_n. The boy cannot sit and do nothing, he decided to study an array. Sereja took a piece of paper and wrote out m integers l_1, l_2, ..., l_m (1 ≤ l_i ≤ n). For each number l_i he wants to know how many distinct numbers are staying on the positions l_i, l_i + 1, ..., n. Formally, he want to find the number of distinct numbers among a_(l_i), a_(l_i + 1), ..., a_n.?
+
+  Sereja wrote out the necessary array elements but the array was so large and the boy was so pressed for time. Help him, find the answer for the described question for each l_i.
+
+INPUT
+  The first line contains two integers n and m (1 ≤ n, m ≤ 10^5). The second line contains n integers a_1, a_2, ..., a_n (1 ≤ a_i ≤ 10^5) — the array elements.
+
+  Next m lines contain integers l_1, l_2, ..., l_m. The i-th line contains integer l_i (1 ≤ l_i ≤ n).
+
+OUTPUT
+  Print m lines — on the i-th line print the answer to the number l_i.
+
+SAMPLE 1
+  Input:
+    10 10
+    1 2 3 4 1 2 3 4 100000 99999
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+  Output:
+    6
+    6
+    6
+    6
+    6
+    5
+    4
+    3
+    2
+    1
+
+--------------------------------------------------------------------------------
+G. Range Sum 2D    [EOI21 Day 12 Practice]
+  Time limit: 1 s.   |   Memory limit: 256 MB
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  you have an array 2D a of size n * m, and you need to answer q queries. each query need to get the summation of all number in rectangle form (x1,y1) to (x2,y2).
+
+INPUT
+  the first line contains three integers n , m the size of array (1 <= n * m <= 10^5), and q number of queries, (1 <= q <= 10^5).
+
+  The next n lines contains m numbers a_(i,j) (1 <= a_(i,j) <= 10^9).
+
+  the next q lines contains x1,y1,x2,y2 (1 <= x1 <= x2 <= n, 1 <= y1 <= y2 <= m).
+
+OUTPUT
+  for each query print the answer of this query in one line.
+
+SAMPLE 1
+  Input:
+    5 5 3
+    1 2 3 4 5
+    5 3 2 2 9
+    2 4 8 5 11
+    10 12 4 9 4
+    1 1 1 1 1
+    1 1 5 5
+    3 4 5 4
+    1 2 1 2
+  Output:
+    110
+    15
+    2
+
+--------------------------------------------------------------------------------
+H. Count a's    [EOI21 Day 12 Practice]
+  Time limit: 1 s   |   Memory limit: 256 MB
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given string s, and you need to answer q queries. each query needs to print occurrences of 'a' from index L to index R.
+
+INPUT
+  the first line contains string s, and q number of queries, (1 <= |s| , q <= 10^5).
+
+  the next q lines contains L,R (1 <= L <= R <= n).
+
+OUTPUT
+  For every Query print occurrences of 'a' in this range.
+
+SAMPLE 1
+  Input:
+    abcaabc
+    6
+    1 3
+    2 4
+    1 6
+    3 5
+    4 7
+    1 7
+  Output:
+    1
+    1
+    3
+    2
+    2
+    3
+
+--------------------------------------------------------------------------------
+I. Aggressive cows    [EOI21 Day 12 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Farmer John has built a new long barn, with n stalls. The stalls are located along a straight line at positions x_1,x_2,...,x_n.
+
+  His c cows don't like this barn layout and become aggressive towards each other once put into a stall. To prevent the cows from hurting each other, Farmer John wants to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. What is the largest minimum distance?
+
+INPUT
+  The first line of input contains two integers n,c (2 <= c <= n <= 10^5). The second line contains n number x_i (1 <= x_i <= 10^9).
+
+OUTPUT
+  print one integer the largest minimum distance.
+
+SAMPLE 1
+  Input:
+    5 3
+    1 2 8 4 9
+  Output:
+    3
+
+NOTE
+  Farmer John can put his 3 cows in the stalls at positions 1, 4 and 8, resulting in a minimum distance of 3.
+
+
+################################################################################
+#  EOI21 DAY 12 HOMEWORK
+#  Contest ID 336975 - 8 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Difference problem    [EOI21 Day 12 Homework]
+  Time limit: 1 second   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a string S consists of 1's and 0's. Print the positive difference between number of ones and number of zeroes.
+
+INPUT
+  Only one line contains a string S (0 < |S| < 10^6)
+
+  It's guaranteed that S contains only 0's and 1's.
+
+OUTPUT
+  Print the positive difference between 1's and 0's.
+
+SAMPLE 1
+  Input:
+    11100000
+  Output:
+    2
+
+SAMPLE 2
+  Input:
+    11111010100
+  Output:
+    3
+
+--------------------------------------------------------------------------------
+B. Creating a Character    [EOI21 Day 12 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You play your favourite game yet another time. You chose the character you didn't play before. It has str points of strength and int points of intelligence. Also, at start, the character has exp free experience points you can invest either in strength or in intelligence (by investing one point you can either raise strength by 1 or raise intelligence by 1).
+
+  Since you'd like to make some fun you want to create a jock character, so it has more strength than intelligence points (resulting strength is strictly greater than the resulting intelligence).
+
+  Calculate the number of different character builds you can create (for the purpose of replayability) if you must invest all free points. Two character builds are different if their strength and/or intellect are different.
+
+INPUT
+  The first line contains the single integer T (1 <= T <= 100) — the number of queries. Next T lines contain descriptions of queries — one per line.
+
+  This line contains three integers str, int and exp (1 <= str, int <= 10^8, 0 <= exp <= 10^8) — the initial strength and intelligence of the character and the number of free points, respectively.
+
+OUTPUT
+  Print T integers — one per query. For each query print the number of different character builds you can create.
+
+SAMPLE 1
+  Input:
+    4
+    5 3 4
+    2 1 0
+    3 5 5
+    4 10 6
+  Output:
+    3
+    1
+    2
+    0
+
+NOTE
+  In the first query there are only three appropriate character builds: (str = 7, int = 5), (8, 4) and (9, 3). All other builds are either too smart or don't use all free points.
+
+  In the second query there is only one possible build: (2, 1).
+
+  In the third query there are two appropriate builds: (7, 6), (8, 5).
+
+  In the fourth query all builds have too much brains.
+
+--------------------------------------------------------------------------------
+C. Megacity    [EOI21 Day 12 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  The administration of the Tomsk Region firmly believes that it's time to become a megacity (that is, get population of one million). Instead of improving the demographic situation, they decided to achieve its goal by expanding the boundaries of the city.
+
+  The city of Tomsk can be represented as point on the plane with coordinates (0; 0). The city is surrounded with n other locations, the i-th one has coordinates (x_i, y_i) with the population of k_i people. You can widen the city boundaries to a circle of radius r. In such case all locations inside the circle and on its border are included into the city.
+
+  Your goal is to write a program that will determine the minimum radius r, to which is necessary to expand the boundaries of Tomsk, so that it becomes a megacity.
+
+INPUT
+  The first line of the input contains two integers n and s (1 ≤ n ≤ 10^3; 1 ≤ s < 10^6) — the number of locatons around Tomsk city and the population of the city. Then n lines follow. The i-th line contains three integers — the x_i and y_i coordinate values of the i-th location and the number k_i of people in it (1 ≤ k_i < 10^6). Each coordinate is an integer and doesn't exceed 10^4 in its absolute value.
+
+  It is guaranteed that no two locations are at the same point and no location is at point (0; 0).
+
+OUTPUT
+  In the output, print "-1" (without the quotes), if Tomsk won't be able to become a megacity. Otherwise, in the first line print a single real number — the minimum radius of the circle that the city needs to expand to in order to become a megacity.
+
+  The answer is considered correct if the absolute or relative error don't exceed 10^(- 6).
+
+SAMPLE 1
+  Input:
+    4 999998
+    1 1 1
+    2 2 1
+    3 3 1
+    2 -2 1
+  Output:
+    2.8284271
+
+SAMPLE 2
+  Input:
+    4 999998
+    1 1 2
+    2 2 1
+    3 3 1
+    2 -2 1
+  Output:
+    1.4142136
+
+SAMPLE 3
+  Input:
+    2 1
+    1 1 999997
+    2 2 1
+  Output:
+    -1
+
+--------------------------------------------------------------------------------
+D. Game    [EOI21 Day 12 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Some friends were playing a special game and it was simple. They have n numbers in front of them. Each player gets a number k and he has to guess the first number that is bigger than k in the n numbers.
+
+  Can you play this game with them?
+
+INPUT
+  The first line of input contains two integers n and q (1 <= n,q <= 10^5) – q denotes the number of ks each player will get.
+
+  The next line contains n integers a_i in distinct non-decreasing order (1 <= a_i <= 10^9).
+
+  The next q lines contain one integer k (1 <= k <= 10^9).
+
+OUTPUT
+  For each k you have to print the answer as described above if there doesn't exist such number print -1.
+
+SAMPLE 1
+  Input:
+    5 3
+    1 3 4 5 6
+    3
+    6
+    2
+  Output:
+    4
+    -1
+    3
+
+--------------------------------------------------------------------------------
+E. Queries about less or equal elements    [EOI21 Day 12 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You are given two arrays of integers a and b. For each element of the second array b_j you should find the number of elements in array a that are less than or equal to the value b_j.
+
+INPUT
+  The first line contains two integers n, m (1 ≤ n, m ≤ 2·10^5) — the sizes of arrays a and b.
+
+  The second line contains n integers — the elements of array a ( - 10^9 ≤ a_i ≤ 10^9).
+
+  The third line contains m integers — the elements of array b ( - 10^9 ≤ b_j ≤ 10^9).
+
+OUTPUT
+  Print m integers, separated by spaces: the j-th of which is equal to the number of such elements in array a that are less than or equal to the value b_j.
+
+SAMPLE 1
+  Input:
+    5 4
+    1 3 5 7 9
+    6 4 2 8
+  Output:
+    3 2 1 4
+
+SAMPLE 2
+  Input:
+    5 5
+    1 2 1 2 5
+    3 1 4 1 5
+  Output:
+    4 2 4 2 5
+
+--------------------------------------------------------------------------------
+F. It's Very Easy    [EOI21 Day 12 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Fares is assigned a task today. He is given an array A containing N integers. His task is to update all elements of the array to some minimum value x, that is, A[i]=x; 1 <= i <= N such that the product of all elements of this new array is strictly greater than the product of all elements of the initial array. Note that x should be as minimum as possible such that it meets the given condition.
+
+  Help him find the value of x.
+
+INPUT
+  The first line consists of an integer N (1 <= N <= 10^5), denoting the number of elements in the array.
+
+  The next line consists of N space-separated integers A[i] (1 <= A[i] <= 10^10 ), denoting the array elements.
+
+OUTPUT
+  The only line of output consists of value of x.
+
+SAMPLE 1
+  Input:
+    5
+    4 2 1 10 6
+  Output:
+    4
+
+NOTE
+  the first example :
+
+  Initial array product 4*2*1*10*6=480.
+
+  If all elements become 4, then the product 4*4*4*4*4=1024. Had all elements become 3, the product would be =243 which is less than 480. So the value of x is 4.
+
+--------------------------------------------------------------------------------
+G. The Da Vinci Code    [EOI21 Day 12 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  The Harvard symbologist Robert Langdon received an urgent late-night phone call that someone has been murdered inside the Louvre museum, and a riddle was left beside the body, but unfortunately, the key that solves the riddle has been stolen.
+
+  The riddle contains an array of size N and an integer X, and the stolen key is an integer K.
+
+  K represents the maximum length of all the subarrays of the given array such that the sum of all elements of each subarray is less than or equal to X.
+
+  Help Robert Langdon find the missing key to solve the riddle.
+
+INPUT
+  The first line of input consists of two space-separated integers denoting N (1 <= N <= 10^5) and X (1 <= X <= 10^18).
+
+  The second line of input consists of N space-separated integers (1 <= a_i <= 10^9), the elements of the array.
+
+OUTPUT
+  Print an integer, The maximum possible value of integer K. If there is no such integer print -1.
+
+SAMPLE 1
+  Input:
+    4 8
+    1 2 3 4
+  Output:
+    2
+
+NOTE
+  In the first example:
+
+  Sum of all elements of each subarray of size 1: 1, 2, 3, 4
+
+  Sum of all elements of each subarray of size 2: 3, 5, 7
+
+  Sum of all elements of each subarray of size 3: 6, 9
+
+  Sum of all elements of each subarray of size 4: 10
+
+  So clearly, maximum subarray size, such that all subarrays of that size have a sum of elements less than 8 is 2.
+
+--------------------------------------------------------------------------------
+H. Polycarp's Practice    [EOI21 Day 12 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Polycarp is practicing his problem solving skill. He has a list of n problems with difficulties a_1, a_2, ..., a_n, respectively. His plan is to practice for exactly k days. Each day he has to solve at least one problem from his list. Polycarp solves the problems in the order they are given in his list, he cannot skip any problem from his list. He has to solve all n problems in exactly k days.
+
+  Thus, each day Polycarp solves a contiguous sequence of (consecutive) problems from the start of the list. He can't skip problems or solve them multiple times. As a result, in k days he will solve all the n problems.
+
+  The profit of the j-th day of Polycarp's practice is the maximum among all the difficulties of problems Polycarp solves during the j-th day (i.e. if he solves problems with indices from l to r during a day, then the profit of the day is max_(l <= i <= r)a_i). The total profit of his practice is the sum of the profits over all k days of his practice.
+
+  You want to help Polycarp to get the maximum possible total profit over all valid ways to solve problems. Your task is to distribute all n problems between k days satisfying the conditions above in such a way, that the total profit is maximum.
+
+  For example, if n = 8, k = 3 and a = [5, 4, 2, 6, 5, 1, 9, 2], one of the possible distributions with maximum total profit is: [5, 4, 2], [6, 5], [1, 9, 2]. Here the total profit equals 5 + 6 + 9 = 20.
+
+INPUT
+  The first line of the input contains two integers n and k (1 <= k <= n <= 2000) — the number of problems and the number of days, respectively.
+
+  The second line of the input contains n integers a_1, a_2, ..., a_n (1 <= a_i <= 2000) — difficulties of problems in Polycarp's list, in the order they are placed in the list (i.e. in the order Polycarp will solve them).
+
+OUTPUT
+  In the first line of the output print the maximum possible total profit.
+
+  In the second line print exactly k positive integers t_1, t_2, ..., t_k (t_1 + t_2 + ... + t_k must equal n), where t_j means the number of problems Polycarp will solve during the j-th day in order to achieve the maximum possible total profit of his practice.
+
+  If there are many possible answers, you may print any of them.
+
+SAMPLE 1
+  Input:
+    8 3
+    5 4 2 6 5 1 9 2
+  Output:
+    20
+    3 2 3
+
+SAMPLE 2
+  Input:
+    5 1
+    1 1 1 1 1
+  Output:
+    1
+    5
+
+SAMPLE 3
+  Input:
+    4 2
+    1 2000 2000 2
+  Output:
+    4000
+    2 2
+
+NOTE
+  The first example is described in the problem statement.
+
+  In the second example there is only one possible distribution.
+
+  In the third example the best answer is to distribute problems in the following way: [1, 2000], [2000, 2]. The total profit of this distribution is 2000 + 2000 = 4000.
+
+
+################################################################################
+#  EOI21 DAY 13 PRACTICE
+#  Contest ID 333976 - 5 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Stack    [EOI21 Day 13 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have an empty stack of integers, and q queries in the following format:
+
+    - push x : where (1 <= x <= 10^9) add x in the top of the stack.
+    - pop : remove the top of the stack.
+    - top : print the top of the stack.
+  It's guaranteed that in the last 2 types of the query, the stack is not empty
+
+INPUT
+  The first line of input contains an integer q (1 <= q <= 10^5).
+
+  The next q lines contain the queries.
+
+OUTPUT
+  Print the answer to the queries in separate lines
+
+SAMPLE 1
+  Input:
+    10
+    push 5
+    top
+    push 6
+    top
+    push 3
+    top
+    pop
+    top
+    pop
+    top
+  Output:
+    5
+    6
+    3
+    6
+    5
+
+--------------------------------------------------------------------------------
+B. Queue    [EOI21 Day 13 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have an empty queue of integers, and q queries in the following format:
+
+    - push x : where (1 <= x <= 10^9) add x in the end of the queue.
+    - pop : remove the first element in the queue.
+    - front : print the first element in the queue.
+    - back : print the last element in the queue.
+  It's guaranteed that in the last 3 types of the query, the queue is not empty
+
+INPUT
+  The first line of input contains an integer q (1 <= q <= 10^5).
+
+  The next q lines contain the queries.
+
+OUTPUT
+  Print the answer to the queries in separate lines
+
+SAMPLE 1
+  Input:
+    15
+    push 5
+    front
+    back
+    push 6
+    front
+    back
+    push 3
+    front
+    back
+    pop
+    front
+    back
+    pop
+    front
+    back
+  Output:
+    5
+    5
+    5
+    6
+    5
+    3
+    6
+    3
+    3
+    3
+
+--------------------------------------------------------------------------------
+C. set    [EOI21 Day 13 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  you have an empty set and q query, each query is one of these 4 types :
+
+    - lower_bound x : mean find first element greater than or equal x, if not found print -1.
+    - upper_bound x : mean find first element greater than x, if not found print -1.
+    - find x : mean find x in the set or not.if x in set print "found" otherwise print "not found".
+    - insert x : mean add x to the set.
+
+INPUT
+  The first line of input contains one integer q (1 <= q <= 10^5). The next q lines contains the queries. (1 <= x <= 10^9).
+
+OUTPUT
+  print the answer for each query in one line.
+
+SAMPLE 1
+  Input:
+    10
+    insert 1
+    insert 2
+    insert 3
+    insert 4
+    insert 5
+    find 5
+    lower_bound 5
+    upper_bound 4
+    lower_bound 1
+    find 6
+  Output:
+    found
+    5
+    5
+    1
+    not found
+
+--------------------------------------------------------------------------------
+D. Frinds and money    [EOI21 Day 13 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  You have N friends, the i_th of them has A_i Pounds.
+
+  Given q queries, each of them is one of the folwing formats:
+
+    - 1 x y: where x is the name of one of your friends and his money increased by y pounds, where (1 <= y <= 10^5)
+    - 2 x: where x is the name of one of your friends, that you must to print his current amount of his money
+
+INPUT
+  The first line of input contains two integers N,q (1 <= N,q <= 10^5).
+
+  Them N lines, i_th line contains x and y where x is the name of i_th friend and y (1 <= y <= 10^9) is the amount of his money
+
+  then q lines contain the q queries.
+
+OUTPUT
+  Print the answers to the queries in separate lines.
+
+SAMPLE 1
+  Input:
+    7 14
+    Hussien 90
+    Hafez 40
+    Omar 70
+    Atef 100
+    Karemo 60
+    Ezzat 50
+    Muhammad 29
+    1 Muhammad 50
+    1 Karemo 20
+    2 Muhammad
+    1 Omar 30
+    2 Karemo
+    1 Ezzat 50
+    1 Hussien 10
+    1 Atef 200
+    2 Atef
+    2 Hussien
+    1 Hafez 45
+    2 Ezzat
+    2 Omar
+    2 Hafez
+  Output:
+    79
+    80
+    300
+    100
+    100
+    100
+    85
+
+--------------------------------------------------------------------------------
+E. String Functions    [EOI21 Day 13 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given two numbers N, Q and a string S of size N. Followed by Q lines of the following queries:
+
+    - pop_back : remove the last character in the string.
+    - front : print the first character in the string.
+    - back : print the last character in the string.
+    - sort l r : where (1 <= l,r <= |S|) sort all characters of S from l to r.
+    - reverse l r : where (1 <= l,r <= |S|) reverse all characters of S from l to r.
+    - print pos : where (1 <= pos <= |S|) print the character in the index pos.
+    - substr l r : where (1 <= l,r <= |S|) print sub-string of s from l to r.
+    - push_back x : add character x in the end of the string.
+
+  For each query, print the answer associated with it in a single line.
+
+  It's guaranteed that in the first 7 types of the query, the string is not empty.
+
+  it's recommended to use built-in functions of String.
+
+INPUT
+  The first line contains two integers N, Q (1 <= N, Q <= 10^3) N denoting the size of the string and Q number of queries.
+
+  The second line contains the string S consists of only lowercase English letters.
+
+  Next Q lines contain the queries.
+
+OUTPUT
+  For each query, print the answer associated with it in a single line.
+
+SAMPLE 1
+  Input:
+    18 8
+    assiutinupperegypt
+    substr 1 6
+    sort 5 8
+    pop_back
+    back
+    reverse 1 6
+    front
+    push_back i
+    print 4
+  Output:
+    assiut
+    p
+    n
+    s
+
+
+################################################################################
+#  EOI21 DAY 13 HOMEWORK
+#  Contest ID 333977 - 4 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Regular Bracket Sequence    [EOI21 Day 13 Homework]
+  Time limit: 5 seconds   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  A bracket sequence is called regular if it is possible to obtain correct arithmetic expression by inserting characters «+» and «1» into this sequence. For example, sequences «(())()», «()» and «(()(()))» are regular, while «)(», «(()» and «(()))(» are not.
+
+  One day Johnny got bracket sequence. He decided to remove some of the brackets from it in order to obtain a regular bracket sequence. What is the maximum length of a regular bracket sequence which can be obtained?
+
+INPUT
+  Input consists of a single line with non-empty string of «(» and «)» characters. Its length does not exceed 10^6.
+
+OUTPUT
+  Output the maximum possible length of a regular bracket sequence.
+
+SAMPLE 1
+  Input:
+    (()))(
+  Output:
+    4
+
+SAMPLE 2
+  Input:
+    ((()())
+  Output:
+    6
+
+--------------------------------------------------------------------------------
+B. Restoring Password    [EOI21 Day 13 Homework]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Igor K. always used to trust his favorite Kashpirovsky Antivirus. That is why he didn't hesitate to download the link one of his groupmates sent him via QIP Infinium. The link was said to contain "some real funny stuff about swine influenza". The antivirus had no objections and Igor K. run the flash application he had downloaded. Immediately his QIP Infinium said: "invalid login/password".
+
+  Igor K. entered the ISQ from his additional account and looked at the info of his main one. His name and surname changed to "H1N1" and "Infected" correspondingly, and the "Additional Information" field contained a strange-looking binary code 80 characters in length, consisting of zeroes and ones. "I've been hacked" — thought Igor K. and run the Internet Exploiter browser to quickly type his favourite search engine's address.
+
+  Soon he learned that it really was a virus that changed ISQ users' passwords. Fortunately, he soon found out that the binary code was actually the encrypted password where each group of 10 characters stood for one decimal digit. Accordingly, the original password consisted of 8 decimal digits.
+
+  Help Igor K. restore his ISQ account by the encrypted password and encryption specification.
+
+INPUT
+  The input data contains 11 lines. The first line represents the binary code 80 characters in length. That is the code written in Igor K.'s ISQ account's info. Next 10 lines contain pairwise distinct binary codes 10 characters in length, corresponding to numbers 0, 1, ..., 9.
+
+OUTPUT
+  Print one line containing 8 characters — The password to Igor K.'s ISQ account. It is guaranteed that the solution exists.
+
+SAMPLE 1
+  Input:
+    01001100100101100000010110001001011001000101100110010110100001011010100101101100
+    0100110000
+    0100110010
+    0101100000
+    0101100010
+    0101100100
+    0101100110
+    0101101000
+    0101101010
+    0101101100
+    0101101110
+  Output:
+    12345678
+
+SAMPLE 2
+  Input:
+    10101101111001000010100100011010101101110010110111011000100011011110010110001000
+    1001000010
+    1101111001
+    1001000110
+    1010110111
+    0010110111
+    1101001101
+    1011000001
+    1110010101
+    1011011000
+    0110001000
+  Output:
+    30234919
+
+--------------------------------------------------------------------------------
+C. Aymoon and Books    [EOI21 Day 13 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Aymoon has a very nice bookshelf containing N books in a row. Each book has a unique id. He can only pick either the leftmost or rightmost book. Aymoon will keep picking books from the shelf in some order and put them on a table and he can only read any book that is on the table. However, some books are more interesting than others. Aymoon believes that the book with the greatest id is the most interesting book to read.
+
+  You are given the description of Aymoon's bookshelf and some queries. Each query will depend on all the previous queries. Each query will be one of three types:
+
+    - 'L': Remove the leftmost book and put it on the table (if there are no books on the shelf, do nothing).
+    - 'R': Remove the rightmost book and put it on the table (if there are no books on the shelf, do nothing).
+    - 'Q': Tell Aymoon the id of the most interesting book that is currently on the table to read it.
+
+  Note that if Aymoon read a book, he will put it away from the table and will never read it again.
+
+INPUT
+  The first line contains a single integer N (1 ≤ N ≤ 10^5) — the number of books on the shelf.
+
+  The second line contains N distinct integers a_1, a_2, ..., a_N (1 ≤ a_i ≤ 10^5) — the ids of the books on the shelf from left to right.
+
+  The third line contains a single integer Q (1 ≤ Q ≤ 10^5) — the number of queries.
+
+  Then Q lines follow each of them contains a single character representing the query type 'L', 'R', or 'Q'.
+
+OUTPUT
+  For each query of type 'Q', print the id of the most interesting book on the table. If there are no books on the table at the moment the query is done, print  - 1.
+
+  If there are no queries of type 'Q', don't output anything.
+
+SAMPLE 1
+  Input:
+    5
+    6 1 7 5 4
+    5
+    L
+    Q
+    R
+    L
+    Q
+  Output:
+    6
+    4
+
+--------------------------------------------------------------------------------
+D. Sort range    [EOI21 Day 13 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Omani and Mubarak were bored during their trip to Alexandria. So they decided to play a game. The game is that Mubarak gives Omani N numbers and Omani has to sort the array as follows sort range [1,1+m] then [2,m+2] then [3,m+3] , .... [n-m,n]. Then Mubarak will ask smar to find number in postion K. Smar can't find the number. Can you find this number and help smar?
+
+INPUT
+  The first line contains an integer T (1 ≤ T ≤ 100) specifying the number of test cases.
+
+  The second line contains a single integer N (1≤ M<= K <=N ≤10^6), n the size of the array ,m size of range , k the postion of number that nada needs.
+
+  The next line will contain N integer a (1≤a≤10^9).
+
+OUTPUT
+  find the number that Mubarak needs.
+
+SAMPLE 1
+  Input:
+    1
+    6 3 4
+    1 2 4 7 6 3
+  Output:
+    3
+
+NOTE
+  Step 1- sort form 1 to 3 .. [1,2,4,7,6,3]
+
+  Step 2- sort form 2 to 4 .. [1,2,4,7,6,3]
+
+  Step 3- sort form 3 to 5 .. [1,2,4,6,7,3]
+
+  step 4 -sort from 4 to 6 .. [1,2,4,3,6,7]
+
+  the numer in postion 4 is 3.
+
+
+################################################################################
+#  EOI21 DAY 14 PRACTICE
+#  Contest ID 333978 - 10 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Base Conversion    [EOI21 Day 14 Practice]
+  Time limit: 1 s.   |   Memory limit: 256 MB
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print the binary equivalent of N.
+
+INPUT
+  First line contains a number T (1 <= T <= 10^4) number of test cases.
+
+  Next T lines will contain a number N (1 <= N <= 10^9).
+
+OUTPUT
+  For each test case print a single line contains the answer according to the required above.
+
+SAMPLE 1
+  Input:
+    2
+    10
+    3
+  Output:
+    1010
+    11
+
+NOTE
+  To convert decimal number to binary  :
+
+  A decimal integer can be converted to binary by dividing it by 2.
+
+  Take the quotient, and keep dividing it by 2, until you reach zero.
+
+  Each time you perform this division, take note of the remainder. Now reverse the remainders list, and you get the number in binary form
+
+  Example to convert 29 to binary
+
+  [image: https://espresso.codeforces.com/d6c8fe3363923ec7b125d248296fbdddbeb8bb1d.png]
+
+  for more details visit this https://flaviocopes.com/converting-decimal-to-binary/.
+
+--------------------------------------------------------------------------------
+B. Mina and Numbers    [EOI21 Day 14 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Our friend Mina lives in an island that have no papers, so he can't find any papers to write everything he is thinking of.
+
+  Instead, he has to remember everything by himself.
+
+  One day he got three integers A, B, C and he decided to sum each pair of them. More formally he will have 3 new integers X, Y, Z where X = A + B, Y = A + C, Z = B + C.
+
+  Unfortunately, Mina had forgotten A, B, C but still have X, Y, Z and asked you to restore them.
+
+INPUT
+  The first line contains three integers X, Y and Z ( - 2 * 10^18 ≤ X, Y, Z ≤ 2 * 10^18)
+
+OUTPUT
+  Print three integers A, B, C (in the same order). It is granted that there will always be a valid answer.
+
+SAMPLE 1
+  Input:
+    8 7 9
+  Output:
+    3 5 4
+
+--------------------------------------------------------------------------------
+C. Ayman and Books    [EOI21 Day 14 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Ayman has a very nice bookshelf containing N books in a row. Each book has a unique id. He can only pick either the leftmost or rightmost book. He will keep picking books from the shelf in some order and put them on a table and he can only read any book that is on the table. However, some books are more interesting than others. Ayman believes that the book with the greatest id is the most interesting book to read.
+
+  You are given the description of Ayman's bookshelf and some queries. Each query will depend on all the previous queries. Each query will be one of three types:
+
+    - 'L': Remove the leftmost book and put it on the table (if there are no books on the shelf, do nothing).
+    - 'R': Remove the rightmost book and put it on the table (if there are no books on the shelf, do nothing).
+    - 'Q': Tell Ayman the id of the most interesting book that is currently on the table to read it.
+
+  Note that if Ayman read a book, he will put it away from the table and will never read it again.
+
+INPUT
+  The first line contains a single integer N (1 ≤ N ≤ 10^5) — the number of books on the shelf.
+
+  The second line contains N distinct integers a_1, a_2, ..., a_N (1 ≤ a_i ≤ 10^5) — the ids of the books on the shelf from left to right.
+
+  The third line contains a single integer Q (1 ≤ Q ≤ 10^5) — the number of queries.
+
+  Then Q lines follow each of them contains a single character representing the query type 'L', 'R', or 'Q'.
+
+OUTPUT
+  For each query of type 'Q', print the id of the most interesting book on the table. If there are no books on the table at the moment the query is done, print  - 1.
+
+  If there are no queries of type 'Q', don't output anything.
+
+SAMPLE 1
+  Input:
+    5
+    6 1 7 5 4
+    6
+    Q
+    L
+    Q
+    R
+    L
+    Q
+  Output:
+    -1
+    6
+    4
+
+--------------------------------------------------------------------------------
+D. Queries    [EOI21 Day 14 Practice]
+  Time limit: 2 seconds   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given an array of length N and Q queries each query you will be given two integers X and Y.
+
+  When the whole array are multiplied by X what is the smallest number greater than or equal to Y.
+
+  You should answer each query independently.
+
+INPUT
+  The first line contains two integers N Q (1 <= N <= 10^5, 1 <= Q <= 10^5) — the number of elements and the number of queries.
+
+  The second line contain N integers a_1,a_2,…,a_N (1 <= a_i <= 10^5) Each query contains two integers X and Y (1 <= X <= 10^4 , 1 <= Y <= 10^9) — Each query is independent of all other queries.
+
+OUTPUT
+  Print the answer of each query, if there is no answer print -1.
+
+SAMPLE 1
+  Input:
+    10 10
+    8 9 2 3 14 4 7 12 10 19
+    1 7
+    4 33
+    2 40
+    4 8
+    3 9
+    1 15
+    2 11
+    5 18
+    1 5
+    4 2
+  Output:
+    7
+    9
+    -1
+    2
+    3
+    19
+    7
+    4
+    7
+    2
+
+--------------------------------------------------------------------------------
+E. Numbers Histogram    [EOI21 Day 14 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given 3 lines of input described as follow:
+
+    - First line contains a symbol S.
+    - Second line contains a number N.
+    - Third line contains N numbers.
+
+  For each number X_i in the N numbers print a new line that contains the symbol S repeated X_i time.
+
+INPUT
+  The first line contains a symbol S can be (+, -, *, /).
+
+  The second line an number N (1 <= N <= 50).
+
+  The third line contains N numbers (1 <= X_i <= 100).
+
+OUTPUT
+  Print the answer required above.
+
+SAMPLE 1
+  Input:
+    +
+    5
+    5 2 4 3 7
+  Output:
+    +++++
+    ++
+    ++++
+    +++
+    +++++++
+
+NOTE
+  Don't print any extra spaces after symbol S.
+
+--------------------------------------------------------------------------------
+F. Convert To Decimal 2    [EOI21 Day 14 Practice]
+  Time limit: 1 second   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a number N. Print the result of doing the following operation on N:
+
+    - Convert N to its binary representation.
+    - Count number of ones in the above binary representation.
+    - Print the equivalent decimal number that its binary representation has only the number of ones that were counted above.
+
+  For example: (10)_decimal = (1010)_binary has 2 ones "11", after converting "11" to decimal number it will become 3.
+
+INPUT
+  First line contains a number T (1 ≤ T ≤ 10) number of test cases.
+
+  Next T lines will contain a number N (1 ≤ N ≤ 2^31 - 1).
+
+OUTPUT
+  For each test case print a single line contains the answer according to the required above.
+
+SAMPLE 1
+  Input:
+    3
+    10
+    7
+    8
+  Output:
+    3
+    7
+    1
+
+NOTE
+  To convert decimal number to binary  :
+
+  A decimal integer can be converted to binary by dividing it by 2.
+
+  Take the quotient, and keep dividing it by 2, until you reach zero.
+
+  Each time you perform this division, take note of the remainder. Now reverse the remainders list, and you get the number in binary form
+
+  Example to convert 29 to binary
+
+  [image: https://espresso.codeforces.com/d6c8fe3363923ec7b125d248296fbdddbeb8bb1d.png]
+
+  for more details visit this https://flaviocopes.com/converting-decimal-to-binary/
+
+  To convert from binary to Decimal  :
+
+  [image: https://espresso.codeforces.com/c801274a4371cadda1fed7679bb4e7be6f50bf34.png]
+
+  Second Test Case :
+
+  (7)_decimal = (111)_binary has 3 ones "111", after converting "111" to decimal number it will become 7.
+
+  Third Test Case :
+
+  (8)_decimal = (1000)_binary has 1 one "1", after converting "1" to decimal number it will become 1.
+
+--------------------------------------------------------------------------------
+G. Vasya and Power    [EOI21 Day 14 Practice]
+  Time limit: 0.25 seconds   |   Memory limit: 4 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Vasya has an integer number n. He wants to know whether n is a power of 2 or not. At the moment he doesn't have any access to a computer to answer this question himself. So please help him know.
+
+INPUT
+  A single integer n, (1 <= n <= 10^6)
+
+OUTPUT
+  Print "Yes" if the number is a power of 2, and "No" otherwise.
+
+  You can print each letter in any case (upper or lower).
+
+SAMPLE 1
+  Input:
+    1
+  Output:
+    YES
+
+SAMPLE 2
+  Input:
+    3
+  Output:
+    NO
+
+NOTE
+  In the first sample case: it's true that 1 is a power of 2 as 2^0 = 1
+
+--------------------------------------------------------------------------------
+H. Count Vowels    [EOI21 Day 14 Practice]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Given a string S. Print number of vowels in the string.
+
+  Note:
+
+    - Vowel letters: ['a', 'e', 'i', 'o', 'u'].
+    - Vowel letters could be capital or small.
+    - Solve this problem using recursion.
+
+INPUT
+  Only one line containing a string S (1 ≤ |S| ≤ 200) where |S| is the length of the string and it consists only of capital ,small letters and spaces.
+
+OUTPUT
+  Print number of vowels in string S.
+
+SAMPLE 1
+  Input:
+    Data Structure Lab
+  Output:
+    6
+
+--------------------------------------------------------------------------------
+I. Help Habiba    [EOI21 Day 14 Practice]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Habiba is a young girl has 8 years .
+
+  she want to ask her brother Moamen about a simple problem but he is busy ,Can you help her to solve her problem .
+
+  Habiba will give you 2 integers A and B, You are asked to find out how many numbers between A and B inclusive are divisible by a number X.
+
+INPUT
+  You will be given 3 numbers A, B, X (0 < A, B ≤ 10^18), (0 < X ≤ 10^18).
+
+  It's guaranteed that (0 ≤ |A - B| ≤ 10^18).
+
+OUTPUT
+  answer the problem
+
+SAMPLE 1
+  Input:
+    1 10 3
+  Output:
+    3
+
+SAMPLE 2
+  Input:
+    5 12 6
+  Output:
+    2
+
+--------------------------------------------------------------------------------
+J. Habiba    [EOI21 Day 14 Practice]
+  Time limit: 2 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Habiba has a very easy task.
+
+  she gives you a string and your task is to find The number of characters in string without repeating the letter.
+
+  for exampl "Aabcdase" the answer is 6 » "Abcdse"
+
+INPUT
+  one line contains a string s.(0<|s|<100).
+
+OUTPUT
+  The number of characters in string without repeating the letter.
+
+SAMPLE 1
+  Input:
+    aBcD
+  Output:
+    4
+
+NOTE
+  'A' is same 'a'
+
+
+################################################################################
+#  EOI21 DAY 14 HOMEWORK
+#  Contest ID 336973 - 6 problems
+################################################################################
+
+--------------------------------------------------------------------------------
+A. Sereja and Dima    [EOI21 Day 14 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Sereja and Dima play a game. The rules of the game are very simple. The players have n cards in a row. Each card contains a number, all numbers on the cards are distinct. The players take turns, Sereja moves first. During his turn a player can take one card: either the leftmost card in a row, or the rightmost one. The game ends when there is no more cards. The player who has the maximum sum of numbers on his cards by the end of the game, wins.
+
+  Sereja and Dima are being greedy. Each of them chooses the card with the larger number during his move.
+
+  Inna is a friend of Sereja and Dima. She knows which strategy the guys are using, so she wants to determine the final score, given the initial state of the game. Help her.
+
+INPUT
+  The first line contains integer n (1 ≤ n ≤ 1000) — the number of cards on the table. The second line contains space-separated numbers on the cards from left to right. The numbers on the cards are distinct integers from 1 to 1000.
+
+OUTPUT
+  On a single line, print two integers. The first number is the number of Sereja's points at the end of the game, the second number is the number of Dima's points at the end of the game.
+
+SAMPLE 1
+  Input:
+    4
+    4 1 2 10
+  Output:
+    12 5
+
+SAMPLE 2
+  Input:
+    7
+    1 2 3 4 5 6 7
+  Output:
+    16 12
+
+NOTE
+  In the first sample Sereja will take cards with numbers 10 and 2, so Sereja's sum is 12. Dima will take cards with numbers 4 and 1, so Dima's sum is 5.
+
+--------------------------------------------------------------------------------
+B. Bombing the City    [EOI21 Day 14 Homework]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: stdin   |   Output: stdout
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Drew is a bad villain, who invents evil machines to destroy the world. He invented a super bomb, that could blow up the whole city! The bomb is initially disabled and has a red button that switches its state; turns it on or off.
+
+  [image: https://espresso.codeforces.com/0b7d9473b007bb50d83851cbd716571e2fdb6089.png]
+
+  Minions are his clumsy assistants. One of them kept pushing the red button several times. Luckily the bomb takes a lot of time to explode, but sadly the light on it was broken, so they won't know after all the pushes done if it is activated or not.
+
+  The minion has pushed the button N times. Help them know will the bomb explode or will they be safe?
+
+INPUT
+  The first line of the input will be a single integer T, the number of test cases (1 <= T <= 100). Followed by the test cases, each test case consists of an integer N (0 <= N <= 10^9).
+
+OUTPUT
+  For each test case, print "RUN!" if the bomb is on and it will explode. Otherwise, print "SAFE." (without the quotes).
+
+SAMPLE 1
+  Input:
+    2
+    1
+    4
+  Output:
+    RUN!
+    SAFE.
+
+--------------------------------------------------------------------------------
+C. Geometry    [EOI21 Day 14 Homework]
+  Time limit: 1 second   |   Memory limit: 1024 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Geometry is a very important field in mathematics, Squares and rectangles are essential shapes in geometry, both of them have 4 right angles, but a square is a special case of a rectangle where width and height are the same.
+
+  The figure below shows a square on the left and a rectangle on the right:
+
+  [image: https://espresso.codeforces.com/fd756caa282bc22e662b5fe9479bbf2da4d6c2f5.png]
+
+  If you have the width and the height of a 4 right angled shape, can you figure out if it is a square or a rectangle?
+
+INPUT
+  The first line contains T, the number of test cases, for each test case there is a line with two integers (1 ≤ w, h ≤ 1, 000, 000) representing width and height, respectively.
+
+OUTPUT
+  For each test case, print one line consists of 'Square' if the shape is a square, otherwise print 'Rectangle' if it is a rectangle.
+
+SAMPLE 1
+  Input:
+    3
+    10 10
+    13 200
+    300 300
+  Output:
+    Square
+    Rectangle
+    Square
+
+--------------------------------------------------------------------------------
+D. Salem    [EOI21 Day 14 Homework]
+  Time limit: 1 second   |   Memory limit: 1024 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  Salem is known to be one of the best competitive programmers in the region. However, he always finds a hard time understanding the concept of the hamming distance. The hamming distance of two numbers is defined as the number of different digits in their binary representations (leading zeros are used if necessary to make the binary representations have the same length). For example the hamming distance between 12 and 5 is 2 since their binary representations are 1100 and 0101 respectively and they differ in the first and fourth positions.
+
+  Recently, Salem got a problem that he needs your help to solve. He is given N integers and asked to get the maximum among the hamming distances of all possible pairs of the given integers.
+
+INPUT
+  The first line of the input will be a single integer T representing the number of test cases. Followed by T test cases. Each test case will start with a line with single integer (2 ≤ N ≤ 100) representing the number of the integers. Each of the following N lines contains one of the integers (1 ≤ A_i ≤ 10, 000) from the list of the integers.
+
+OUTPUT
+  For each test case print one line consists of one integer representing the maximum hamming distance between all possible pairs from the given integers.
+
+SAMPLE 1
+  Input:
+    2
+    2
+    12
+    5
+    3
+    1
+    2
+    3
+  Output:
+    2
+    2
+
+--------------------------------------------------------------------------------
+E. Power Of Two    [EOI21 Day 14 Homework]
+  Time limit: 0.25 seconds   |   Memory limit: 64 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  ACM ACPC Club has a number of trainees.
+
+  Who will solve the problem quickly?
+
+  He gave them the number N and asked them to convert the number to this format:
+
+  N = 2^a + 2^b + 2^c + .... .
+
+  where a, b, c... are integer numbers.
+
+  And your task calculates the summation of numbers (a+b+c+...).
+
+INPUT
+  The input contains one integer N (1<=N<=10^18)
+
+OUTPUT
+  Print answer of the problems
+
+SAMPLE 1
+  Input:
+    3
+  Output:
+    1
+
+SAMPLE 2
+  Input:
+    120
+  Output:
+    18
+
+NOTE
+  the first test:
+
+  3 = 2^0 + 2^1 , so answer = 0 + 1 = 1.
+
+--------------------------------------------------------------------------------
+F. The Game    [EOI21 Day 14 Homework]
+  Time limit: 1 second   |   Memory limit: 256 megabytes
+  Input: standard input   |   Output: standard output
+--------------------------------------------------------------------------------
+
+STATEMENT
+  George and Moamen play the game of Odd Brownie Points. Some brownie points are located in the plane, at integer coordinates. George plays first and places a vertical line in the plane. The line must go through a brownie point and may cross many (with the same x coordinate).
+
+  Then Moamen places a horizontal line that must cross a brownie point already crossed by the vertical line. Those lines divide the plane into four quadrants. Note : their lines cross the point whose coordinates are given at the center of the input sequence of points for this case.
+
+  The players score according to the number of brownie points in the quadrants. If a brownie point is crossed by a line, it doesn’t count. George gets a point for each (uncrossed) brownie point in the top-right and bottom-left quadrants. Moamen gets a point for each (uncrossed) brownie point in the top-left and bottom-right quadrants.
+
+  Your task is to compute the scores of George and Moamen given the point through which they draw their lines.
+
+INPUT
+  The first line of each test case contains a positive odd integer N (1 < N < 2*10^5) which is the number of brownie points.
+
+  Each of the following N lines contains two integers, the horizontal (x) and vertical (y) coordinates of a brownie point. No two brownie points occupy the same place. (-10^6 <= x, y <= 10^6)
+
+OUTPUT
+  Print a line with two numbers separated by a single space. The first number is George’s score, the second is the score of Moamen.
+
+SAMPLE 1
+  Input:
+    11
+    3 2
+    3 3
+    3 4
+    3 6
+    2 -2
+    1 -3
+    0 0
+    -3 -3
+    -3 -2
+    -3 -4
+    3 -7
+  Output:
+    6 3
+
+SAMPLE 2
+  Input:
+    3
+    22 2
+    -15 21
+    2 -15
+  Output:
+    0 2
+
+NOTE
+  First example :
+
+  [image: https://espresso.codeforces.com/cdbcfe9d2294390fd5e1bc1c7efda2e4ff0860e4.gif]
+

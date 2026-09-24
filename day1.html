@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 1 Practice - ICPC at AUBM</title>
+<meta name="description" content="Day 1: your first C++ program. Walkthroughs for Hello AUBM and Motivation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a href="../index.html#icpc">About ICPC</a>
+      <a href="../index.html#plan">Plan</a>
+      <a class="current" href="index.html">Practice</a>
+      <a class="reg" href="../index.html#register">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../index.html#top">ICPC at AUBM</a> / <a href="index.html">Practice</a> / Day 1</p>
+      <h1>Day 1: your first C++ program</h1>
+      <p>Two problems, both about the same skill: getting a C++ program to compile and print exactly the text that's asked for. This is the foundation everything else builds on.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <ul class="day-toc">
+      <li><a href="#p1">Practice A &middot; Hello AUBM</a></li>
+      <li><a href="#h1">Homework A &middot; Motivation</a></li>
+    </ul>
+
+    <div class="intro-block">
+      <h2>Before you start</h2>
+      <p>Every C++ program that reads input or produces output on Codeforces has the same skeleton:</p>
+    </div>
+
+    <div class="code-wrap" style="margin-bottom:2rem">
+      <pre class="code"><code><span class="com">// 1. bring in the standard library tools (cin, cout, etc.)</span>
+<span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="com">// 2. every C++ program starts running at main()</span>
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="com">// 3. your code goes here</span>
+
+    <span class="kw">return</span> <span class="num">0</span>; <span class="com">// 4. tell the OS the program finished successfully</span>
+}</code></pre>
+    </div>
+
+    <div class="intro-block">
+      <p><code>#include &lt;bits/stdc++.h&gt;</code> pulls in the whole standard library in one line &mdash; it's not "real" standard C++ (it's a GCC extension), but it's what almost everyone uses in competitive programming because it saves you from remembering which header has which tool. <code>using namespace std;</code> means you can write <code>cout</code> instead of <code>std::cout</code>.</p>
+      <p>To print text, use <code>cout</code> (character output) with the <code>&lt;&lt;</code> operator, which you can chain:</p>
+    </div>
+
+    <div class="code-wrap" style="margin-bottom:2.5rem">
+      <pre class="code"><code>cout &lt;&lt; <span class="str">"Hello"</span> &lt;&lt; <span class="str">" "</span> &lt;&lt; <span class="str">"World"</span> &lt;&lt; <span class="str">"\n"</span>;</code></pre>
+    </div>
+
+    <div class="intro-block">
+      <p>A few things that trip people up the first time:</p>
+      <ul style="max-width:44rem">
+        <li>Text you want printed literally must be inside double quotes <code>"..."</code>.</li>
+        <li>Every statement ends with a semicolon <code>;</code>.</li>
+        <li><code>"\n"</code> inside a string means "start a new line" &mdash; it's not two characters, it's one newline character written with two symbols.</li>
+        <li>Codeforces checks your output <strong>character for character</strong> against the expected answer (ignoring trailing whitespace/newlines). Capitalization, spelling and punctuation all have to match exactly.</li>
+        <li>To submit: open the problem on Codeforces, paste your code into the submit box, choose language <strong>GNU G++17</strong> (or any recent GNU C++), and submit.</li>
+      </ul>
+    </div>
+
+    <!-- ============ PRACTICE ============ -->
+    <h2 class="group-title" id="practice">Practice</h2>
+    <p class="group-lead">One problem: get comfortable with the skeleton above and with printing exact text.</p>
+
+    <article class="problem" id="p1">
+      <header>
+        <h3>A. Hello AUBM</h3>
+        <p class="limits">Time limit: 2 seconds &middot; Memory limit: 256 MB</p>
+      </header>
+      <div class="body">
+        <section class="statement">
+          <h4>Statement</h4>
+          <p>Hello, Smarty.</p>
+          <p>Print <code>"Hello AUBM"</code> without quotes.</p>
+        </section>
+
+        <section>
+          <h4>Input / Output</h4>
+          <p style="margin:0 0 .6rem">This problem has no input.</p>
+          <table class="io-table">
+            <tr><th>Output</th></tr>
+            <tr><td><pre>Hello AUBM</pre></td></tr>
+          </table>
+        </section>
+
+        <section class="teach">
+          <h4>How to think about it</h4>
+          <p>There's no input to read at all, so your entire program is: set up the skeleton, then print one line of text. This is really a test of whether you can write, compile and submit a C++ program &mdash; the "logic" is a single <code>cout</code> statement.</p>
+          <div class="callout">
+            <span class="lbl">Watch out for</span>
+            <p>The exact spelling and capitalization: <code>Hello AUBM</code>, with a single space, capital H, and AUBM in all caps. <code>hello aubm</code> or <code>Hello, AUBM</code> would both be judged wrong.</p>
+          </div>
+        </section>
+
+        <section class="hints">
+          <h4>Hints</h4>
+          <details>
+            <summary>Hint 1</summary>
+            <div class="hint-body"><p>You don't need to read anything with <code>cin</code>. You only need one line inside <code>main()</code>.</p></div>
+          </details>
+          <details>
+            <summary>Hint 2</summary>
+            <div class="hint-body"><p>Use <code>cout &lt;&lt; "..."</code> with the exact text between the quotes, matching the required output exactly.</p></div>
+          </details>
+        </section>
+
+        <section class="solution">
+          <h4>Solution</h4>
+          <button class="reveal-btn" data-target="sol-p1" aria-controls="sol-p1">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-p1" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    cout &lt;&lt; <span class="str">"Hello AUBM"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+            </div>
+            <dl class="walkthrough">
+              <dt>cout &lt;&lt; "Hello AUBM"</dt>
+              <dd>Sends the literal text <code>Hello AUBM</code> to standard output.</dd>
+              <dt>&lt;&lt; "\n"</dt>
+              <dd>Adds a trailing newline. Codeforces doesn't require it, but it's good habit for every line you print.</dd>
+            </dl>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- ============ HOMEWORK ============ -->
+    <h2 class="group-title" id="homework">Homework</h2>
+    <p class="group-lead">Same skill, reinforced with a longer, trickier string to copy exactly.</p>
+
+    <article class="problem" id="h1">
+      <header>
+        <h3>A. Motivation</h3>
+        <p class="limits">Time limit: 1 second &middot; Memory limit: 256 MB</p>
+      </header>
+      <div class="body">
+        <section class="statement">
+          <h4>Statement</h4>
+          <p>Every champion starts with the right mindset.</p>
+          <p>Print <code>"I will win the ICPC because I am a great programmer"</code> without quotes.</p>
+        </section>
+
+        <section>
+          <h4>Input / Output</h4>
+          <p style="margin:0 0 .6rem">This problem has no input.</p>
+          <table class="io-table">
+            <tr><th>Output</th></tr>
+            <tr><td><pre>I will win the ICPC because I am a great programmer</pre></td></tr>
+          </table>
+        </section>
+
+        <section class="teach">
+          <h4>How to think about it</h4>
+          <p>Identical idea to the practice problem, just a longer sentence. The only new risk is a typo somewhere in the middle of a long string &mdash; the judge won't tell you <em>where</em> it's wrong, just that your output doesn't match.</p>
+          <div class="callout">
+            <span class="lbl">Watch out for</span>
+            <p>Getting <code>ICPC</code> in all caps, single spaces between every word, and no extra punctuation. It helps to type the sentence once, then re-read it character by character against the statement before you submit.</p>
+          </div>
+        </section>
+
+        <section class="hints">
+          <h4>Hints</h4>
+          <details>
+            <summary>Hint 1</summary>
+            <div class="hint-body"><p>Same structure as Hello AUBM: one <code>cout</code> statement inside <code>main()</code>.</p></div>
+          </details>
+          <details>
+            <summary>Hint 2</summary>
+            <div class="hint-body"><p>Copy the sentence straight from the statement into your quotes so you don't introduce a typo by retyping it from memory.</p></div>
+          </details>
+        </section>
+
+        <section class="solution">
+          <h4>Solution</h4>
+          <button class="reveal-btn" data-target="sol-h1" aria-controls="sol-h1">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-h1" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    cout &lt;&lt; <span class="str">"I will win the ICPC because I am a great programmer"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+            </div>
+            <dl class="walkthrough">
+              <dt>cout &lt;&lt; "I will win..."</dt>
+              <dd>One string, printed exactly as given in the statement.</dd>
+            </dl>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <nav class="day-nav">
+      <a class="prev" href="index.html"><span class="lbl">Back to</span><span class="to">All days</span></a>
+      <a class="next" href="day2.html"><span class="lbl">Next</span><span class="to">Day 2 &rarr;</span></a>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js"></script>
+</body>
+</html>
