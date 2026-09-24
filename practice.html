@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Practice - ICPC at AUBM</title>
-<meta name="description" content="Day-by-day C++ practice walkthroughs for AUBM's ICPC newbies track.">
+<title>Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="The AUBM ICPC practice sheet: daily C++ lessons for the 2026 training period.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <nav class="links" aria-label="Sections">
       <a href="index.html#icpc">About ICPC</a>
       <a href="index.html#plan">Plan</a>
-      <a class="current" href="practice.html">Practice</a>
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
       <a class="reg" href="index.html#register">Register</a>
     </nav>
   </div>
@@ -27,35 +27,46 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="crumbs"><a href="index.html#top">ICPC at AUBM</a> / Practice</p>
-      <h1>Practice, day by day</h1>
-      <p>Each day pairs a short practice set with homework. Every problem here walks you through the real Codeforces statement, teaches the C++ you need to solve it, gives hints if you get stuck, and has a full worked solution you can reveal when you're ready. Solve the problem yourself first, then submit it on the group's Codeforces page.</p>
+      <p class="crumbs"><a href="index.html#top">ICPC at AUBM</a> / Practice Sheet</p>
+      <h1>Practice Sheet</h1>
+      <p>The practice sheet is the official training material for AUBM's ICPC candidates during the 2026 practice period. It introduces the C++ language and the fundamentals of competitive programming one day at a time, in preparation for the selection contest.</p>
     </div>
   </section>
 
-  <div class="wrap">
-    <div class="intro-block" style="margin-top:2.5rem">
-      <h2>How to use this</h2>
-      <p>Work through the days in order. For each problem: read the statement, try to write the code yourself, and only open a hint if you're stuck for more than a few minutes. Hints are ordered from a small nudge to a near-complete plan, so open them one at a time. The full solution is hidden by default &mdash; use it to check your work or to see a clean approach after you've submitted your own.</p>
+  <div class="wrap content">
+    <div class="prose">
+      <h2>About the programme</h2>
+      <p>Each day is organised around a small number of programming concepts. Every concept is explained from first principles, illustrated with worked examples in C++, and then applied to a practice problem from the AUBM ICPC group on Codeforces. A reference solution is provided for each practice problem.</p>
+      <p>Prior programming experience is not assumed. All material is written in C++, the language used throughout the course and the one recommended for the contest.</p>
     </div>
 
-    <h2 class="group-title" style="border-top:0; padding-top:0; margin-top:0">Days</h2>
+    <ul class="overview">
+      <li><h3>1. Study the concept</h3><p>Read each lesson carefully and make sure you understand the examples before moving on.</p></li>
+      <li><h3>2. Solve the problem</h3><p>Write your own solution to the practice problem and submit it on Codeforces.</p></li>
+      <li><h3>3. Review the solution</h3><p>Once you have attempted the problem, compare your approach with the reference solution.</p></li>
+    </ul>
+
+    <h2 class="section-title">Days</h2>
     <div class="day-grid">
       <a class="day-card" href="day1.html">
-        <h3>Day 1</h3>
-        <p>Your first C++ program: printing exact text to the screen.</p>
-        <span class="count">1 practice &middot; 1 homework</span>
+        <span class="lbl">Day 1</span>
+        <h3>Your first C++ program</h3>
+        <p>Program structure, printing output, and submitting on Codeforces.</p>
       </a>
       <a class="day-card" href="day2.html">
-        <h3>Day 2</h3>
-        <p>Data types, reading input, arithmetic, and your first conditions.</p>
-        <span class="count">3 practice &middot; 3 homework</span>
+        <span class="lbl">Day 2</span>
+        <h3>Data types and arithmetic</h3>
+        <p>Variables, reading input, operators, and integer overflow.</p>
       </a>
       <div class="day-card soon" aria-disabled="true">
-        <h3>Day 3</h3>
-        <p>Coming soon.</p>
-        <span class="count">&nbsp;</span>
+        <span class="lbl">Day 3</span>
+        <h3>To be published</h3>
+        <p>New material is added as the practice period progresses.</p>
       </div>
+    </div>
+
+    <div class="prose" style="margin-top:2.75rem">
+      <p style="color:var(--muted); font-size:.95rem">Questions about the material can be sent to <a href="mailto:zml00@aubmed.ac.cy">zml00@aubmed.ac.cy</a>.</p>
     </div>
   </div>
 </main>
@@ -64,6 +75,5 @@
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js"></script>
 </body>
 </html>
