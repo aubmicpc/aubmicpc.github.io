@@ -47,12 +47,11 @@
         <div class="lesson">
           <div class="prose">
             <p>Set up C++ on your laptop in your favorite editor. We recommend <strong>VS Code</strong> with the <strong>GCC</strong> compiler (<code>g++</code>), which is what Codeforces uses. If you get stuck, ask an AI to walk you through the setup for your OS.</p>
-            <p>Make sure <code>#include &lt;bits/stdc++.h&gt;</code> compiles. It is used in every solution, and macOS's default compiler (Clang) doesn't support it, so Mac users should install GCC through Homebrew.</p>
             <p>To test your setup, compile and run this. It should print <code>It works!</code>.</p>
           </div>
           <div class="code-wrap">
             <button class="copy-btn" type="button">Copy</button>
-            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+            <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {
@@ -113,18 +112,6 @@
             </table>
           </div>
         </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Rules of thumb</h3>
-            <ul>
-              <li>Print <strong>only</strong> what's asked. No <code>Enter a number:</code> prompts; the judge is a program.</li>
-              <li>Output must match exactly: spelling, case, spaces and line breaks.</li>
-              <li>Read from <code>cin</code> and write to <code>cout</code>. No files, no <code>system("pause")</code>.</li>
-              <li>Passing the examples isn't enough. Think about edge cases and the largest inputs allowed by the constraints.</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -141,8 +128,8 @@
             <p>Every solution starts from this template:</p>
           </div>
           <div class="code-wrap">
-            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;  <span class="com">// includes the entire standard library</span>
-<span class="kw">using</span> <span class="kw">namespace</span> std;     <span class="com">// lets you write cout instead of std::cout</span>
+            <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;   <span class="com">// cin and cout</span>
+<span class="kw">using</span> <span class="kw">namespace</span> std; <span class="com">// lets you write cout instead of std::cout</span>
 
 <span class="ty">int</span> <span class="fn">main</span>() {
     <span class="com">// your code</span>
@@ -179,7 +166,7 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
           <div class="solution-body" id="sol-a" hidden>
             <div class="code-wrap">
               <button class="copy-btn" type="button">Copy</button>
-              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {

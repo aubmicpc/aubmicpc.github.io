@@ -108,7 +108,7 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
         <pre class="code out"><code>2.5 3.14159 14049.3</code></pre>
       </div>
       <div class="prose">
-        <p>Problems that print real numbers usually accept a small error, stated in the output section (for example, an absolute or relative error of at most 10<sup>&minus;5</sup>), so the default format is often sufficient. When more digits are needed, <code>cout &lt;&lt; fixed &lt;&lt; setprecision(k)</code> prints exactly <code>k</code> digits after the decimal point.</p>
+        <p>Problems that print real numbers usually accept a small error, stated in the output section (for example, an absolute or relative error of at most 10<sup>&minus;5</sup>), so the default format is often sufficient. When more digits are needed, <code>cout &lt;&lt; fixed &lt;&lt; setprecision(k)</code> (from <code>&lt;iomanip&gt;</code>) prints exactly <code>k</code> digits after the decimal point.</p>
       </div>
         </div>
         <div class="solution">
@@ -120,7 +120,7 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
           <div class="solution-body" id="sol-a" hidden>
             <div class="code-wrap">
               <button class="copy-btn" type="button">Copy</button>
-              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {
@@ -201,7 +201,7 @@ cout &lt;&lt; n % <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</
           <div class="solution-body" id="sol-b" hidden>
             <div class="code-wrap">
               <button class="copy-btn" type="button">Copy</button>
-              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {
@@ -275,7 +275,7 @@ cout &lt;&lt; <span class="str">"Total = "</span> &lt;&lt; total &lt;&lt; <span 
           <div class="solution-body" id="sol-c" hidden>
             <div class="code-wrap">
               <button class="copy-btn" type="button">Copy</button>
-              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {
