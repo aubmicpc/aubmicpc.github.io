@@ -113,19 +113,16 @@ pre.code code{font-family:inherit; background:none; padding:0; color:inherit}
 .walkthrough dd{margin:.35rem 0 0}
 
 /* prev / next */
-.day-nav{display:flex; justify-content:space-between; gap:1rem; margin-top:3.5rem; padding-top:1.5rem; border-top:1px solid var(--rule)}
-.day-nav a{flex:1; text-decoration:none; color:var(--ink); border:1px solid var(--rule); border-radius:2px; padding:1rem 1.2rem}
-.day-nav a:hover{border-color:var(--berytus)}
-.day-nav .lbl{display:block; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin-bottom:.2rem}
-.day-nav .to{font-weight:600; font-family:var(--serif); font-size:1.05rem}
-.day-nav a.next{text-align:right}
+.day-nav{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1rem; margin-top:3.5rem; padding-top:1.75rem; border-top:1px solid var(--rule); max-width:46rem}
+.day-nav a{text-decoration:none; font-family:var(--serif); font-weight:600; font-size:1.1rem; color:var(--berytus)}
+.day-nav a.prev{justify-self:start}
+.day-nav a.next{justify-self:end}
+.day-nav a.prev:hover, .day-nav a.next:hover{text-decoration:underline; text-underline-offset:4px}
+.day-nav a.home{font-family:var(--sans); font-size:.9rem; padding:.55rem 1.1rem; border:2px solid var(--berytus); border-radius:2px; transition:background .15s, color .15s}
+.day-nav a.home:hover{background:var(--berytus); color:#fff}
 
 footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-size:.92rem; border-top:1px solid var(--rule)}
 
-@media (max-width:640px){
-  .day-nav{flex-direction:column}
-  .day-nav a.next{text-align:left}
-}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none !important; transition:none !important}
