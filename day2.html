@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=10">
+<link rel="stylesheet" href="practice.css?v=11">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
   <section class="hero">
     <div class="wrap">
       <h1>Day 2</h1>
-      <p>This day introduces variables, the basic C++ data types, reading input with <code>cin</code>, and arithmetic. It closes with integer overflow, one of the most common causes of wrong answers in competitive programming.</p>
+      <p>Data types, reading input, arithmetic, and integer overflow.</p>
     </div>
   </section>
 
@@ -44,73 +44,54 @@
       </header>
       <div class="problem-body">
         <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">Variables and data types</h3>
-        <p>A <strong>variable</strong> is a named location in memory that stores a value. In C++, every variable has a <strong>data type</strong>, which determines what kind of value it can hold and how much memory it uses. A variable is created by writing its type followed by its name:</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">int</span> age = <span class="num-l">19</span>;          <span class="com">// a whole number</span>
-<span class="ty">char</span> grade = <span class="str">'A'</span>;      <span class="com">// a single character, in single quotes</span>
-<span class="ty">double</span> height = <span class="num-l">1.78</span>;  <span class="com">// a real number</span>
+          <div class="prose">
+            <h3 class="concept-title">Data types</h3>
+            <p>Every variable has a type. The ones you'll use most:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Type</th><th>Stores</th><th>Range</th></tr></thead>
+              <tbody>
+                <tr><td><code>int</code></td><td>Integer, 32 bits</td><td>about &plusmn;2.1&times;10<sup>9</sup></td></tr>
+                <tr><td><code>long long</code></td><td>Integer, 64 bits</td><td>about &plusmn;9.2&times;10<sup>18</sup></td></tr>
+                <tr><td><code>char</code></td><td>One character</td><td><code>'a'</code>, <code>'7'</code>, <code>'&gt;'</code></td></tr>
+                <tr><td><code>float</code></td><td>Real number, 32 bits</td><td>about 7 significant digits</td></tr>
+                <tr><td><code>double</code></td><td>Real number, 64 bits</td><td>about 15 significant digits</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>Pick the type from the constraints: if a value can exceed about 2&times;10<sup>9</sup>, use <code>long long</code>. For real numbers, use <code>double</code> unless told otherwise.</p>
+          </div>
+        </div>
 
-age = <span class="num-l">20</span>;               <span class="com">// a variable's value can be changed later</span></code></pre>
-      </div>
-      <div class="prose">
-        <p>The five types you will use most often are:</p>
-      </div>
-      <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th>Type</th><th>Stores</th><th>Size</th><th>Range or precision</th></tr></thead>
-          <tbody>
-            <tr><td><code>int</code></td><td>Integers</td><td>32 bits</td><td>&minus;2,147,483,648 to 2,147,483,647 (about &plusmn;2.1&times;10<sup>9</sup>)</td></tr>
-            <tr><td><code>long long</code></td><td>Integers</td><td>64 bits</td><td>About &plusmn;9.2&times;10<sup>18</sup></td></tr>
-            <tr><td><code>char</code></td><td>A single character</td><td>8 bits</td><td>Letters, digits and symbols, e.g. <code>'a'</code>, <code>'7'</code>, <code>'&gt;'</code></td></tr>
-            <tr><td><code>float</code></td><td>Real numbers</td><td>32 bits</td><td>About 7 significant digits</td></tr>
-            <tr><td><code>double</code></td><td>Real numbers</td><td>64 bits</td><td>About 15 significant digits</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="prose">
-        <p>Choosing a type is a matter of reading the problem's constraints. If a value can be as large as 10<sup>18</sup>, an <code>int</code> cannot hold it and a <code>long long</code> is required. For real numbers, prefer <code>double</code> over <code>float</code> unless a problem specifically asks for <code>float</code>, since <code>double</code> is considerably more precise.</p>
-        <div class="callout">
-          <span class="lbl">Why C++</span>
-          <p>C++ is the language of choice in competitive programming, not simply the language this course happens to use. It is among the fastest languages available, gives precise control over data types and memory, and its standard library provides efficient implementations of the data structures and algorithms you will rely on in later days. The large majority of top ICPC teams compete in C++.</p>
-        </div>
-      </div>
-        </div>
         <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">Reading input with <code>cin</code></h3>
-        <p>Most problems provide input that your program must read. Input is read with <code>cin</code> ("character input") and the <strong>extraction operator</strong> <code>&gt;&gt;</code>, which takes the next value from the input and stores it in a variable. Like <code>cout</code>, it can be chained:</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">int</span> n;
+          <div class="prose">
+            <h3 class="concept-title">Input with <code>cin</code></h3>
+            <p>Read with <code>cin &gt;&gt;</code>, chained like <code>cout</code>. Values are read in order, and spaces and newlines between them are skipped.</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> n;
 <span class="ty">char</span> c;
 <span class="ty">double</span> x;
-cin &gt;&gt; n &gt;&gt; c &gt;&gt; x;   <span class="com">// reads three values, in this order</span>
-
-cout &lt;&lt; n &lt;&lt; <span class="str">"\n"</span>;
-cout &lt;&lt; c &lt;&lt; <span class="str">"\n"</span>;
-cout &lt;&lt; x &lt;&lt; <span class="str">"\n"</span>;</code></pre>
-      </div>
-      <div class="prose">
-        <p>With the input <code>42 z 2.5</code>, this program prints <code>42</code>, <code>z</code> and <code>2.5</code> on three separate lines. Note that printing a variable does not use quotes: <code>cout &lt;&lt; n</code> prints the value stored in <code>n</code>, while <code>cout &lt;&lt; "n"</code> prints the letter n.</p>
-        <p><code>cin</code> skips any spaces and line breaks before each value, so it does not matter whether the values are on one line or several. When reading into a <code>char</code>, it skips whitespace and then reads exactly one character.</p>
-        <h4>How real numbers are printed</h4>
-        <p>By default, <code>cout</code> prints real numbers with at most <strong>6 significant digits</strong> in total, not 6 digits after the decimal point. Trailing zeros are omitted.</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">double</span> a = <span class="num-l">2.50</span>, b = <span class="num-l">3.14159265</span>, c = <span class="num-l">14049.30493</span>;
-cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span class="str">" "</span> &lt;&lt; c &lt;&lt; <span class="str">"\n"</span>;</code></pre>
-      </div>
-      <div class="code-wrap">
-        <span class="code-cap">Output</span>
-        <pre class="code out"><code>2.5 3.14159 14049.3</code></pre>
-      </div>
-      <div class="prose">
-        <p>Problems that print real numbers usually accept a small error, stated in the output section (for example, an absolute or relative error of at most 10<sup>&minus;5</sup>), so the default format is often sufficient. When more digits are needed, <code>cout &lt;&lt; fixed &lt;&lt; setprecision(k)</code> (from <code>&lt;iomanip&gt;</code>) prints exactly <code>k</code> digits after the decimal point.</p>
-      </div>
+cin &gt;&gt; n &gt;&gt; c &gt;&gt; x;   <span class="com">// input: 42 z 2.5</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>By default, <code>cout</code> prints real numbers with 6 <strong>significant</strong> digits:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">double</span> a = <span class="num-l">3.14159265</span>, b = <span class="num-l">14049.30493</span>;
+cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span class="str">"\n"</span>;</code></pre>
+          </div>
+          <div class="code-wrap">
+            <span class="code-cap">Output</span>
+            <pre class="code out"><code>3.14159 14049.3</code></pre>
+          </div>
+          <div class="prose">
+            <p>That's usually fine, since problems with real-number output accept a small error. For a fixed number of decimals, use <code>cout &lt;&lt; fixed &lt;&lt; setprecision(k)</code> from <code>&lt;iomanip&gt;</code>.</p>
+          </div>
         </div>
+
         <div class="solution">
           <h3 class="concept-title">Solution</h3>
           <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
@@ -130,23 +111,11 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
     <span class="ty">float</span> f;
     <span class="ty">double</span> d;
     cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; f &gt;&gt; d;
-
-    cout &lt;&lt; a &lt;&lt; <span class="str">"\n"</span>;
-    cout &lt;&lt; b &lt;&lt; <span class="str">"\n"</span>;
-    cout &lt;&lt; c &lt;&lt; <span class="str">"\n"</span>;
-    cout &lt;&lt; f &lt;&lt; <span class="str">"\n"</span>;
-    cout &lt;&lt; d &lt;&lt; <span class="str">"\n"</span>;
+    cout &lt;&lt; a &lt;&lt; <span class="str">"\n"</span> &lt;&lt; b &lt;&lt; <span class="str">"\n"</span> &lt;&lt; c &lt;&lt; <span class="str">"\n"</span> &lt;&lt; f &lt;&lt; <span class="str">"\n"</span> &lt;&lt; d &lt;&lt; <span class="str">"\n"</span>;
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <dl class="walkthrough">
-              <dt>long long b;</dt>
-              <dd>The second value can be as large as about 9.2&times;10<sup>18</sup>, which only a <code>long long</code> can hold.</dd>
-              <dt>cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; f &gt;&gt; d;</dt>
-              <dd>Reads the five values in the order they appear in the input.</dd>
-              <dt>cout &lt;&lt; f / cout &lt;&lt; d</dt>
-              <dd>The default 6-significant-digit format is within the problem's allowed error, so no special formatting is needed.</dd>
-            </dl>
+            <p class="sol-note" style="margin-top:.9rem">Read each value into its matching type and print each one on its own line. <code>b</code> needs <code>long long</code>.</p>
           </div>
         </div>
       </div>
@@ -159,39 +128,22 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
       </header>
       <div class="problem-body">
         <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">Arithmetic operators</h3>
-        <p>C++ provides the usual arithmetic operators. The result can be printed directly or stored in a variable.</p>
-      </div>
-      <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th>Operator</th><th>Operation</th><th>Example</th><th>Result</th></tr></thead>
-          <tbody>
-            <tr><td><code>+</code></td><td>Addition</td><td><code>7 + 2</code></td><td><code>9</code></td></tr>
-            <tr><td><code>-</code></td><td>Subtraction</td><td><code>7 - 2</code></td><td><code>5</code></td></tr>
-            <tr><td><code>*</code></td><td>Multiplication</td><td><code>7 * 2</code></td><td><code>14</code></td></tr>
-            <tr><td><code>/</code></td><td>Division</td><td><code>7 / 2</code></td><td><code>3</code></td></tr>
-            <tr><td><code>%</code></td><td>Remainder (modulo)</td><td><code>7 % 2</code></td><td><code>1</code></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="prose">
-        <h4>Integer division</h4>
-        <p>When both operands are integers, <code>/</code> performs <strong>integer division</strong>: the fractional part is discarded, so <code>7 / 2</code> is <code>3</code>, not <code>3.5</code>. To obtain a real result, at least one operand must be a real number, as in <code>7.0 / 2</code>, which gives <code>3.5</code>.</p>
-        <h4>The modulo operator</h4>
-        <p>The <code>%</code> operator gives the remainder after integer division. Since 7 = 2 &times; 3 + 1, <code>7 % 2</code> is <code>1</code>. Modulo is used constantly in competitive programming. Two common uses:</p>
-        <ul>
-          <li><strong>Divisibility:</strong> <code>a % b == 0</code> exactly when <code>a</code> is divisible by <code>b</code>. For example, a number is even when <code>n % 2 == 0</code>.</li>
-          <li><strong>Digits:</strong> for a non-negative integer, <code>n % 10</code> is its last digit, and <code>n / 10</code> removes its last digit.</li>
-        </ul>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">int</span> n = <span class="num-l">4096</span>;
+          <div class="prose">
+            <h3 class="concept-title">Arithmetic</h3>
+            <p>The operators are <code>+ - * / %</code>. Two need attention:</p>
+            <ul>
+              <li><code>/</code> on two integers drops the fraction: <code>7 / 2</code> is <code>3</code>. Use <code>7.0 / 2</code> to get <code>3.5</code>.</li>
+              <li><code>%</code> is the remainder: <code>7 % 2</code> is <code>1</code>.</li>
+            </ul>
+            <p><code>%</code> and <code>/</code> by 10 are the standard way to work with digits:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> n = <span class="num-l">4096</span>;
 cout &lt;&lt; n % <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 6   (last digit)</span>
-cout &lt;&lt; n / <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 409 (last digit removed)</span>
-cout &lt;&lt; n % <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</span>;    <span class="com">// 0   (n is even)</span></code></pre>
-      </div>
+cout &lt;&lt; n / <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 409 (last digit removed)</span></code></pre>
+          </div>
         </div>
+
         <div class="solution">
           <h3 class="concept-title">Solution</h3>
           <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
@@ -211,12 +163,7 @@ cout &lt;&lt; n % <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <dl class="walkthrough">
-              <dt>long long n, m;</dt>
-              <dd>Both numbers can be as large as 10<sup>18</sup>, which exceeds the range of <code>int</code>.</dd>
-              <dt>n % 10 + m % 10</dt>
-              <dd>Takes the last digit of each number and adds them. <code>%</code> is evaluated before <code>+</code>, so no parentheses are needed.</dd>
-            </dl>
+            <p class="sol-note" style="margin-top:.9rem">Add the last digits with <code>% 10</code>. N and M go up to 10<sup>18</sup>, so they need <code>long long</code>.</p>
           </div>
         </div>
       </div>
@@ -229,43 +176,22 @@ cout &lt;&lt; n % <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</
       </header>
       <div class="problem-body">
         <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">Integer overflow</h3>
-        <p>Each integer type can only represent values within its range. When the result of a calculation falls outside that range, it <strong>overflows</strong>: the program does not stop or report an error, it silently produces an incorrect value.</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">int</span> x = <span class="num-l">100000</span>;
-cout &lt;&lt; x * x &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// expected 10000000000</span></code></pre>
-      </div>
-      <div class="code-wrap">
-        <span class="code-cap">Output</span>
-        <pre class="code out"><code>1410065408</code></pre>
-      </div>
-      <div class="prose">
-        <p>The true result, 10<sup>10</sup>, is larger than the maximum <code>int</code> value of about 2.1&times;10<sup>9</sup>. The type of a calculation is decided by its operands, not by where the result is stored, so the following is still wrong:</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">int</span> x = <span class="num-l">100000</span>;
-<span class="ty">long</span> <span class="ty">long</span> y = x * x;   <span class="com">// still overflows: x * x is computed as int</span></code></pre>
-      </div>
-      <div class="prose">
-        <p>The reliable approach is to declare the variables themselves as <code>long long</code> whenever a calculation involving them could exceed about 2&times;10<sup>9</sup>. To decide, estimate the largest possible result using the problem's constraints before writing any code.</p>
-        <h4>Order of operations</h4>
-        <p>C++ follows the usual mathematical order: <code>*</code>, <code>/</code> and <code>%</code> are evaluated before <code>+</code> and <code>-</code>, and operators of equal priority are evaluated from left to right. Parentheses can always be used to make the order explicit.</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code>cout &lt;&lt; <span class="num-l">2</span> + <span class="num-l">3</span> * <span class="num-l">4</span> &lt;&lt; <span class="str">"\n"</span>;     <span class="com">// 14</span>
-cout &lt;&lt; (<span class="num-l">2</span> + <span class="num-l">3</span>) * <span class="num-l">4</span> &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 20</span></code></pre>
-      </div>
-      <div class="prose">
-        <h4>Printing text and values together</h4>
-        <p>String literals and variables can be combined in a single <code>cout</code> statement. Remember that spaces are only printed where you write them:</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="ty">int</span> total = <span class="num-l">42</span>;
-cout &lt;&lt; <span class="str">"Total = "</span> &lt;&lt; total &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// Total = 42</span></code></pre>
-      </div>
+          <div class="prose">
+            <h3 class="concept-title">Integer overflow</h3>
+            <p>If a result doesn't fit in its type, it <strong>overflows</strong> and silently becomes a wrong value. There is no error:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> x = <span class="num-l">100000</span>;
+cout &lt;&lt; x * x &lt;&lt; <span class="str">"\n"</span>;         <span class="com">// prints 1410065408, not 10000000000</span>
+
+<span class="ty">long</span> <span class="ty">long</span> y = x * x;           <span class="com">// still wrong: x * x is computed as int</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>A calculation is done in the type of its operands, not the type you store it in. If a result can exceed about 2&times;10<sup>9</sup>, declare the variables themselves as <code>long long</code>.</p>
+            <p>Operator precedence is the usual one: <code>* / %</code> before <code>+ -</code>, left to right. Use parentheses when in doubt.</p>
+          </div>
         </div>
+
         <div class="solution">
           <h3 class="concept-title">Solution</h3>
           <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
@@ -281,19 +207,11 @@ cout &lt;&lt; <span class="str">"Total = "</span> &lt;&lt; total &lt;&lt; <span 
 <span class="ty">int</span> <span class="fn">main</span>() {
     <span class="ty">long</span> <span class="ty">long</span> a, b, c, d;
     cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;
-    <span class="ty">long</span> <span class="ty">long</span> x = a * b - c * d;
-    cout &lt;&lt; <span class="str">"Difference = "</span> &lt;&lt; x &lt;&lt; <span class="str">"\n"</span>;
+    cout &lt;&lt; <span class="str">"Difference = "</span> &lt;&lt; a * b - c * d &lt;&lt; <span class="str">"\n"</span>;
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <dl class="walkthrough">
-              <dt>long long a, b, c, d;</dt>
-              <dd>Each value can be up to 10<sup>5</sup> in absolute value, so a product can reach 10<sup>10</sup>. Declaring the variables as <code>long long</code> ensures the multiplications are carried out in 64 bits.</dd>
-              <dt>a * b - c * d</dt>
-              <dd>Both multiplications are evaluated before the subtraction, matching (A &times; B) &minus; (C &times; D).</dd>
-              <dt>"Difference = "</dt>
-              <dd>The label is printed exactly as required, including the space after the equals sign.</dd>
-            </dl>
+            <p class="sol-note" style="margin-top:.9rem">Each product can reach 10<sup>10</sup>, so everything is <code>long long</code>. Print the label exactly as written, including the spaces.</p>
           </div>
         </div>
       </div>
@@ -311,6 +229,6 @@ cout &lt;&lt; <span class="str">"Total = "</span> &lt;&lt; total &lt;&lt; <span 
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=10"></script>
+<script src="practice.js?v=11"></script>
 </body>
 </html>
