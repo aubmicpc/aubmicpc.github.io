@@ -86,9 +86,9 @@
             <h3 class="concept-title">Reading a problem</h3>
             <ul>
               <li><strong>Time and memory limits:</strong> per test, usually 1&ndash;2 seconds and 256 MB.</li>
-              <li><strong>Input:</strong> what you're given and in what order, plus the <strong>constraints</strong>, meaning how big or small each value can get. These tell you which types to use and how fast your code needs to be.</li>
-              <li><strong>Output:</strong> exactly what you should print and how it should look.</li>
-              <li><strong>Examples:</strong> sample inputs with the correct outputs. Always check your code on these before submitting.</li>
+              <li><strong>Input:</strong> what you're given and in what order, along with the <strong>constraints</strong> (the range of each value). They tell you which types to use and how fast your code has to be.</li>
+              <li><strong>Output:</strong> exactly what to print and in what format.</li>
+              <li><strong>Examples:</strong> sample inputs with their correct outputs. Test your code on them before submitting.</li>
             </ul>
           </div>
         </div>
@@ -96,18 +96,18 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Submitting</h3>
-            <p>On the problem page, use the <strong>Submit</strong> box on the right. Pick the newest <strong>GNU G++</strong> (G++20 or G++17), paste your code and hit submit. Codeforces runs it on a bunch of hidden tests and gives you a verdict:</p>
+            <p>On the problem page, use the <strong>Submit</strong> box on the right. Pick the newest <strong>GNU G++</strong> (G++20 or G++17), paste your code and submit. It's run on hidden tests and you get a verdict:</p>
           </div>
           <div class="table-wrap">
             <table class="table">
               <thead><tr><th>Verdict</th><th>Meaning</th></tr></thead>
               <tbody>
-                <tr><td><strong style="color:#008000">Accepted</strong></td><td>You passed every test.</td></tr>
-                <tr><td><strong>Wrong answer on test N</strong></td><td>Your output was wrong on test N. If it's test 1, you're probably failing the first example.</td></tr>
-                <tr><td><strong>Compilation error</strong></td><td>Your code doesn't compile. Click the verdict to see the error.</td></tr>
-                <tr><td><strong>Time limit exceeded</strong></td><td>Your code was too slow.</td></tr>
-                <tr><td><strong>Memory limit exceeded</strong></td><td>Your code used too much memory.</td></tr>
-                <tr><td><strong>Runtime error</strong></td><td>Your code crashed, for example by dividing by zero.</td></tr>
+                <tr><td><strong style="color:#008000">Accepted</strong></td><td>Your solution passed every test.</td></tr>
+                <tr><td><strong>Wrong answer on test N</strong></td><td>Wrong output on test N. If it's test 1, the first example is failing.</td></tr>
+                <tr><td><strong>Compilation error</strong></td><td>The code doesn't compile. Click the verdict to see the error.</td></tr>
+                <tr><td><strong>Time limit exceeded</strong></td><td>The code took too long.</td></tr>
+                <tr><td><strong>Memory limit exceeded</strong></td><td>The code used too much memory.</td></tr>
+                <tr><td><strong>Runtime error</strong></td><td>The code crashed, for example from dividing by zero.</td></tr>
               </tbody>
             </table>
           </div>
@@ -125,7 +125,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Program template</h3>
-            <p>Every solution you write will start like this:</p>
+            <p>Every solution starts with this template:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;   <span class="com">// include the libraries you need, iostream is for input and output</span>
@@ -174,7 +174,7 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">There's no input, so you just print the text exactly as it's written.</p>
+            <p class="sol-note" style="margin-top:.9rem">There's no input, so just print the text exactly as written.</p>
           </div>
         </div>
       </div>
