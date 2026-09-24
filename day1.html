@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#000000">
 <title>Day 1 - Practice Sheet - ICPC at AUBM</title>
-<meta name="description" content="Day 1: setting up C++ in VS Code, getting started on Codeforces, and writing your first program.">
+<meta name="description" content="Day 1: setting up C++, getting started on Codeforces, and writing your first program.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=8">
+<link rel="stylesheet" href="practice.css?v=9">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 
   <div class="wrap content">
     <ol class="problem-list">
-      <li><a href="#setup"><span class="letter step">1</span><span class="pname">Setting up C++ in VS Code</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#setup"><span class="letter step">1</span><span class="pname">Setting up C++</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
       <li><a href="#codeforces"><span class="letter step">2</span><span class="pname">Getting started on Codeforces</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
       <li><a href="#A"><span class="letter">A</span><span class="pname">Hello AUBM</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
     </ol>
@@ -41,101 +41,31 @@
     <section class="problem" id="setup">
       <header class="problem-head">
         <span class="letter step">1</span>
-        <h2>Setting up C++ in VS Code</h2>
+        <h2>Setting up C++</h2>
       </header>
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <p>To write C++ you need two pieces of software:</p>
+            <p>Before you start, set up C++ on your laptop in your favorite code editor. You need two things:</p>
             <ul>
-              <li>A <strong>compiler</strong>, which turns your C++ code into a program the computer can run. We use <strong>GCC</strong> (its C++ compiler is called <code>g++</code>), the same compiler Codeforces uses.</li>
-              <li>A <strong>code editor</strong> to write the code in. We use <strong>Visual Studio Code</strong> (VS Code), a free editor with a built-in terminal.</li>
+              <li>A <strong>compiler</strong>, which turns your C++ code into a program the computer can run. We recommend <strong>GCC</strong> (<code>g++</code>), the same compiler Codeforces uses.</li>
+              <li>A <strong>code editor</strong> to write your code in. We recommend <strong>Visual Studio Code</strong> (VS Code), a free editor available on Windows, macOS and Linux.</li>
             </ul>
-            <p>Install the compiler first, then VS Code. Follow only the instructions for your operating system.</p>
+            <p>The exact steps depend on your operating system, so use an AI assistant to guide you through the installation. You can ask it something like:</p>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code out prompt"><code>I want to write C++ for competitive programming on my laptop, which runs [Windows / macOS / Linux]. Walk me through installing the g++ compiler and setting up VS Code step by step, so that I can compile and run a program that uses #include &lt;bits/stdc++.h&gt;.</code></pre>
+          </div>
+          <div class="prose">
+            <p>If something goes wrong along the way, copy the exact error message into the same conversation and ask what it means.</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Step 1: Install the compiler</h3>
-
-            <h4>Windows</h4>
-            <p>On Windows, GCC is installed through <strong>MSYS2</strong>.</p>
-            <ol>
-              <li>Download the installer from <a href="https://www.msys2.org" target="_blank" rel="noopener">msys2.org</a> and run it. Keep the default installation folder, <code>C:\msys64</code>.</li>
-              <li>When it finishes, an <strong>MSYS2 UCRT64</strong> terminal opens. (If it doesn't, open it from the Start menu.) Paste the following command and press <kbd>Enter</kbd>:</li>
-            </ol>
-          </div>
-          <div class="code-wrap">
-            <button class="copy-btn" type="button">Copy</button>
-            <pre class="code"><code>pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain</code></pre>
-          </div>
-          <div class="prose">
-            <ol start="3">
-              <li>Press <kbd>Enter</kbd> to accept the default selection, then type <kbd>Y</kbd> and press <kbd>Enter</kbd> to confirm the installation.</li>
-              <li>Add the compiler to your <code>PATH</code> so it can be used from any terminal. Open the Start menu, search for <strong>Edit environment variables for your account</strong>, select <strong>Path</strong>, click <strong>Edit</strong>, then <strong>New</strong>, and paste:</li>
-            </ol>
-          </div>
-          <div class="code-wrap">
-            <button class="copy-btn" type="button">Copy</button>
-            <pre class="code"><code>C:\msys64\ucrt64\bin</code></pre>
-          </div>
-          <div class="prose">
-            <ol start="5">
-              <li>Click <strong>OK</strong> on every window to save.</li>
-            </ol>
-
-            <h4>macOS</h4>
-            <p>macOS includes a compiler called Clang, but it does not support <code>#include &lt;bits/stdc++.h&gt;</code>, which we use in every program. Install GCC with <strong>Homebrew</strong> instead.</p>
-            <ol>
-              <li>If you don't have Homebrew, install it by following the instructions on <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a>.</li>
-              <li>Open the <strong>Terminal</strong> app and run:</li>
-            </ol>
-          </div>
-          <div class="code-wrap">
-            <button class="copy-btn" type="button">Copy</button>
-            <pre class="code"><code>brew install gcc</code></pre>
-          </div>
-          <div class="prose">
-            <p>Homebrew names the compiler after its version, for example <code>g++-15</code>. Type <code>g++-</code> in the terminal and press <kbd>Tab</kbd> to see the exact name on your machine. On macOS, use that name everywhere this page says <code>g++</code>.</p>
-
-            <h4>Linux</h4>
-            <p>Install <code>g++</code> with your package manager. On Ubuntu or Debian:</p>
-          </div>
-          <div class="code-wrap">
-            <button class="copy-btn" type="button">Copy</button>
-            <pre class="code"><code>sudo apt install g++</code></pre>
-          </div>
-          <div class="prose">
-            <p>On Fedora, use <code>sudo dnf install gcc-c++</code>.</p>
-
-            <h4>Check the installation</h4>
-            <p>Open a <strong>new</strong> terminal (PowerShell on Windows, Terminal on macOS and Linux) and run:</p>
-          </div>
-          <div class="code-wrap">
-            <pre class="code"><code>g++ --version</code></pre>
-          </div>
-          <div class="prose">
-            <p>If it prints a version number, the compiler is installed. If you get an error such as "command not found" or "not recognized", the compiler is either not installed or not on your <code>PATH</code>. On Windows, recheck step 4 and make sure you opened a new terminal afterwards.</p>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Step 2: Install VS Code</h3>
-            <ol>
-              <li>Download VS Code from <a href="https://code.visualstudio.com" target="_blank" rel="noopener">code.visualstudio.com</a> and install it.</li>
-              <li>Open VS Code, go to the Extensions view (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>, or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> on macOS), search for <strong>C/C++</strong>, and install the extension published by <strong>Microsoft</strong>. It adds syntax highlighting, error underlining and code suggestions.</li>
-              <li>Create a folder for your practice work, for example <code>icpc</code>, and open it with <strong>File &rarr; Open Folder</strong>.</li>
-              <li>Open the built-in terminal with <strong>Terminal &rarr; New Terminal</strong> (<kbd>Ctrl</kbd>+<kbd>`</kbd>). It opens inside your folder, and it is where you will compile and run your programs.</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Step 3: Compile and run a test program</h3>
-            <p>In your folder, create a file called <code>main.cpp</code> and paste this program into it. You don't need to understand it yet; problem A below explains every line.</p>
+            <h3 class="concept-title">Check that it works</h3>
+            <p>Once everything is installed, create a file called <code>main.cpp</code>, paste in this program, then compile and run it. You don't need to understand it yet; problem A below explains every line.</p>
           </div>
           <div class="code-wrap">
             <button class="copy-btn" type="button">Copy</button>
@@ -148,40 +78,7 @@
 }</code></pre>
           </div>
           <div class="prose">
-            <p>Save the file, then <strong>compile</strong> it by running this in the terminal:</p>
-          </div>
-          <div class="code-wrap">
-            <button class="copy-btn" type="button">Copy</button>
-            <pre class="code"><code>g++ -std=c++17 -Wall main.cpp -o main</code></pre>
-          </div>
-          <div class="prose">
-            <p>This reads <code>main.cpp</code> and creates a program called <code>main</code> (<code>main.exe</code> on Windows). <code>-std=c++17</code> selects the C++17 version of the language, and <code>-Wall</code> turns on warnings about likely mistakes. If there are errors in your code, they are printed here instead, with the line number where each one occurs.</p>
-            <p>Now <strong>run</strong> the program:</p>
-          </div>
-          <div class="table-wrap">
-            <table class="table">
-              <thead><tr><th>System</th><th>Command</th></tr></thead>
-              <tbody>
-                <tr><td>Windows (PowerShell)</td><td><code>.\main.exe</code></td></tr>
-                <tr><td>macOS and Linux</td><td><code>./main</code></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="prose">
-            <p>If the terminal prints <code>It works!</code>, your setup is complete. Every time you change the code, save the file and compile again before running; otherwise you are running the old version.</p>
-
-            <h4>Giving your program input</h4>
-            <p>From Day 2 onwards, programs read input. When you run a program that reads input, it waits for you: type the input into the terminal and press <kbd>Enter</kbd>.</p>
-            <p>Retyping the same input every time gets tedious. Instead, save the input in a file called <code>input.txt</code> in the same folder and pass it to the program:</p>
-          </div>
-          <div class="table-wrap">
-            <table class="table">
-              <thead><tr><th>System</th><th>Command</th></tr></thead>
-              <tbody>
-                <tr><td>Windows (PowerShell)</td><td><code>Get-Content input.txt | .\main.exe</code></td></tr>
-                <tr><td>macOS and Linux</td><td><code>./main &lt; input.txt</code></td></tr>
-              </tbody>
-            </table>
+            <p>If it prints <code>It works!</code>, your setup is complete.</p>
           </div>
         </div>
       </div>
@@ -208,32 +105,6 @@
               <li>Choose a <strong>handle</strong>, enter your email address and a password, and submit the form.</li>
               <li>Open the confirmation email Codeforces sends you and click the link to activate your account.</li>
             </ol>
-            <p>Your handle is your public username: it appears on standings, on your submissions and on your profile. Choose it carefully, since it is not easy to change later.</p>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Your profile and rating</h3>
-            <p>Click your handle in the top-right corner to open your profile. It shows your rating, your contest history and your submissions.</p>
-            <p>Your <strong>rating</strong> is a number that measures your performance in official Codeforces contests. You start unrated; after your first rated contest you receive a rating, which goes up or down after each contest you take part in. Your handle's color reflects your rank:</p>
-          </div>
-          <div class="table-wrap">
-            <table class="table">
-              <thead><tr><th>Rating</th><th>Rank</th></tr></thead>
-              <tbody>
-                <tr><td>below 1200</td><td><strong style="color:#808080">Newbie</strong></td></tr>
-                <tr><td>1200 &ndash; 1399</td><td><strong style="color:#008000">Pupil</strong></td></tr>
-                <tr><td>1400 &ndash; 1599</td><td><strong style="color:#03A89E">Specialist</strong></td></tr>
-                <tr><td>1600 &ndash; 1899</td><td><strong style="color:#0000FF">Expert</strong></td></tr>
-                <tr><td>1900 &ndash; 2099</td><td><strong style="color:#AA00AA">Candidate Master</strong></td></tr>
-                <tr><td>2100 &ndash; 2399</td><td><strong style="color:#E08000">Master, International Master</strong></td></tr>
-                <tr><td>2400 and above</td><td><strong style="color:#FF0000">Grandmaster and above</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="prose">
-            <p>Contests inside groups, including ours, are <strong>unrated</strong>: solving the practice sheet does not change your rating. Once you are comfortable with the basics, taking part in official Codeforces rounds is excellent practice.</p>
           </div>
         </div>
 
@@ -245,7 +116,7 @@
               <li>Open the AUBM ICPC group link that was shared with you and click <strong>Join</strong>. If the group requires approval, your request will be accepted by the organizers.</li>
               <li>Once you are a member, the group page lists its contests. Each day of the practice sheet has two: <strong>Day N Practice</strong> and <strong>Day N Homework</strong>.</li>
             </ol>
-            <p>Open a contest to see its problems. They are labeled with letters (A, B, C, ...), usually ordered from easiest to hardest.</p>
+            <p>Open a contest to see its problems, which are labeled with letters (A, B, C, ...).</p>
           </div>
         </div>
 
@@ -264,7 +135,6 @@
                 <tr><td><strong>Input</strong></td><td>Exactly what your program will be given, in what order, and the <strong>constraints</strong>: the smallest and largest possible values.</td></tr>
                 <tr><td><strong>Output</strong></td><td>Exactly what your program must print, and in what format.</td></tr>
                 <tr><td><strong>Examples</strong></td><td>Sample inputs with their correct outputs. Test your program on every one before submitting.</td></tr>
-                <tr><td><strong>Note</strong></td><td>Optional. Usually explains why the example outputs are correct.</td></tr>
               </tbody>
             </table>
           </div>
@@ -296,9 +166,6 @@
                 <tr><td><strong>Runtime error on test N</strong></td><td>Your program crashed on test N, for example by dividing by zero.</td></tr>
               </tbody>
             </table>
-          </div>
-          <div class="prose">
-            <p>A rejected submission is not a failure. Find the mistake, fix it and submit again; there is no penalty in the practice contests. Solved problems are marked in green on the contest's problem list.</p>
           </div>
         </div>
 
@@ -423,6 +290,6 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=8"></script>
+<script src="practice.js?v=9"></script>
 </body>
 </html>
