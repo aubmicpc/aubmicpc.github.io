@@ -88,8 +88,6 @@ pre.code code{font-family:inherit; background:none; padding:0; color:inherit}
 .num-l{color:#F6A96C}
 .fn{color:#D6A8F0}
 pre.code.out{background:var(--bg-soft); color:var(--ink); border:1px solid var(--rule)}
-pre.code.prompt{white-space:pre-wrap; padding-right:5.5rem; font-family:var(--sans); font-size:.95rem}
-.code-wrap:has(.out) .copy-btn{background:var(--bg); color:var(--ink); border-color:var(--rule-strong)}
 .code-cap{display:block; font-size:.8rem; color:var(--muted); margin:0 0 .35rem}
 
 .copy-btn{position:absolute; top:.6rem; right:.6rem; background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:3px; padding:.3rem .6rem; font-size:.78rem; font-family:var(--sans); cursor:pointer}

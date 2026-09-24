@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=9">
+<link rel="stylesheet" href="practice.css?v=10">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
   <section class="hero">
     <div class="wrap">
       <h1>Day 1</h1>
-      <p>Before solving any problems, you need two things: a working C++ setup on your own computer, and a Codeforces account. This day walks you through both, then through your first problem.</p>
+      <p>Get C++ running, get set up on Codeforces, and solve your first problem.</p>
     </div>
   </section>
 
@@ -46,26 +46,9 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <p>Before you start, set up C++ on your laptop in your favorite code editor. You need two things:</p>
-            <ul>
-              <li>A <strong>compiler</strong>, which turns your C++ code into a program the computer can run. We recommend <strong>GCC</strong> (<code>g++</code>), the same compiler Codeforces uses.</li>
-              <li>A <strong>code editor</strong> to write your code in. We recommend <strong>Visual Studio Code</strong> (VS Code), a free editor available on Windows, macOS and Linux.</li>
-            </ul>
-            <p>The exact steps depend on your operating system, so use an AI assistant to guide you through the installation. You can ask it something like:</p>
-          </div>
-          <div class="code-wrap">
-            <button class="copy-btn" type="button">Copy</button>
-            <pre class="code out prompt"><code>I want to write C++ for competitive programming on my laptop, which runs [Windows / macOS / Linux]. Walk me through installing the g++ compiler and setting up VS Code step by step, so that I can compile and run a program that uses #include &lt;bits/stdc++.h&gt;.</code></pre>
-          </div>
-          <div class="prose">
-            <p>If something goes wrong along the way, copy the exact error message into the same conversation and ask what it means.</p>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Check that it works</h3>
-            <p>Once everything is installed, create a file called <code>main.cpp</code>, paste in this program, then compile and run it. You don't need to understand it yet; problem A below explains every line.</p>
+            <p>Set up C++ on your laptop in your favorite editor. We recommend <strong>VS Code</strong> with the <strong>GCC</strong> compiler (<code>g++</code>), which is what Codeforces uses. If you get stuck, ask an AI to walk you through the setup for your OS.</p>
+            <p>Make sure <code>#include &lt;bits/stdc++.h&gt;</code> compiles. It is used in every solution, and macOS's default compiler (Clang) doesn't support it, so Mac users should install GCC through Homebrew.</p>
+            <p>To test your setup, compile and run this. It should print <code>It works!</code>.</p>
           </div>
           <div class="code-wrap">
             <button class="copy-btn" type="button">Copy</button>
@@ -76,9 +59,6 @@
     cout &lt;&lt; <span class="str">"It works!"</span> &lt;&lt; <span class="str">"\n"</span>;
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
-          </div>
-          <div class="prose">
-            <p>If it prints <code>It works!</code>, your setup is complete.</p>
           </div>
         </div>
       </div>
@@ -93,77 +73,42 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <p><strong>Codeforces</strong> is one of the largest competitive programming websites. It hosts contests almost every week and has thousands of problems to practice on. All of our practice and homework problems are hosted on Codeforces, in the AUBM ICPC group.</p>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Creating an account</h3>
+            <h3 class="concept-title">Account and group</h3>
             <ol>
-              <li>Go to <a href="https://codeforces.com" target="_blank" rel="noopener">codeforces.com</a> and click <strong>Register</strong> in the top-right corner.</li>
-              <li>Choose a <strong>handle</strong>, enter your email address and a password, and submit the form.</li>
-              <li>Open the confirmation email Codeforces sends you and click the link to activate your account.</li>
+              <li>Register at <a href="https://codeforces.com" target="_blank" rel="noopener">codeforces.com</a> and confirm your email.</li>
+              <li>Open the AUBM ICPC group link shared with you and click <strong>Join</strong>.</li>
+              <li>The group has two contests per day: <strong>Day N Practice</strong> and <strong>Day N Homework</strong>.</li>
             </ol>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Joining the AUBM group</h3>
-            <ol>
-              <li>Log in to Codeforces.</li>
-              <li>Open the AUBM ICPC group link that was shared with you and click <strong>Join</strong>. If the group requires approval, your request will be accepted by the organizers.</li>
-              <li>Once you are a member, the group page lists its contests. Each day of the practice sheet has two: <strong>Day N Practice</strong> and <strong>Day N Homework</strong>.</li>
-            </ol>
-            <p>Open a contest to see its problems, which are labeled with letters (A, B, C, ...).</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Reading a problem</h3>
-            <p>Every problem statement follows the same structure:</p>
-          </div>
-          <div class="table-wrap">
-            <table class="table">
-              <thead><tr><th>Part</th><th>What it tells you</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Time limit</strong></td><td>The maximum time your program may run on a single test, for example 1 second.</td></tr>
-                <tr><td><strong>Memory limit</strong></td><td>The maximum memory your program may use, for example 256 megabytes.</td></tr>
-                <tr><td><strong>Statement</strong></td><td>The task your program has to solve.</td></tr>
-                <tr><td><strong>Input</strong></td><td>Exactly what your program will be given, in what order, and the <strong>constraints</strong>: the smallest and largest possible values.</td></tr>
-                <tr><td><strong>Output</strong></td><td>Exactly what your program must print, and in what format.</td></tr>
-                <tr><td><strong>Examples</strong></td><td>Sample inputs with their correct outputs. Test your program on every one before submitting.</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="prose">
-            <p>Read the input and output sections as carefully as the statement itself. Most early mistakes come from reading the input in the wrong order or printing in the wrong format.</p>
+            <ul>
+              <li><strong>Time and memory limits:</strong> per test, usually 1&ndash;2 seconds and 256 MB.</li>
+              <li><strong>Input:</strong> what you are given, in what order, and the <strong>constraints</strong> (the range of every value). Constraints decide which data types you need and how fast your solution has to be.</li>
+              <li><strong>Output:</strong> exactly what to print, and in what format.</li>
+              <li><strong>Examples:</strong> sample tests. Your solution must pass these before you submit.</li>
+            </ul>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Submitting a solution</h3>
-            <ol>
-              <li>Make sure your program compiles and produces the correct output for every example on your own computer.</li>
-              <li>On the problem page, find the <strong>Submit</strong> box on the right, or open the <strong>Submit Code</strong> tab at the top of the contest.</li>
-              <li>Select a language. Choose the newest <strong>GNU G++</strong> option available, such as GNU G++20 or GNU G++17.</li>
-              <li>Paste your code, or choose your <code>.cpp</code> file, and click <strong>Submit</strong>.</li>
-            </ol>
-            <p>You are taken to the <strong>My Submissions</strong> page. Your program is run on a set of hidden tests, one after another, and after a few seconds you receive a <strong>verdict</strong>:</p>
+            <h3 class="concept-title">Submitting</h3>
+            <p>On the problem page, use the <strong>Submit</strong> box on the right. Pick the newest <strong>GNU G++</strong> compiler (G++20 or G++17), paste your code and submit. Your code is run on hidden tests and you get a verdict:</p>
           </div>
           <div class="table-wrap">
             <table class="table">
               <thead><tr><th>Verdict</th><th>Meaning</th></tr></thead>
               <tbody>
-                <tr><td><strong style="color:#008000">Accepted</strong></td><td>Your program passed every test. The problem is solved.</td></tr>
-                <tr><td><strong>Wrong answer on test N</strong></td><td>Your output on test N differed from the expected output. "On test 1" usually means the first example from the statement fails.</td></tr>
-                <tr><td><strong>Compilation error</strong></td><td>Your code is not valid C++. Click the verdict to see the compiler's error message.</td></tr>
-                <tr><td><strong>Time limit exceeded on test N</strong></td><td>Your program ran longer than the time limit on test N.</td></tr>
-                <tr><td><strong>Memory limit exceeded on test N</strong></td><td>Your program used more memory than allowed on test N.</td></tr>
-                <tr><td><strong>Runtime error on test N</strong></td><td>Your program crashed on test N, for example by dividing by zero.</td></tr>
+                <tr><td><strong style="color:#008000">Accepted</strong></td><td>Passed every test.</td></tr>
+                <tr><td><strong>Wrong answer on test N</strong></td><td>Wrong output on test N. Test 1 is usually the first example.</td></tr>
+                <tr><td><strong>Compilation error</strong></td><td>Code doesn't compile. Click the verdict to see the error.</td></tr>
+                <tr><td><strong>Time limit exceeded</strong></td><td>Too slow.</td></tr>
+                <tr><td><strong>Memory limit exceeded</strong></td><td>Used too much memory.</td></tr>
+                <tr><td><strong>Runtime error</strong></td><td>Crashed, e.g. division by zero or reading outside an array.</td></tr>
               </tbody>
             </table>
           </div>
@@ -171,13 +116,12 @@
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Important things to know</h3>
+            <h3 class="concept-title">Rules of thumb</h3>
             <ul>
-              <li><strong>Print only what is asked.</strong> The judge is a program, not a person. Messages such as <code>Enter a number:</code> or <code>The answer is:</code> make your output wrong.</li>
-              <li><strong>Output must match exactly.</strong> Spelling, capital letters, spaces and line breaks all count. Extra spaces or a blank line at the very end are usually ignored, but nothing else is.</li>
-              <li><strong>Use standard input and output.</strong> Read with <code>cin</code> and print with <code>cout</code>. Do not open files, and do not use <code>system("pause")</code> or <code>getch()</code> to keep a window open.</li>
-              <li><strong>Passing the examples is not enough.</strong> The hidden tests include large values and edge cases. Always check your program against the constraints in the input section.</li>
-              <li><strong>Try before looking.</strong> When you are stuck, think about the problem a little longer before reading the solution. Struggling with a problem is how you improve.</li>
+              <li>Print <strong>only</strong> what's asked. No <code>Enter a number:</code> prompts; the judge is a program.</li>
+              <li>Output must match exactly: spelling, case, spaces and line breaks.</li>
+              <li>Read from <code>cin</code> and write to <code>cout</code>. No files, no <code>system("pause")</code>.</li>
+              <li>Passing the examples isn't enough. Think about edge cases and the largest inputs allowed by the constraints.</li>
             </ul>
           </div>
         </div>
@@ -193,44 +137,24 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">The structure of a C++ program</h3>
-            <p>A C++ program is a text file containing instructions that the compiler translates into a program the computer can run. Every program you write in this course starts from the same skeleton:</p>
+            <h3 class="concept-title">Program template</h3>
+            <p>Every solution starts from this template:</p>
           </div>
           <div class="code-wrap">
-            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
-<span class="kw">using</span> <span class="kw">namespace</span> std;
+            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;  <span class="com">// includes the entire standard library</span>
+<span class="kw">using</span> <span class="kw">namespace</span> std;     <span class="com">// lets you write cout instead of std::cout</span>
 
 <span class="ty">int</span> <span class="fn">main</span>() {
-    <span class="com">// your instructions go here</span>
+    <span class="com">// your code</span>
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
-          </div>
-          <div class="prose">
-            <p>Each line has a specific purpose:</p>
-            <ul>
-              <li><code>#include &lt;bits/stdc++.h&gt;</code> gives your program access to the C++ standard library, which contains ready-made tools for input, output, mathematics and more. This single line includes all of them, which is why it is standard practice in competitive programming.</li>
-              <li><code>using namespace std;</code> lets you write names from the standard library directly, such as <code>cout</code>, instead of the full form <code>std::cout</code>.</li>
-              <li><code>int main() { ... }</code> defines the <strong>main function</strong>. When the program runs, execution begins at the first line inside its braces and proceeds line by line, top to bottom.</li>
-              <li><code>return 0;</code> ends the program and reports that it finished successfully.</li>
-            </ul>
-            <p>Lines beginning with <code>//</code> are <strong>comments</strong>. The compiler ignores them; they exist only to explain the code to a human reader.</p>
-            <div class="callout">
-              <span class="lbl">Syntax rules</span>
-              <p>C++ is case-sensitive: <code>Main</code> and <code>main</code> are different names. Every instruction ends with a semicolon <code>;</code>, and every opening brace <code>{</code> must have a matching closing brace <code>}</code>. A missing semicolon is the most common reason a beginner's program fails to compile.</p>
-            </div>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Printing output with <code>cout</code></h3>
-            <p>To print text, use <code>cout</code> (short for "character output") followed by the <strong>insertion operator</strong> <code>&lt;&lt;</code> and the value to print. Text is written inside double quotes; a piece of quoted text is called a <strong>string literal</strong>.</p>
-          </div>
-          <div class="code-wrap">
-            <pre class="code"><code>cout &lt;&lt; <span class="str">"Welcome to AUBM"</span>;</code></pre>
-          </div>
-          <div class="prose">
-            <p>Several values can be printed in one statement by chaining <code>&lt;&lt;</code>. They are printed one after another with nothing added in between, so any spaces you want must be written explicitly:</p>
+            <h3 class="concept-title">Output with <code>cout</code></h3>
+            <p>Print with <code>cout &lt;&lt;</code>. You can chain values; nothing is added between them, so write spaces and newlines yourself.</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code>cout &lt;&lt; <span class="str">"ICPC"</span> &lt;&lt; <span class="str">" "</span> &lt;&lt; <span class="str">"Cyprus"</span> &lt;&lt; <span class="str">"\n"</span>;
@@ -242,11 +166,7 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
 2026</code></pre>
           </div>
           <div class="prose">
-            <p>The sequence <code>"\n"</code> is the <strong>newline character</strong>. Printing it moves the output to the start of the next line. Without it, consecutive <code>cout</code> statements continue on the same line. You may also see <code>endl</code> used for the same purpose; it works the same way for our needs but is slower, so <code>"\n"</code> is preferred.</p>
-            <div class="callout">
-              <span class="lbl">Exactness</span>
-              <p>Your output is compared with the expected answer character by character. <code>Hello World</code>, <code>hello world</code> and <code>Hello, World</code> are three different outputs, and only one of them is correct.</p>
-            </div>
+            <p>Use <code>"\n"</code> for new lines rather than <code>endl</code>. <code>endl</code> also flushes the output, which makes it slow when you print a lot.</p>
           </div>
         </div>
 
@@ -267,12 +187,7 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <dl class="walkthrough">
-              <dt>cout &lt;&lt; "Hello AUBM"</dt>
-              <dd>The problem has no input, so the program only prints the required text, spelled and capitalized exactly as in the statement.</dd>
-              <dt>&lt;&lt; "\n"</dt>
-              <dd>Ends the line. It is not strictly required here, but ending every line of output this way is good practice.</dd>
-            </dl>
+            <p class="sol-note" style="margin-top:.9rem">No input, just print the exact string.</p>
           </div>
         </div>
       </div>
@@ -290,6 +205,6 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=9"></script>
+<script src="practice.js?v=10"></script>
 </body>
 </html>
