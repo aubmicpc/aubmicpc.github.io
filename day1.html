@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#000000">
 <title>Day 1 - Practice Sheet - ICPC at AUBM</title>
-<meta name="description" content="Day 1: the structure of a C++ program, printing output, and submitting on Codeforces.">
+<meta name="description" content="Day 1: setting up C++ in VS Code, getting started on Codeforces, and writing your first program.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=7">
+<link rel="stylesheet" href="practice.css?v=8">
 </head>
 <body>
 
@@ -26,15 +26,298 @@
   <section class="hero">
     <div class="wrap">
       <h1>Day 1</h1>
-      <p>This day covers the minimum needed to write, run and submit a working C++ program: how a program is structured, how to print text, and how Codeforces judges a submission.</p>
+      <p>Before solving any problems, you need two things: a working C++ setup on your own computer, and a Codeforces account. This day walks you through both, then through your first problem.</p>
     </div>
   </section>
 
   <div class="wrap content">
     <ol class="problem-list">
+      <li><a href="#setup"><span class="letter step">1</span><span class="pname">Setting up C++ in VS Code</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#codeforces"><span class="letter step">2</span><span class="pname">Getting started on Codeforces</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
       <li><a href="#A"><span class="letter">A</span><span class="pname">Hello AUBM</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
     </ol>
 
+    <!-- ===================== 1. SETUP ===================== -->
+    <section class="problem" id="setup">
+      <header class="problem-head">
+        <span class="letter step">1</span>
+        <h2>Setting up C++ in VS Code</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <p>To write C++ you need two pieces of software:</p>
+            <ul>
+              <li>A <strong>compiler</strong>, which turns your C++ code into a program the computer can run. We use <strong>GCC</strong> (its C++ compiler is called <code>g++</code>), the same compiler Codeforces uses.</li>
+              <li>A <strong>code editor</strong> to write the code in. We use <strong>Visual Studio Code</strong> (VS Code), a free editor with a built-in terminal.</li>
+            </ul>
+            <p>Install the compiler first, then VS Code. Follow only the instructions for your operating system.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Step 1: Install the compiler</h3>
+
+            <h4>Windows</h4>
+            <p>On Windows, GCC is installed through <strong>MSYS2</strong>.</p>
+            <ol>
+              <li>Download the installer from <a href="https://www.msys2.org" target="_blank" rel="noopener">msys2.org</a> and run it. Keep the default installation folder, <code>C:\msys64</code>.</li>
+              <li>When it finishes, an <strong>MSYS2 UCRT64</strong> terminal opens. (If it doesn't, open it from the Start menu.) Paste the following command and press <kbd>Enter</kbd>:</li>
+            </ol>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code"><code>pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain</code></pre>
+          </div>
+          <div class="prose">
+            <ol start="3">
+              <li>Press <kbd>Enter</kbd> to accept the default selection, then type <kbd>Y</kbd> and press <kbd>Enter</kbd> to confirm the installation.</li>
+              <li>Add the compiler to your <code>PATH</code> so it can be used from any terminal. Open the Start menu, search for <strong>Edit environment variables for your account</strong>, select <strong>Path</strong>, click <strong>Edit</strong>, then <strong>New</strong>, and paste:</li>
+            </ol>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code"><code>C:\msys64\ucrt64\bin</code></pre>
+          </div>
+          <div class="prose">
+            <ol start="5">
+              <li>Click <strong>OK</strong> on every window to save.</li>
+            </ol>
+
+            <h4>macOS</h4>
+            <p>macOS includes a compiler called Clang, but it does not support <code>#include &lt;bits/stdc++.h&gt;</code>, which we use in every program. Install GCC with <strong>Homebrew</strong> instead.</p>
+            <ol>
+              <li>If you don't have Homebrew, install it by following the instructions on <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a>.</li>
+              <li>Open the <strong>Terminal</strong> app and run:</li>
+            </ol>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code"><code>brew install gcc</code></pre>
+          </div>
+          <div class="prose">
+            <p>Homebrew names the compiler after its version, for example <code>g++-15</code>. Type <code>g++-</code> in the terminal and press <kbd>Tab</kbd> to see the exact name on your machine. On macOS, use that name everywhere this page says <code>g++</code>.</p>
+
+            <h4>Linux</h4>
+            <p>Install <code>g++</code> with your package manager. On Ubuntu or Debian:</p>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code"><code>sudo apt install g++</code></pre>
+          </div>
+          <div class="prose">
+            <p>On Fedora, use <code>sudo dnf install gcc-c++</code>.</p>
+
+            <h4>Check the installation</h4>
+            <p>Open a <strong>new</strong> terminal (PowerShell on Windows, Terminal on macOS and Linux) and run:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>g++ --version</code></pre>
+          </div>
+          <div class="prose">
+            <p>If it prints a version number, the compiler is installed. If you get an error such as "command not found" or "not recognized", the compiler is either not installed or not on your <code>PATH</code>. On Windows, recheck step 4 and make sure you opened a new terminal afterwards.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Step 2: Install VS Code</h3>
+            <ol>
+              <li>Download VS Code from <a href="https://code.visualstudio.com" target="_blank" rel="noopener">code.visualstudio.com</a> and install it.</li>
+              <li>Open VS Code, go to the Extensions view (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>, or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> on macOS), search for <strong>C/C++</strong>, and install the extension published by <strong>Microsoft</strong>. It adds syntax highlighting, error underlining and code suggestions.</li>
+              <li>Create a folder for your practice work, for example <code>icpc</code>, and open it with <strong>File &rarr; Open Folder</strong>.</li>
+              <li>Open the built-in terminal with <strong>Terminal &rarr; New Terminal</strong> (<kbd>Ctrl</kbd>+<kbd>`</kbd>). It opens inside your folder, and it is where you will compile and run your programs.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Step 3: Compile and run a test program</h3>
+            <p>In your folder, create a file called <code>main.cpp</code> and paste this program into it. You don't need to understand it yet; problem A below explains every line.</p>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    cout &lt;&lt; <span class="str">"It works!"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>Save the file, then <strong>compile</strong> it by running this in the terminal:</p>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre class="code"><code>g++ -std=c++17 -Wall main.cpp -o main</code></pre>
+          </div>
+          <div class="prose">
+            <p>This reads <code>main.cpp</code> and creates a program called <code>main</code> (<code>main.exe</code> on Windows). <code>-std=c++17</code> selects the C++17 version of the language, and <code>-Wall</code> turns on warnings about likely mistakes. If there are errors in your code, they are printed here instead, with the line number where each one occurs.</p>
+            <p>Now <strong>run</strong> the program:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>System</th><th>Command</th></tr></thead>
+              <tbody>
+                <tr><td>Windows (PowerShell)</td><td><code>.\main.exe</code></td></tr>
+                <tr><td>macOS and Linux</td><td><code>./main</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>If the terminal prints <code>It works!</code>, your setup is complete. Every time you change the code, save the file and compile again before running; otherwise you are running the old version.</p>
+
+            <h4>Giving your program input</h4>
+            <p>From Day 2 onwards, programs read input. When you run a program that reads input, it waits for you: type the input into the terminal and press <kbd>Enter</kbd>.</p>
+            <p>Retyping the same input every time gets tedious. Instead, save the input in a file called <code>input.txt</code> in the same folder and pass it to the program:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>System</th><th>Command</th></tr></thead>
+              <tbody>
+                <tr><td>Windows (PowerShell)</td><td><code>Get-Content input.txt | .\main.exe</code></td></tr>
+                <tr><td>macOS and Linux</td><td><code>./main &lt; input.txt</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. CODEFORCES ===================== -->
+    <section class="problem" id="codeforces">
+      <header class="problem-head">
+        <span class="letter step">2</span>
+        <h2>Getting started on Codeforces</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <p><strong>Codeforces</strong> is one of the largest competitive programming websites. It hosts contests almost every week and has thousands of problems to practice on. All of our practice and homework problems are hosted on Codeforces, in the AUBM ICPC group.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Creating an account</h3>
+            <ol>
+              <li>Go to <a href="https://codeforces.com" target="_blank" rel="noopener">codeforces.com</a> and click <strong>Register</strong> in the top-right corner.</li>
+              <li>Choose a <strong>handle</strong>, enter your email address and a password, and submit the form.</li>
+              <li>Open the confirmation email Codeforces sends you and click the link to activate your account.</li>
+            </ol>
+            <p>Your handle is your public username: it appears on standings, on your submissions and on your profile. Choose it carefully, since it is not easy to change later.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Your profile and rating</h3>
+            <p>Click your handle in the top-right corner to open your profile. It shows your rating, your contest history and your submissions.</p>
+            <p>Your <strong>rating</strong> is a number that measures your performance in official Codeforces contests. You start unrated; after your first rated contest you receive a rating, which goes up or down after each contest you take part in. Your handle's color reflects your rank:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Rating</th><th>Rank</th></tr></thead>
+              <tbody>
+                <tr><td>below 1200</td><td><strong style="color:#808080">Newbie</strong></td></tr>
+                <tr><td>1200 &ndash; 1399</td><td><strong style="color:#008000">Pupil</strong></td></tr>
+                <tr><td>1400 &ndash; 1599</td><td><strong style="color:#03A89E">Specialist</strong></td></tr>
+                <tr><td>1600 &ndash; 1899</td><td><strong style="color:#0000FF">Expert</strong></td></tr>
+                <tr><td>1900 &ndash; 2099</td><td><strong style="color:#AA00AA">Candidate Master</strong></td></tr>
+                <tr><td>2100 &ndash; 2399</td><td><strong style="color:#E08000">Master, International Master</strong></td></tr>
+                <tr><td>2400 and above</td><td><strong style="color:#FF0000">Grandmaster and above</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>Contests inside groups, including ours, are <strong>unrated</strong>: solving the practice sheet does not change your rating. Once you are comfortable with the basics, taking part in official Codeforces rounds is excellent practice.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Joining the AUBM group</h3>
+            <ol>
+              <li>Log in to Codeforces.</li>
+              <li>Open the AUBM ICPC group link that was shared with you and click <strong>Join</strong>. If the group requires approval, your request will be accepted by the organizers.</li>
+              <li>Once you are a member, the group page lists its contests. Each day of the practice sheet has two: <strong>Day N Practice</strong> and <strong>Day N Homework</strong>.</li>
+            </ol>
+            <p>Open a contest to see its problems. They are labeled with letters (A, B, C, ...), usually ordered from easiest to hardest.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Reading a problem</h3>
+            <p>Every problem statement follows the same structure:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Part</th><th>What it tells you</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Time limit</strong></td><td>The maximum time your program may run on a single test, for example 1 second.</td></tr>
+                <tr><td><strong>Memory limit</strong></td><td>The maximum memory your program may use, for example 256 megabytes.</td></tr>
+                <tr><td><strong>Statement</strong></td><td>The task your program has to solve.</td></tr>
+                <tr><td><strong>Input</strong></td><td>Exactly what your program will be given, in what order, and the <strong>constraints</strong>: the smallest and largest possible values.</td></tr>
+                <tr><td><strong>Output</strong></td><td>Exactly what your program must print, and in what format.</td></tr>
+                <tr><td><strong>Examples</strong></td><td>Sample inputs with their correct outputs. Test your program on every one before submitting.</td></tr>
+                <tr><td><strong>Note</strong></td><td>Optional. Usually explains why the example outputs are correct.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>Read the input and output sections as carefully as the statement itself. Most early mistakes come from reading the input in the wrong order or printing in the wrong format.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Submitting a solution</h3>
+            <ol>
+              <li>Make sure your program compiles and produces the correct output for every example on your own computer.</li>
+              <li>On the problem page, find the <strong>Submit</strong> box on the right, or open the <strong>Submit Code</strong> tab at the top of the contest.</li>
+              <li>Select a language. Choose the newest <strong>GNU G++</strong> option available, such as GNU G++20 or GNU G++17.</li>
+              <li>Paste your code, or choose your <code>.cpp</code> file, and click <strong>Submit</strong>.</li>
+            </ol>
+            <p>You are taken to the <strong>My Submissions</strong> page. Your program is run on a set of hidden tests, one after another, and after a few seconds you receive a <strong>verdict</strong>:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Verdict</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><strong style="color:#008000">Accepted</strong></td><td>Your program passed every test. The problem is solved.</td></tr>
+                <tr><td><strong>Wrong answer on test N</strong></td><td>Your output on test N differed from the expected output. "On test 1" usually means the first example from the statement fails.</td></tr>
+                <tr><td><strong>Compilation error</strong></td><td>Your code is not valid C++. Click the verdict to see the compiler's error message.</td></tr>
+                <tr><td><strong>Time limit exceeded on test N</strong></td><td>Your program ran longer than the time limit on test N.</td></tr>
+                <tr><td><strong>Memory limit exceeded on test N</strong></td><td>Your program used more memory than allowed on test N.</td></tr>
+                <tr><td><strong>Runtime error on test N</strong></td><td>Your program crashed on test N, for example by dividing by zero.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>A rejected submission is not a failure. Find the mistake, fix it and submit again; there is no penalty in the practice contests. Solved problems are marked in green on the contest's problem list.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Important things to know</h3>
+            <ul>
+              <li><strong>Print only what is asked.</strong> The judge is a program, not a person. Messages such as <code>Enter a number:</code> or <code>The answer is:</code> make your output wrong.</li>
+              <li><strong>Output must match exactly.</strong> Spelling, capital letters, spaces and line breaks all count. Extra spaces or a blank line at the very end are usually ignored, but nothing else is.</li>
+              <li><strong>Use standard input and output.</strong> Read with <code>cin</code> and print with <code>cout</code>. Do not open files, and do not use <code>system("pause")</code> or <code>getch()</code> to keep a window open.</li>
+              <li><strong>Passing the examples is not enough.</strong> The hidden tests include large values and edge cases. Always check your program against the constraints in the input section.</li>
+              <li><strong>Try before looking.</strong> When you are stuck, think about the problem a little longer before reading the solution. Struggling with a problem is how you improve.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== A. HELLO AUBM ===================== -->
     <section class="problem" id="A">
       <header class="problem-head">
         <span class="letter">A</span>
@@ -42,83 +325,64 @@
       </header>
       <div class="problem-body">
         <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">The structure of a C++ program</h3>
-        <p>A C++ program is a text file containing instructions that a <strong>compiler</strong> translates into a program the computer can run. Every program you write in this course starts from the same skeleton:</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+          <div class="prose">
+            <h3 class="concept-title">The structure of a C++ program</h3>
+            <p>A C++ program is a text file containing instructions that the compiler translates into a program the computer can run. Every program you write in this course starts from the same skeleton:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {
     <span class="com">// your instructions go here</span>
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
-      </div>
-      <div class="prose">
-        <p>Each line has a specific purpose:</p>
-        <ul>
-          <li><code>#include &lt;bits/stdc++.h&gt;</code> gives your program access to the C++ standard library, which contains ready-made tools for input, output, mathematics and more. This single header includes all of them, which is why it is standard practice in competitive programming.</li>
-          <li><code>using namespace std;</code> lets you write names from the standard library directly, such as <code>cout</code>, instead of the full form <code>std::cout</code>.</li>
-          <li><code>int main() { ... }</code> defines the <strong>main function</strong>. When the program runs, execution begins at the first line inside its braces and proceeds line by line, top to bottom.</li>
-          <li><code>return 0;</code> ends the program and reports to the operating system that it finished successfully.</li>
-        </ul>
-        <p>Lines beginning with <code>//</code> are <strong>comments</strong>. The compiler ignores them; they exist only to explain the code to a human reader.</p>
-        <div class="callout">
-          <span class="lbl">Syntax rules</span>
-          <p>C++ is case-sensitive: <code>Main</code> and <code>main</code> are different names. Every instruction ends with a semicolon <code>;</code>, and every opening brace <code>{</code> must have a matching closing brace <code>}</code>. A missing semicolon is the most common reason a beginner's program fails to compile.</p>
+          </div>
+          <div class="prose">
+            <p>Each line has a specific purpose:</p>
+            <ul>
+              <li><code>#include &lt;bits/stdc++.h&gt;</code> gives your program access to the C++ standard library, which contains ready-made tools for input, output, mathematics and more. This single line includes all of them, which is why it is standard practice in competitive programming.</li>
+              <li><code>using namespace std;</code> lets you write names from the standard library directly, such as <code>cout</code>, instead of the full form <code>std::cout</code>.</li>
+              <li><code>int main() { ... }</code> defines the <strong>main function</strong>. When the program runs, execution begins at the first line inside its braces and proceeds line by line, top to bottom.</li>
+              <li><code>return 0;</code> ends the program and reports that it finished successfully.</li>
+            </ul>
+            <p>Lines beginning with <code>//</code> are <strong>comments</strong>. The compiler ignores them; they exist only to explain the code to a human reader.</p>
+            <div class="callout">
+              <span class="lbl">Syntax rules</span>
+              <p>C++ is case-sensitive: <code>Main</code> and <code>main</code> are different names. Every instruction ends with a semicolon <code>;</code>, and every opening brace <code>{</code> must have a matching closing brace <code>}</code>. A missing semicolon is the most common reason a beginner's program fails to compile.</p>
+            </div>
+          </div>
         </div>
-      </div>
-        </div>
+
         <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">Printing output with <code>cout</code></h3>
-        <p>To display text, use <code>cout</code> (short for "character output") followed by the <strong>insertion operator</strong> <code>&lt;&lt;</code> and the value to print. Text is written inside double quotes; a piece of quoted text is called a <strong>string literal</strong>.</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code>cout &lt;&lt; <span class="str">"Welcome to AUBM"</span>;</code></pre>
-      </div>
-      <div class="prose">
-        <p>Several values can be printed in one statement by chaining <code>&lt;&lt;</code>. They are printed one after another, with nothing added in between, so any spaces you want must be written explicitly:</p>
-      </div>
-      <div class="code-wrap">
-        <pre class="code"><code>cout &lt;&lt; <span class="str">"ICPC"</span> &lt;&lt; <span class="str">" "</span> &lt;&lt; <span class="str">"Cyprus"</span> &lt;&lt; <span class="str">"\n"</span>;
+          <div class="prose">
+            <h3 class="concept-title">Printing output with <code>cout</code></h3>
+            <p>To print text, use <code>cout</code> (short for "character output") followed by the <strong>insertion operator</strong> <code>&lt;&lt;</code> and the value to print. Text is written inside double quotes; a piece of quoted text is called a <strong>string literal</strong>.</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>cout &lt;&lt; <span class="str">"Welcome to AUBM"</span>;</code></pre>
+          </div>
+          <div class="prose">
+            <p>Several values can be printed in one statement by chaining <code>&lt;&lt;</code>. They are printed one after another with nothing added in between, so any spaces you want must be written explicitly:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>cout &lt;&lt; <span class="str">"ICPC"</span> &lt;&lt; <span class="str">" "</span> &lt;&lt; <span class="str">"Cyprus"</span> &lt;&lt; <span class="str">"\n"</span>;
 cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</span>;</code></pre>
-      </div>
-      <div class="code-wrap">
-        <span class="code-cap">Output</span>
-        <pre class="code out"><code>ICPC Cyprus
+          </div>
+          <div class="code-wrap">
+            <span class="code-cap">Output</span>
+            <pre class="code out"><code>ICPC Cyprus
 2026</code></pre>
-      </div>
-      <div class="prose">
-        <p>The sequence <code>"\n"</code> is the <strong>newline character</strong>. Printing it moves the output to the start of the next line. Without it, consecutive <code>cout</code> statements continue on the same line. You may also see <code>endl</code> used for the same purpose; it behaves identically for our needs but is slower, so <code>"\n"</code> is preferred.</p>
-        <div class="callout">
-          <span class="lbl">Exactness</span>
-          <p>A program's output is compared with the expected answer character by character. Spelling, capitalization, spaces and punctuation must all match exactly: <code>Hello World</code>, <code>hello world</code> and <code>Hello, World</code> are three different outputs.</p>
+          </div>
+          <div class="prose">
+            <p>The sequence <code>"\n"</code> is the <strong>newline character</strong>. Printing it moves the output to the start of the next line. Without it, consecutive <code>cout</code> statements continue on the same line. You may also see <code>endl</code> used for the same purpose; it works the same way for our needs but is slower, so <code>"\n"</code> is preferred.</p>
+            <div class="callout">
+              <span class="lbl">Exactness</span>
+              <p>Your output is compared with the expected answer character by character. <code>Hello World</code>, <code>hello world</code> and <code>Hello, World</code> are three different outputs, and only one of them is correct.</p>
+            </div>
+          </div>
         </div>
-      </div>
-        </div>
-        <div class="lesson">
-      <div class="prose">
-        <h3 class="concept-title">How Codeforces judges your program</h3>
-        <p>Problems in this course are hosted on Codeforces. To submit a solution, open the problem, select a C++ compiler (any recent <strong>GNU G++</strong> version, such as GNU G++17 or G++20), paste your code, and submit. Your program is then run automatically against a set of hidden tests, and you receive a <strong>verdict</strong>:</p>
-      </div>
-      <div class="table-wrap">
-        <table class="table">
-          <thead><tr><th>Verdict</th><th>Meaning</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Accepted</strong></td><td>Your program produced the correct output for every test.</td></tr>
-            <tr><td><strong>Wrong answer</strong></td><td>On at least one test the output differed from the expected answer.</td></tr>
-            <tr><td><strong>Compilation error</strong></td><td>The code is not valid C++, for example because of a missing semicolon or a misspelled name.</td></tr>
-            <tr><td><strong>Time limit exceeded</strong></td><td>The program took longer than the problem's time limit.</td></tr>
-            <tr><td><strong>Runtime error</strong></td><td>The program crashed while running.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="prose">
-        <p>Before submitting, compile and run your program on your own computer and check that its output matches the examples in the problem statement.</p>
-      </div>
-        </div>
+
         <div class="solution">
           <h3 class="concept-title">Solution</h3>
           <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
@@ -159,6 +423,6 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=7"></script>
+<script src="practice.js?v=8"></script>
 </body>
 </html>

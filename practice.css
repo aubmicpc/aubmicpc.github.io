@@ -65,6 +65,10 @@ a{color:inherit}
 .problem-list a:hover .go{transform:translateX(3px)}
 .letter{display:inline-grid; place-items:center; flex:none; width:2.1rem; height:2.1rem; background:var(--berytus); color:#fff; font-weight:700; font-size:1rem; border-radius:2px}
 
+.letter.step{background:var(--ink)}
+kbd{font-family:var(--mono); font-size:.82em; padding:.1em .45em; border:1px solid var(--rule-strong); border-bottom-width:2px; border-radius:3px; background:var(--bg); white-space:nowrap}
+.prose a{color:var(--berytus); text-underline-offset:3px}
+
 .problem{max-width:46rem; margin-top:3.5rem; scroll-margin-top:4.5rem}
 .problem:first-of-type{margin-top:0}
 .problem-head{display:flex; align-items:center; gap:.9rem; padding-bottom:.9rem; border-bottom:2px solid var(--ink); margin-bottom:1.75rem}
