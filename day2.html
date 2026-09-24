@@ -46,7 +46,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Data types</h3>
-            <p>Every variable has a type. The ones you'll use most:</p>
+            <p>Every variable in C++ has a type, and the type decides what it can hold. These are the ones you'll use all the time:</p>
           </div>
           <div class="table-wrap">
             <table class="table">
@@ -61,14 +61,14 @@
             </table>
           </div>
           <div class="prose">
-            <p>Pick the type from the constraints: if a value can exceed about 2&times;10<sup>9</sup>, use <code>long long</code>. For real numbers, use <code>double</code> unless told otherwise.</p>
+            <p>So how do you choose? Look at the constraints in the problem. An <code>int</code> only goes up to about 2 billion, so if a number can get bigger than that, use <code>long long</code>. For decimals, just use <code>double</code>. <code>float</code> is less precise and you'll rarely need it.</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Input with <code>cin</code></h3>
-            <p>Read with <code>cin &gt;&gt;</code>, chained like <code>cout</code>. Values are read in order, and spaces and newlines between them are skipped.</p>
+            <p><code>cin</code> is like <code>cout</code> in reverse: it takes values from the input and puts them into your variables, in the order you write them.</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">int</span> n;
@@ -77,7 +77,8 @@
 cin &gt;&gt; n &gt;&gt; c &gt;&gt; x;   <span class="com">// input: 42 z 2.5</span></code></pre>
           </div>
           <div class="prose">
-            <p>By default, <code>cout</code> prints real numbers with 6 <strong>significant</strong> digits:</p>
+            <p>It doesn't matter if the values are on one line or spread over several, <code>cin</code> just skips the spaces and newlines in between.</p>
+            <p>One thing that surprises people: by default, <code>cout</code> prints decimals with 6 significant digits, so longer numbers get cut short:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">double</span> a = <span class="num-l">3.14159265</span>, b = <span class="num-l">14049.30493</span>;
@@ -88,7 +89,7 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
             <pre class="code out"><code>3.14159 14049.3</code></pre>
           </div>
           <div class="prose">
-            <p>That's usually fine, since problems with real-number output accept a small error. For a fixed number of decimals, use <code>cout &lt;&lt; fixed &lt;&lt; setprecision(k)</code> from <code>&lt;iomanip&gt;</code>.</p>
+            <p>This is usually fine, because problems that print decimals accept answers that are off by a tiny amount.</p>
           </div>
         </div>
 
@@ -115,7 +116,7 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Read each value into its matching type and print each one on its own line. <code>b</code> needs <code>long long</code>.</p>
+            <p class="sol-note" style="margin-top:.9rem">Read every value into the right type and print them one per line. The only catch is <code>b</code>, which is too big for an <code>int</code>.</p>
           </div>
         </div>
       </div>
@@ -130,12 +131,12 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Arithmetic</h3>
-            <p>The operators are <code>+ - * / %</code>. Two need attention:</p>
+            <p>You have <code>+ - * / %</code>, and most of them work the way you'd expect. The two to watch out for:</p>
             <ul>
-              <li><code>/</code> on two integers drops the fraction: <code>7 / 2</code> is <code>3</code>. Use <code>7.0 / 2</code> to get <code>3.5</code>.</li>
-              <li><code>%</code> is the remainder: <code>7 % 2</code> is <code>1</code>.</li>
+              <li><code>/</code> between two integers throws away the decimal part, so <code>7 / 2</code> gives <code>3</code>, not <code>3.5</code>. If you want <code>3.5</code>, make one of them a decimal: <code>7.0 / 2</code>.</li>
+              <li><code>%</code> gives you the remainder, so <code>7 % 2</code> is <code>1</code>.</li>
             </ul>
-            <p><code>%</code> and <code>/</code> by 10 are the standard way to work with digits:</p>
+            <p>A trick you'll use a lot: <code>% 10</code> gives you the last digit of a number, and <code>/ 10</code> chops it off.</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">int</span> n = <span class="num-l">4096</span>;
@@ -163,7 +164,7 @@ cout &lt;&lt; n / <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"<
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Add the last digits with <code>% 10</code>. N and M go up to 10<sup>18</sup>, so they need <code>long long</code>.</p>
+            <p class="sol-note" style="margin-top:.9rem">Get the last digit of each number with <code>% 10</code> and add them up. N and M can be as big as 10<sup>18</sup>, so they need to be <code>long long</code>.</p>
           </div>
         </div>
       </div>
@@ -178,7 +179,7 @@ cout &lt;&lt; n / <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"<
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Integer overflow</h3>
-            <p>If a result doesn't fit in its type, it <strong>overflows</strong> and silently becomes a wrong value. There is no error:</p>
+            <p>Every type has a maximum value. If a result goes past it, it <strong>overflows</strong>: the number wraps around and you get garbage, and C++ won't warn you about it.</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">int</span> x = <span class="num-l">100000</span>;
@@ -187,8 +188,8 @@ cout &lt;&lt; x * x &lt;&lt; <span class="str">"\n"</span>;         <span class=
 <span class="ty">long</span> <span class="ty">long</span> y = x * x;           <span class="com">// still wrong: x * x is computed as int</span></code></pre>
           </div>
           <div class="prose">
-            <p>A calculation is done in the type of its operands, not the type you store it in. If a result can exceed about 2&times;10<sup>9</sup>, declare the variables themselves as <code>long long</code>.</p>
-            <p>Operator precedence is the usual one: <code>* / %</code> before <code>+ -</code>, left to right. Use parentheses when in doubt.</p>
+            <p>The second line catches a lot of people. Since <code>x</code> is an <code>int</code>, C++ does the multiplication as an <code>int</code> first and only then stores it in <code>y</code>, and by then it has already overflowed. The fix is to make the variables themselves <code>long long</code>.</p>
+            <p>Also, <code>* / %</code> happen before <code>+ -</code>, same as in math. If you're not sure, add parentheses.</p>
           </div>
         </div>
 
@@ -211,7 +212,7 @@ cout &lt;&lt; x * x &lt;&lt; <span class="str">"\n"</span>;         <span class=
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Each product can reach 10<sup>10</sup>, so everything is <code>long long</code>. Print the label exactly as written, including the spaces.</p>
+            <p class="sol-note" style="margin-top:.9rem">A &times; B can be as big as 10<sup>10</sup>, which doesn't fit in an <code>int</code>, so use <code>long long</code> for everything. And print <code>Difference = </code> exactly as written, spaces included.</p>
           </div>
         </div>
       </div>
