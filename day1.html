@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=5">
+<link rel="stylesheet" href="practice.css?v=7">
 </head>
 <body>
 
@@ -25,27 +25,25 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="crumbs"><a href="index.html#top">ICPC at AUBM</a> / <a href="practice.html">Practice Sheet</a> / Day 1</p>
-      <h1>Day 1: Your first C++ program</h1>
+      <h1>Day 1</h1>
       <p>This day covers the minimum needed to write, run and submit a working C++ program: how a program is structured, how to print text, and how Codeforces judges a submission.</p>
     </div>
   </section>
 
   <div class="wrap content">
-    <nav class="toc" aria-label="Contents">
-      <p>Contents</p>
-      <ol>
-        <li><a href="#l1">The structure of a C++ program</a></li>
-        <li><a href="#l2">Printing output with <code>cout</code></a></li>
-        <li><a href="#l3">How Codeforces judges your program</a></li>
-      </ol>
-    </nav>
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Hello AUBM</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
 
-    <!-- Lesson 1 -->
-    <section class="lesson" id="l1">
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Hello AUBM</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 1</span>
-        <h2>The structure of a C++ program</h2>
+        <h3 class="concept-title">The structure of a C++ program</h3>
         <p>A C++ program is a text file containing instructions that a <strong>compiler</strong> translates into a program the computer can run. Every program you write in this course starts from the same skeleton:</p>
       </div>
       <div class="code-wrap">
@@ -71,13 +69,10 @@
           <p>C++ is case-sensitive: <code>Main</code> and <code>main</code> are different names. Every instruction ends with a semicolon <code>;</code>, and every opening brace <code>{</code> must have a matching closing brace <code>}</code>. A missing semicolon is the most common reason a beginner's program fails to compile.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Lesson 2 -->
-    <section class="lesson" id="l2">
+        </div>
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 2</span>
-        <h2>Printing output with <code>cout</code></h2>
+        <h3 class="concept-title">Printing output with <code>cout</code></h3>
         <p>To display text, use <code>cout</code> (short for "character output") followed by the <strong>insertion operator</strong> <code>&lt;&lt;</code> and the value to print. Text is written inside double quotes; a piece of quoted text is called a <strong>string literal</strong>.</p>
       </div>
       <div class="code-wrap">
@@ -102,13 +97,10 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
           <p>A program's output is compared with the expected answer character by character. Spelling, capitalization, spaces and punctuation must all match exactly: <code>Hello World</code>, <code>hello world</code> and <code>Hello, World</code> are three different outputs.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Lesson 3 -->
-    <section class="lesson" id="l3">
+        </div>
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 3</span>
-        <h2>How Codeforces judges your program</h2>
+        <h3 class="concept-title">How Codeforces judges your program</h3>
         <p>Problems in this course are hosted on Codeforces. To submit a solution, open the problem, select a C++ compiler (any recent <strong>GNU G++</strong> version, such as GNU G++17 or G++20), paste your code, and submit. Your program is then run automatically against a set of hidden tests, and you receive a <strong>verdict</strong>:</p>
       </div>
       <div class="table-wrap">
@@ -126,14 +118,10 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
       <div class="prose">
         <p>Before submitting, compile and run your program on your own computer and check that its output matches the examples in the problem statement.</p>
       </div>
-
-      <div class="apply">
-        <div class="apply-head">
-          <span class="lbl">Practice problem</span>
-          <h3>A. Hello AUBM</h3>
-          <p>Solve this problem on Codeforces using the three lessons above, then review the reference solution.</p>
         </div>
-        <div class="apply-body">
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
           <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
             <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
           </button>
@@ -171,6 +159,6 @@ cout &lt;&lt; <span class="str">"2026"</span> &lt;&lt; <span class="str">"\n"</s
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=5"></script>
+<script src="practice.js?v=7"></script>
 </body>
 </html>

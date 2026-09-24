@@ -34,16 +34,13 @@ a{color:inherit}
 .hero h1{font-family:var(--serif); font-weight:600; font-size:clamp(1.9rem,3.6vw,2.6rem); line-height:1.12; letter-spacing:-.01em; margin:0 0 .6rem}
 .hero p{margin:0; max-width:44rem; color:rgba(255,255,255,.9)}
 .hero code{background:rgba(0,0,0,.25); color:#fff; padding:.1em .35em; border-radius:3px; font-family:var(--mono); font-size:.9em}
-.crumbs{margin:0 0 1rem !important; font-size:.9rem; color:rgba(255,255,255,.75) !important}
-.crumbs a{color:#fff; text-decoration:none}
-.crumbs a:hover{text-decoration:underline; text-underline-offset:3px}
 
 .content{padding-block:clamp(2.25rem,5vw,3.25rem) 4rem}
 
 /* prose */
 .prose{max-width:46rem}
 .prose h2{font-family:var(--serif); font-weight:600; font-size:1.55rem; line-height:1.2; margin:0 0 .6rem; color:var(--heading)}
-.prose h3{font-family:var(--sans); font-size:1.02rem; font-weight:700; margin:1.6rem 0 .3rem}
+.prose h3, .prose h4{font-family:var(--sans); font-size:1.02rem; font-weight:700; margin:1.6rem 0 .3rem}
 .prose p, .prose li{margin:.7rem 0}
 .prose ul, .prose ol{padding-left:1.3rem; margin:.7rem 0}
 .prose code, .table code{background:var(--bg-soft); padding:.1em .35em; border-radius:3px; font-family:var(--mono); font-size:.9em}
@@ -59,15 +56,24 @@ a{color:inherit}
 .day-card:hover .arrow{transform:translateX(3px)}
 
 /* day page */
-.toc{margin:0 0 2.75rem; padding:1.1rem 1.35rem; background:var(--bg-soft); border-left:3px solid var(--berytus); max-width:46rem}
-.toc p{margin:0 0 .35rem; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; font-weight:700; color:var(--accent-text)}
-.toc ol{margin:0; padding-left:1.3rem}
-.toc a{text-decoration:none}
-.toc a:hover{color:var(--berytus); text-decoration:underline; text-underline-offset:3px}
+.problem-list{list-style:none; margin:0 0 3rem; padding:0; max-width:46rem; border-top:2px solid var(--ink)}
+.problem-list li{border-bottom:1px solid var(--rule)}
+.problem-list a{display:flex; align-items:center; gap:1rem; padding:.8rem .25rem; text-decoration:none; color:var(--ink); transition:background .15s}
+.problem-list a:hover{background:var(--bg-soft)}
+.problem-list .pname{flex:1; font-family:var(--serif); font-weight:600; font-size:1.15rem}
+.problem-list .go{color:var(--berytus); transition:transform .15s}
+.problem-list a:hover .go{transform:translateX(3px)}
+.letter{display:inline-grid; place-items:center; flex:none; width:2.1rem; height:2.1rem; background:var(--berytus); color:#fff; font-weight:700; font-size:1rem; border-radius:2px}
 
-.lesson{max-width:46rem; padding-top:2.25rem; margin-top:2.25rem; border-top:1px solid var(--rule); scroll-margin-top:5rem}
-.lesson:first-of-type{border-top:0; margin-top:0; padding-top:0}
-.lesson .num{display:block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; font-weight:700; color:var(--accent-text); margin-bottom:.25rem}
+.problem{max-width:46rem; margin-top:3.5rem; scroll-margin-top:4.5rem}
+.problem:first-of-type{margin-top:0}
+.problem-head{display:flex; align-items:center; gap:.9rem; padding-bottom:.9rem; border-bottom:2px solid var(--ink); margin-bottom:1.75rem}
+.problem-head .letter{width:2.6rem; height:2.6rem; font-size:1.2rem}
+.problem-head h2{font-family:var(--serif); font-weight:600; font-size:clamp(1.6rem,3vw,2rem); line-height:1.15; margin:0; color:var(--ink)}
+.problem .concept-title{font-family:var(--serif); font-weight:600; font-size:1.45rem; line-height:1.2; margin:0 0 .6rem; color:var(--heading)}
+.lesson + .lesson, .solution{margin-top:2.25rem; padding-top:2rem; border-top:1px solid var(--rule)}
+.sol-note{margin:0 0 1rem; color:var(--muted); font-size:.95rem}
+
 
 .code-wrap{position:relative; margin:1rem 0; max-width:46rem}
 pre.code{background:var(--code-bg); color:var(--code-ink); padding:1.1rem 1.25rem; border-radius:4px; overflow-x:auto; font-family:var(--mono); font-size:.88rem; line-height:1.6; margin:0}
@@ -78,7 +84,7 @@ pre.code code{font-family:inherit; background:none; padding:0; color:inherit}
 .com{color:#9AA0A8; font-style:italic}
 .num-l{color:#F6A96C}
 .fn{color:#D6A8F0}
-.out{background:var(--bg-soft); color:var(--ink); border:1px solid var(--rule)}
+pre.code.out{background:var(--bg-soft); color:var(--ink); border:1px solid var(--rule)}
 .code-cap{display:block; font-size:.8rem; color:var(--muted); margin:0 0 .35rem}
 
 .copy-btn{position:absolute; top:.6rem; right:.6rem; background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:3px; padding:.3rem .6rem; font-size:.78rem; font-family:var(--sans); cursor:pointer}
@@ -94,19 +100,11 @@ pre.code code{font-family:inherit; background:none; padding:0; color:inherit}
 .callout p + p{margin-top:.5rem}
 .callout .lbl{display:block; font-weight:700; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; color:var(--accent-text); margin-bottom:.3rem}
 
-/* applying the lesson */
-.apply{margin-top:1.75rem; border:1px solid var(--rule); border-radius:2px; max-width:46rem}
-.apply-head{padding:1rem 1.2rem; border-bottom:1px solid var(--rule)}
-.apply-head .lbl{display:block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; font-weight:700; color:var(--accent-text)}
-.apply-head h3{font-family:var(--serif); font-weight:600; font-size:1.2rem; margin:.15rem 0 .25rem}
-.apply-head p{margin:0; font-size:.95rem; color:var(--muted)}
-.apply-body{padding:1rem 1.2rem 1.2rem}
 .reveal-btn{display:flex; width:100%; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem 1.1rem; background:var(--berytus); color:#fff; border:0; border-radius:2px; font:inherit; font-weight:600; font-size:.95rem; cursor:pointer; transition:background .2s}
 .reveal-btn:hover{background:var(--berytus-dark)}
 .reveal-btn .chev{transition:transform .15s}
 .reveal-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
 .solution-body{margin-top:1rem}
-.solution-body .code-wrap{margin-top:0}
 .walkthrough{margin:1rem 0 0}
 .walkthrough dt{font-family:var(--mono); font-size:.85rem; background:var(--bg-soft); display:inline-block; padding:.15rem .5rem; border-radius:3px; margin-top:.9rem}
 .walkthrough dt:first-child{margin-top:0}

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=5">
+<link rel="stylesheet" href="practice.css?v=7">
 </head>
 <body>
 
@@ -25,28 +25,27 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="crumbs"><a href="index.html#top">ICPC at AUBM</a> / <a href="practice.html">Practice Sheet</a> / Day 2</p>
-      <h1>Day 2: Data types and arithmetic</h1>
+      <h1>Day 2</h1>
       <p>This day introduces variables, the basic C++ data types, reading input with <code>cin</code>, and arithmetic. It closes with integer overflow, one of the most common causes of wrong answers in competitive programming.</p>
     </div>
   </section>
 
   <div class="wrap content">
-    <nav class="toc" aria-label="Contents">
-      <p>Contents</p>
-      <ol>
-        <li><a href="#l1">Variables and data types</a></li>
-        <li><a href="#l2">Reading input with <code>cin</code></a></li>
-        <li><a href="#l3">Arithmetic operators</a></li>
-        <li><a href="#l4">Integer overflow</a></li>
-      </ol>
-    </nav>
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Basic Data Types</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Digits Summation</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">Difference</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
 
-    <!-- Lesson 1 -->
-    <section class="lesson" id="l1">
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Basic Data Types</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 1</span>
-        <h2>Variables and data types</h2>
+        <h3 class="concept-title">Variables and data types</h3>
         <p>A <strong>variable</strong> is a named location in memory that stores a value. In C++, every variable has a <strong>data type</strong>, which determines what kind of value it can hold and how much memory it uses. A variable is created by writing its type followed by its name:</p>
       </div>
       <div class="code-wrap">
@@ -78,13 +77,10 @@ age = <span class="num-l">20</span>;               <span class="com">// a variab
           <p>C++ is the language of choice in competitive programming, not simply the language this course happens to use. It is among the fastest languages available, gives precise control over data types and memory, and its standard library provides efficient implementations of the data structures and algorithms you will rely on in later days. The large majority of top ICPC teams compete in C++.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Lesson 2 -->
-    <section class="lesson" id="l2">
+        </div>
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 2</span>
-        <h2>Reading input with <code>cin</code></h2>
+        <h3 class="concept-title">Reading input with <code>cin</code></h3>
         <p>Most problems provide input that your program must read. Input is read with <code>cin</code> ("character input") and the <strong>extraction operator</strong> <code>&gt;&gt;</code>, which takes the next value from the input and stores it in a variable. Like <code>cout</code>, it can be chained:</p>
       </div>
       <div class="code-wrap">
@@ -100,7 +96,7 @@ cout &lt;&lt; x &lt;&lt; <span class="str">"\n"</span>;</code></pre>
       <div class="prose">
         <p>With the input <code>42 z 2.5</code>, this program prints <code>42</code>, <code>z</code> and <code>2.5</code> on three separate lines. Note that printing a variable does not use quotes: <code>cout &lt;&lt; n</code> prints the value stored in <code>n</code>, while <code>cout &lt;&lt; "n"</code> prints the letter n.</p>
         <p><code>cin</code> skips any spaces and line breaks before each value, so it does not matter whether the values are on one line or several. When reading into a <code>char</code>, it skips whitespace and then reads exactly one character.</p>
-        <h3>How real numbers are printed</h3>
+        <h4>How real numbers are printed</h4>
         <p>By default, <code>cout</code> prints real numbers with at most <strong>6 significant digits</strong> in total, not 6 digits after the decimal point. Trailing zeros are omitted.</p>
       </div>
       <div class="code-wrap">
@@ -114,14 +110,10 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
       <div class="prose">
         <p>Problems that print real numbers usually accept a small error, stated in the output section (for example, an absolute or relative error of at most 10<sup>&minus;5</sup>), so the default format is often sufficient. When more digits are needed, <code>cout &lt;&lt; fixed &lt;&lt; setprecision(k)</code> prints exactly <code>k</code> digits after the decimal point.</p>
       </div>
-
-      <div class="apply">
-        <div class="apply-head">
-          <span class="lbl">Practice problem</span>
-          <h3>A. Basic Data Types</h3>
-          <p>Solve this problem on Codeforces using lessons 1 and 2, then review the reference solution.</p>
         </div>
-        <div class="apply-body">
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
           <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
             <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
           </button>
@@ -160,11 +152,15 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
       </div>
     </section>
 
-    <!-- Lesson 3 -->
-    <section class="lesson" id="l3">
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Digits Summation</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 3</span>
-        <h2>Arithmetic operators</h2>
+        <h3 class="concept-title">Arithmetic operators</h3>
         <p>C++ provides the usual arithmetic operators. The result can be printed directly or stored in a variable.</p>
       </div>
       <div class="table-wrap">
@@ -180,9 +176,9 @@ cout &lt;&lt; a &lt;&lt; <span class="str">" "</span> &lt;&lt; b &lt;&lt; <span 
         </table>
       </div>
       <div class="prose">
-        <h3>Integer division</h3>
+        <h4>Integer division</h4>
         <p>When both operands are integers, <code>/</code> performs <strong>integer division</strong>: the fractional part is discarded, so <code>7 / 2</code> is <code>3</code>, not <code>3.5</code>. To obtain a real result, at least one operand must be a real number, as in <code>7.0 / 2</code>, which gives <code>3.5</code>.</p>
-        <h3>The modulo operator</h3>
+        <h4>The modulo operator</h4>
         <p>The <code>%</code> operator gives the remainder after integer division. Since 7 = 2 &times; 3 + 1, <code>7 % 2</code> is <code>1</code>. Modulo is used constantly in competitive programming. Two common uses:</p>
         <ul>
           <li><strong>Divisibility:</strong> <code>a % b == 0</code> exactly when <code>a</code> is divisible by <code>b</code>. For example, a number is even when <code>n % 2 == 0</code>.</li>
@@ -195,14 +191,10 @@ cout &lt;&lt; n % <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"<
 cout &lt;&lt; n / <span class="num-l">10</span> &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 409 (last digit removed)</span>
 cout &lt;&lt; n % <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</span>;    <span class="com">// 0   (n is even)</span></code></pre>
       </div>
-
-      <div class="apply">
-        <div class="apply-head">
-          <span class="lbl">Practice problem</span>
-          <h3>B. Digits Summation</h3>
-          <p>Solve this problem on Codeforces using lessons 1 to 3, then review the reference solution.</p>
         </div>
-        <div class="apply-body">
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
           <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
             <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
           </button>
@@ -230,11 +222,15 @@ cout &lt;&lt; n % <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</
       </div>
     </section>
 
-    <!-- Lesson 4 -->
-    <section class="lesson" id="l4">
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>Difference</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
       <div class="prose">
-        <span class="num">Lesson 4</span>
-        <h2>Integer overflow</h2>
+        <h3 class="concept-title">Integer overflow</h3>
         <p>Each integer type can only represent values within its range. When the result of a calculation falls outside that range, it <strong>overflows</strong>: the program does not stop or report an error, it silently produces an incorrect value.</p>
       </div>
       <div class="code-wrap">
@@ -254,7 +250,7 @@ cout &lt;&lt; x * x &lt;&lt; <span class="str">"\n"</span>;   <span class="com">
       </div>
       <div class="prose">
         <p>The reliable approach is to declare the variables themselves as <code>long long</code> whenever a calculation involving them could exceed about 2&times;10<sup>9</sup>. To decide, estimate the largest possible result using the problem's constraints before writing any code.</p>
-        <h3>Order of operations</h3>
+        <h4>Order of operations</h4>
         <p>C++ follows the usual mathematical order: <code>*</code>, <code>/</code> and <code>%</code> are evaluated before <code>+</code> and <code>-</code>, and operators of equal priority are evaluated from left to right. Parentheses can always be used to make the order explicit.</p>
       </div>
       <div class="code-wrap">
@@ -262,21 +258,17 @@ cout &lt;&lt; x * x &lt;&lt; <span class="str">"\n"</span>;   <span class="com">
 cout &lt;&lt; (<span class="num-l">2</span> + <span class="num-l">3</span>) * <span class="num-l">4</span> &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 20</span></code></pre>
       </div>
       <div class="prose">
-        <h3>Printing text and values together</h3>
+        <h4>Printing text and values together</h4>
         <p>String literals and variables can be combined in a single <code>cout</code> statement. Remember that spaces are only printed where you write them:</p>
       </div>
       <div class="code-wrap">
         <pre class="code"><code><span class="ty">int</span> total = <span class="num-l">42</span>;
 cout &lt;&lt; <span class="str">"Total = "</span> &lt;&lt; total &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// Total = 42</span></code></pre>
       </div>
-
-      <div class="apply">
-        <div class="apply-head">
-          <span class="lbl">Practice problem</span>
-          <h3>C. Difference</h3>
-          <p>Solve this problem on Codeforces using lessons 1 to 4, then review the reference solution.</p>
         </div>
-        <div class="apply-body">
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
           <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
             <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
           </button>
@@ -319,6 +311,6 @@ cout &lt;&lt; <span class="str">"Total = "</span> &lt;&lt; total &lt;&lt; <span 
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=5"></script>
+<script src="practice.js?v=7"></script>
 </body>
 </html>
