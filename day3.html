@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 3 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 3: formulas, conditions, digits, unit conversion, and min/max in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=11">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 3</h1>
+      <p>Formulas, conditions, working with digits, and min/max.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Summation from 1 to N</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Mathematical Expression</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">The Middel Digit</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#D"><span class="letter">D</span><span class="pname">Age in Days</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#E"><span class="letter">E</span><span class="pname">Max and Min</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Summation from 1 to N</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The sum formula</h3>
+            <p>The sum of all numbers from 1 to N has a closed formula:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>sum = n * (n + <span class="num-l">1</span>) / <span class="num-l">2</span>;</code></pre>
+          </div>
+          <div class="prose">
+            <p>Adding the numbers one by one would take up to 10<sup>9</sup> additions, which is far too slow for a 0.25 second time limit. The formula gives the answer in a single step.</p>
+            <p><code>n * (n + 1)</code> is always even, so dividing by 2 afterwards is exact.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Watch the size of the result</h3>
+            <p>With N up to 10<sup>9</sup>, <code>n * (n + 1)</code> is about 10<sup>18</sup>. That fits in a <code>long long</code> but not in an <code>int</code>, so <code>n</code> itself should be a <code>long long</code> (see overflow on Day 2).</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">long</span> <span class="ty">long</span> n;
+    cin &gt;&gt; n;
+    cout &lt;&lt; n * (n + <span class="num-l">1</span>) / <span class="num-l">2</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Apply the formula directly. <code>n</code> is a <code>long long</code> so the multiplication doesn't overflow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Mathematical Expression</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Conditions with <code>if</code></h3>
+            <p><code>if</code> runs a block of code only when its condition is true. <code>else if</code> checks another condition, and <code>else</code> handles everything left over:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">if</span> (x &gt; <span class="num-l">0</span>) {
+    cout &lt;&lt; <span class="str">"positive"</span> &lt;&lt; <span class="str">"\n"</span>;
+} <span class="kw">else</span> <span class="kw">if</span> (x &lt; <span class="num-l">0</span>) {
+    cout &lt;&lt; <span class="str">"negative"</span> &lt;&lt; <span class="str">"\n"</span>;
+} <span class="kw">else</span> {
+    cout &lt;&lt; <span class="str">"zero"</span> &lt;&lt; <span class="str">"\n"</span>;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>The comparison operators are <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code> and <code>&gt;=</code>. Note that equality is <code>==</code>; a single <code>=</code> is assignment.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Reading and comparing characters</h3>
+            <p>Symbols like <code>+</code> and <code>=</code> in the input can be read into a <code>char</code>, just like numbers are read into an <code>int</code>. Since <code>cin</code> skips spaces, the input <code>5 + 10 = 15</code> can be read with:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> a, b, c;
+<span class="ty">char</span> s, q;
+cin &gt;&gt; a &gt;&gt; s &gt;&gt; b &gt;&gt; q &gt;&gt; c;</code></pre>
+          </div>
+          <div class="prose">
+            <p>To check which symbol you read, compare it with a character in single quotes, for example <code>s == '+'</code>. Double quotes (<code>"+"</code>) make a string, which is a different type.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> a, b, c;
+    <span class="ty">char</span> s, q;
+    cin &gt;&gt; a &gt;&gt; s &gt;&gt; b &gt;&gt; q &gt;&gt; c;
+
+    <span class="ty">int</span> result;
+    <span class="kw">if</span> (s == <span class="str">'+'</span>) result = a + b;
+    <span class="kw">else</span> <span class="kw">if</span> (s == <span class="str">'-'</span>) result = a - b;
+    <span class="kw">else</span> result = a * b;
+
+    <span class="kw">if</span> (result == c) cout &lt;&lt; <span class="str">"Yes"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">else</span> cout &lt;&lt; result &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Compute the correct result based on the sign, then compare it with <code>c</code>. The <code>=</code> sign is read into <code>q</code> and not used.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>The Middel Digit</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Digits and place value</h3>
+            <p>Each digit of a number is worth a different amount depending on its position. In a three-digit number, the first digit counts hundreds, the second counts tens and the third counts ones:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="num-l">365</span> = <span class="num-l">3</span> * <span class="num-l">100</span> + <span class="num-l">6</span> * <span class="num-l">10</span> + <span class="num-l">5</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>So changing the tens digit by some amount changes the whole number by ten times that amount. Subtracting 2 from the tens digit of 365 gives 345, which is the same as <code>365 - 20</code>.</p>
+            <p>There's no need to split the number into digits here. The statement guarantees the second digit is at least 2, so it never goes negative.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-c" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> x, y;
+    cin &gt;&gt; x &gt;&gt; y;
+    cout &lt;&lt; x - <span class="num-l">20</span> - y &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Subtracting 2 from the tens digit of X is the same as subtracting 20 from X. The answer can be negative, which is fine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="D">
+      <header class="problem-head">
+        <span class="letter">D</span>
+        <h2>Age in Days</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Converting units with <code>/</code> and <code>%</code></h3>
+            <p>To split a quantity into bigger units, divide to get how many whole units fit, and take the remainder to get what's left. For example, converting seconds into minutes and seconds:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> total = <span class="num-l">150</span>;
+<span class="ty">int</span> minutes = total / <span class="num-l">60</span>;   <span class="com">// 2</span>
+<span class="ty">int</span> seconds = total % <span class="num-l">60</span>;   <span class="com">// 30</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>With more than two units, repeat the same idea on the remainder. First take out the largest unit, then split what's left into the next one, and so on.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-d" aria-controls="sol-d">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-d" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    <span class="ty">int</span> years = n / <span class="num-l">365</span>;
+    n %= <span class="num-l">365</span>;
+    <span class="ty">int</span> months = n / <span class="num-l">30</span>;
+    <span class="ty">int</span> days = n % <span class="num-l">30</span>;
+    cout &lt;&lt; years &lt;&lt; <span class="str">" years\n"</span>;
+    cout &lt;&lt; months &lt;&lt; <span class="str">" months\n"</span>;
+    cout &lt;&lt; days &lt;&lt; <span class="str">" days\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Take out the years first, then split the remaining days into months and days. <code>n %= 365</code> is short for <code>n = n % 365</code>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="E">
+      <header class="problem-head">
+        <span class="letter">E</span>
+        <h2>Max and Min</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title"><code>min</code> and <code>max</code></h3>
+            <p>The <code>&lt;algorithm&gt;</code> header provides <code>min(a, b)</code> and <code>max(a, b)</code>, which return the smaller and the larger of two values:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>cout &lt;&lt; min(<span class="num-l">4</span>, <span class="num-l">9</span>) &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 4</span>
+cout &lt;&lt; max(<span class="num-l">4</span>, <span class="num-l">9</span>) &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 9</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>They only take two values at a time. For three values, nest them: <code>min(a, min(b, c))</code>.</p>
+            <p>Remember to add <code>#include &lt;algorithm&gt;</code> at the top of your program, since <code>&lt;iostream&gt;</code> alone doesn't provide these.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-e" aria-controls="sol-e">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-e" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
+<span class="kw">#include</span> &lt;algorithm&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> a, b, c;
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    cout &lt;&lt; min(a, min(b, c)) &lt;&lt; <span class="str">" "</span> &lt;&lt; max(a, max(b, c)) &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Nest <code>min</code> and <code>max</code> to handle three values, and print them separated by a single space.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day2.html"><span aria-hidden="true">&larr;</span> Day 2</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=12"></script>
+</body>
+</html>
