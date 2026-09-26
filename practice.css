@@ -78,6 +78,17 @@ a{color:inherit}
 .sol-note{margin:0 0 1rem; color:var(--muted); font-size:.95rem}
 
 
+.formula{max-width:46rem; margin:1.25rem 0; padding:1rem 1.25rem; background:var(--bg-soft); border-left:3px solid var(--berytus); font-family:var(--serif); font-size:1.35rem; display:flex; align-items:center; flex-wrap:wrap; gap:.4rem}
+.frac{display:inline-flex; flex-direction:column; align-items:center; line-height:1.25; vertical-align:middle}
+.frac > span:first-child{border-bottom:1.5px solid currentColor; padding:0 .3rem .1rem}
+.frac > span:last-child{padding-top:.1rem}
+.proof{max-width:46rem; margin:1.25rem 0; padding:1.25rem; border:1px solid var(--rule); text-align:center}
+.proof-svg{width:100%; max-width:320px; height:auto}
+.pf-a{fill:var(--berytus)}
+.pf-b{fill:var(--gold)}
+.pf-lbl{font-family:var(--sans); font-size:14px; fill:var(--muted)}
+.proof figcaption{margin-top:.75rem; font-size:.93rem; color:var(--muted); text-align:left}
+
 .code-wrap{position:relative; margin:1rem 0; max-width:46rem}
 pre.code{background:var(--code-bg); color:var(--code-ink); padding:1.1rem 1.25rem; border-radius:4px; overflow-x:auto; font-family:var(--mono); font-size:.88rem; line-height:1.6; margin:0}
 pre.code code{font-family:inherit; background:none; padding:0; color:inherit}

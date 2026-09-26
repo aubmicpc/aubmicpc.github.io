@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="practice.css?v=11">
+<link rel="stylesheet" href="practice.css?v=13">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -41,7 +41,7 @@
     <ol class="problem-list">
       <li><a href="#A"><span class="letter">A</span><span class="pname">Summation from 1 to N</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
       <li><a href="#B"><span class="letter">B</span><span class="pname">Mathematical Expression</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
-      <li><a href="#C"><span class="letter">C</span><span class="pname">The Middel Digit</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">The Middle Digit</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
       <li><a href="#D"><span class="letter">D</span><span class="pname">Age in Days</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
       <li><a href="#E"><span class="letter">E</span><span class="pname">Max and Min</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
     </ol>
@@ -54,22 +54,31 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">The sum formula</h3>
-            <p>The sum of all numbers from 1 to N has a closed formula:</p>
-          </div>
-          <div class="code-wrap">
-            <pre class="code"><code>sum = n * (n + <span class="num-l">1</span>) / <span class="num-l">2</span>;</code></pre>
-          </div>
-          <div class="prose">
-            <p>Adding the numbers one by one would take up to 10<sup>9</sup> additions, which is far too slow for a 0.25 second time limit. The formula gives the answer in a single step.</p>
-            <p><code>n * (n + 1)</code> is always even, so dividing by 2 afterwards is exact.</p>
+            <h3 class="concept-title">The time limit</h3>
+            <p>This is the first problem where the time limit actually matters. The basic solution is to loop over every number from 1 to n and add them up, but n can be as large as 10<sup>9</sup>, so that means up to 10<sup>9</sup> operations.</p>
+            <p>As a rule of thumb, a solution that does fewer than about 10<sup>7</sup> operations is fast enough to get Accepted, and one that does more than 10<sup>8</sup> will never pass. 10<sup>9</sup> is far over that, so we need a faster way to calculate the sum.</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Watch the size of the result</h3>
-            <p>With N up to 10<sup>9</sup>, <code>n * (n + 1)</code> is about 10<sup>18</sup>. That fits in a <code>long long</code> but not in an <code>int</code>, so <code>n</code> itself should be a <code>long long</code> (see overflow on Day 2).</p>
+            <h3 class="concept-title">The sum formula</h3>
+            <p>Luckily, one of the most useful formulas in competitive programming does exactly this:</p>
+          </div>
+          <div class="formula">1 + 2 + 3 + &hellip; + n = <span class="frac"><span>n (n + 1)</span><span>2</span></span></div>
+          <div class="prose">
+            <p>Here's a visual proof. Stack the numbers 1 to n as a staircase of squares (red). Take a second copy of the same staircase (gold), flip it, and fit it against the first one:</p>
+          </div>
+          <figure class="proof">
+            <svg class="proof-svg" viewBox="0 0 292 228" role="img" aria-label="A 4 by 5 grid split into two staircases: rows of 1, 2, 3, 4 squares in red and rows of 4, 3, 2, 1 squares in gold">
+              <rect class="pf-a" x="56" y="12" width="40" height="40" rx="3"/><rect class="pf-b" x="100" y="12" width="40" height="40" rx="3"/><rect class="pf-b" x="144" y="12" width="40" height="40" rx="3"/><rect class="pf-b" x="188" y="12" width="40" height="40" rx="3"/><rect class="pf-b" x="232" y="12" width="40" height="40" rx="3"/><rect class="pf-a" x="56" y="56" width="40" height="40" rx="3"/><rect class="pf-a" x="100" y="56" width="40" height="40" rx="3"/><rect class="pf-b" x="144" y="56" width="40" height="40" rx="3"/><rect class="pf-b" x="188" y="56" width="40" height="40" rx="3"/><rect class="pf-b" x="232" y="56" width="40" height="40" rx="3"/><rect class="pf-a" x="56" y="100" width="40" height="40" rx="3"/><rect class="pf-a" x="100" y="100" width="40" height="40" rx="3"/><rect class="pf-a" x="144" y="100" width="40" height="40" rx="3"/><rect class="pf-b" x="188" y="100" width="40" height="40" rx="3"/><rect class="pf-b" x="232" y="100" width="40" height="40" rx="3"/><rect class="pf-a" x="56" y="144" width="40" height="40" rx="3"/><rect class="pf-a" x="100" y="144" width="40" height="40" rx="3"/><rect class="pf-a" x="144" y="144" width="40" height="40" rx="3"/><rect class="pf-a" x="188" y="144" width="40" height="40" rx="3"/><rect class="pf-b" x="232" y="144" width="40" height="40" rx="3"/>
+              <text class="pf-lbl" x="42" y="98.0" text-anchor="end" dominant-baseline="middle">n = 4</text>
+              <text class="pf-lbl" x="164.0" y="212" text-anchor="middle">n + 1 = 5</text>
+            </svg>
+            <figcaption>The two staircases fill an n &times; (n + 1) rectangle exactly. So two copies of the sum equal n (n + 1), and one copy equals n (n + 1) / 2. Here, 1 + 2 + 3 + 4 = (4 &times; 5) / 2 = 10.</figcaption>
+          </figure>
+          <div class="prose">
+            <p>With the formula, the answer takes a single calculation no matter how big n is.</p>
           </div>
         </div>
 
@@ -92,7 +101,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Apply the formula directly. <code>n</code> is a <code>long long</code> so the multiplication doesn't overflow.</p>
+            <p class="sol-note" style="margin-top:.9rem">Apply the formula directly. <code>n (n + 1)</code> can reach about 10<sup>18</sup>, so <code>n</code> needs to be a <code>long long</code>.</p>
           </div>
         </div>
       </div>
@@ -104,25 +113,6 @@
         <h2>Mathematical Expression</h2>
       </header>
       <div class="problem-body">
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Conditions with <code>if</code></h3>
-            <p><code>if</code> runs a block of code only when its condition is true. <code>else if</code> checks another condition, and <code>else</code> handles everything left over:</p>
-          </div>
-          <div class="code-wrap">
-            <pre class="code"><code><span class="kw">if</span> (x &gt; <span class="num-l">0</span>) {
-    cout &lt;&lt; <span class="str">"positive"</span> &lt;&lt; <span class="str">"\n"</span>;
-} <span class="kw">else</span> <span class="kw">if</span> (x &lt; <span class="num-l">0</span>) {
-    cout &lt;&lt; <span class="str">"negative"</span> &lt;&lt; <span class="str">"\n"</span>;
-} <span class="kw">else</span> {
-    cout &lt;&lt; <span class="str">"zero"</span> &lt;&lt; <span class="str">"\n"</span>;
-}</code></pre>
-          </div>
-          <div class="prose">
-            <p>The comparison operators are <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code> and <code>&gt;=</code>. Note that equality is <code>==</code>; a single <code>=</code> is assignment.</p>
-          </div>
-        </div>
-
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Reading and comparing characters</h3>
@@ -174,20 +164,14 @@ cin &gt;&gt; a &gt;&gt; s &gt;&gt; b &gt;&gt; q &gt;&gt; c;</code></pre>
     <section class="problem" id="C">
       <header class="problem-head">
         <span class="letter">C</span>
-        <h2>The Middel Digit</h2>
+        <h2>The Middle Digit</h2>
       </header>
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Digits and place value</h3>
-            <p>Each digit of a number is worth a different amount depending on its position. In a three-digit number, the first digit counts hundreds, the second counts tens and the third counts ones:</p>
-          </div>
-          <div class="code-wrap">
-            <pre class="code"><code><span class="num-l">365</span> = <span class="num-l">3</span> * <span class="num-l">100</span> + <span class="num-l">6</span> * <span class="num-l">10</span> + <span class="num-l">5</span></code></pre>
-          </div>
-          <div class="prose">
-            <p>So changing the tens digit by some amount changes the whole number by ten times that amount. Subtracting 2 from the tens digit of 365 gives 345, which is the same as <code>365 - 20</code>.</p>
-            <p>There's no need to split the number into digits here. The statement guarantees the second digit is at least 2, so it never goes negative.</p>
+            <h3 class="concept-title">Changing a digit</h3>
+            <p>The second digit of a three-digit number is the tens digit, so reducing it by 2 is the same as subtracting 20 from the whole number. For example, 365 becomes 345, which is 365 &minus; 20.</p>
+            <p>The statement guarantees the second digit is at least 2, so it never goes negative after subtracting.</p>
           </div>
         </div>
 
@@ -277,15 +261,28 @@ cin &gt;&gt; a &gt;&gt; s &gt;&gt; b &gt;&gt; q &gt;&gt; c;</code></pre>
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title"><code>min</code> and <code>max</code></h3>
-            <p>The <code>&lt;algorithm&gt;</code> header provides <code>min(a, b)</code> and <code>max(a, b)</code>, which return the smaller and the larger of two values:</p>
+            <p><code>min</code> and <code>max</code> return the smallest and largest of the values you give them. They take either two numbers, or a whole list of numbers written inside curly braces:</p>
           </div>
           <div class="code-wrap">
-            <pre class="code"><code>cout &lt;&lt; min(<span class="num-l">4</span>, <span class="num-l">9</span>) &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 4</span>
-cout &lt;&lt; max(<span class="num-l">4</span>, <span class="num-l">9</span>) &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 9</span></code></pre>
+            <pre class="code"><code>cout &lt;&lt; min(<span class="num-l">4</span>, <span class="num-l">9</span>) &lt;&lt; <span class="str">"\n"</span>;          <span class="com">// 4</span>
+cout &lt;&lt; max({<span class="num-l">4</span>, <span class="num-l">9</span>, <span class="num-l">2</span>, <span class="num-l">7</span>}) &lt;&lt; <span class="str">"\n"</span>;   <span class="com">// 9</span></code></pre>
           </div>
           <div class="prose">
-            <p>They only take two values at a time. For three values, nest them: <code>min(a, min(b, c))</code>.</p>
-            <p>Remember to add <code>#include &lt;algorithm&gt;</code> at the top of your program, since <code>&lt;iostream&gt;</code> alone doesn't provide these.</p>
+            <p>To use them, you need to include the <code>&lt;algorithm&gt;</code> library at the top of your program.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Including everything at once</h3>
+            <p>Instead of including each library separately, you can write a single line that includes the entire standard library:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;</code></pre>
+          </div>
+          <div class="prose">
+            <p>This doesn't make your program any slower. Including more libraries only adds to the compile time, and compile time isn't counted in the time limit.</p>
+            <p>From now on, we'll use <code>&lt;bits/stdc++.h&gt;</code> in all solutions. It works with GCC, the compiler Codeforces uses. If it doesn't compile on your laptop, you're most likely using a different compiler, such as the default one on macOS.</p>
           </div>
         </div>
 
@@ -298,18 +295,17 @@ cout &lt;&lt; max(<span class="num-l">4</span>, <span class="num-l">9</span>) &l
           <div class="solution-body" id="sol-e" hidden>
             <div class="code-wrap">
               <button class="copy-btn" type="button">Copy</button>
-              <pre class="code"><code><span class="kw">#include</span> &lt;iostream&gt;
-<span class="kw">#include</span> &lt;algorithm&gt;
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
 <span class="kw">using</span> <span class="kw">namespace</span> std;
 
 <span class="ty">int</span> <span class="fn">main</span>() {
     <span class="ty">int</span> a, b, c;
     cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
-    cout &lt;&lt; min(a, min(b, c)) &lt;&lt; <span class="str">" "</span> &lt;&lt; max(a, max(b, c)) &lt;&lt; <span class="str">"\n"</span>;
+    cout &lt;&lt; min({a, b, c}) &lt;&lt; <span class="str">" "</span> &lt;&lt; max({a, b, c}) &lt;&lt; <span class="str">"\n"</span>;
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Nest <code>min</code> and <code>max</code> to handle three values, and print them separated by a single space.</p>
+            <p class="sol-note" style="margin-top:.9rem">Pass all three numbers to <code>min</code> and <code>max</code> in curly braces, and print the results separated by a single space.</p>
           </div>
         </div>
       </div>
@@ -327,6 +323,6 @@ cout &lt;&lt; max(<span class="num-l">4</span>, <span class="num-l">9</span>) &l
   <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
 </footer>
 
-<script src="practice.js?v=12"></script>
+<script src="practice.js?v=13"></script>
 </body>
 </html>
