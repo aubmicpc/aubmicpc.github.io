@@ -157,6 +157,13 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
   *,*::before,*::after{animation:none !important; transition:none !important}
 }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
 </head>
 <body>
 
@@ -168,7 +175,7 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
       <a href="#plan">Plan</a>
       <a href="#why">Why join</a>
       <a href="#season">Last season</a>
-      <a class="practice" href="practice.html">Practice</a>
+      <a class="practice" href="practice.html" data-track="click_practice_nav">Practice</a>
       <a class="reg" href="#register">Register</a>
     </nav>
   </div>
@@ -240,7 +247,7 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
       <h2>The plan</h2>
       <ol class="plan">
         <li><span class="num" aria-hidden="true">1</span><div><h3>Register</h3><p class="when">By Monday 21 September, 11:59 pm</p></div><p class="d">Fill in the form at the bottom of this page.</p></li>
-        <li><span class="num" aria-hidden="true">2</span><div><h3>Practice period</h3><p class="when">After registration</p></div><p class="d">We'll share <a href="practice.html">day-by-day practice material</a>, follow up with you along the way and help when you get stuck. The rest is on you: the more consistently you practise, the better you'll do.</p></li>
+        <li><span class="num" aria-hidden="true">2</span><div><h3>Practice period</h3><p class="when">After registration</p></div><p class="d">We'll share <a href="practice.html" data-track="click_practice_plan">day-by-day practice material</a>, follow up with you along the way and help when you get stuck. The rest is on you: the more consistently you practise, the better you'll do.</p></li>
         <li><span class="num" aria-hidden="true">3</span><div><h3>Selection contest</h3><p class="when">End of the practice period</p></div><p class="d">One contest decides who qualifies and forms the teams: the top three together, the next three together, and so on.</p></li>
         <li class="key"><span class="num" aria-hidden="true">4</span><div><h3>ICPC Cyprus</h3><p class="when">24 October, Neapolis University Pafos</p></div><p class="d">Every AUBM team competes. The best one qualifies for SEERC.</p></li>
         <li><span class="num" aria-hidden="true">5</span><div><h3>SEERC</h3><p class="when">Later in the semester</p></div><p class="d">The Southeastern Europe regional contest.</p></li>
@@ -297,7 +304,7 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
     <div class="wrap">
       <h2>Register</h2>
       <p class="lead">Registration is open to all CS students and closes on Wednesday 23 September at 11:59 pm.</p>
-      <a class="btn" id="register-btn" href="#register">Open the registration form</a>
+      <a class="btn" id="register-btn" href="#register" data-track="open_registration_form">Open the registration form</a>
       <p class="note">Questions? Send an email to <a href="mailto:zml00@aubmed.ac.cy">zml00@aubmed.ac.cy</a>.</p>
     </div>
   </section>
@@ -350,6 +357,10 @@ footer{background:var(--bg-soft); color:var(--muted); padding:1.75rem 0; font-si
     reg.classList.add("disabled");
     reg.textContent = "Registration form coming soon";
   }
+
+  document.querySelectorAll("[data-track]").forEach(function(el){
+    el.addEventListener("click", function(){ gtag("event", el.getAttribute("data-track")); });
+  });
 
   // Photo lightbox
   var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
