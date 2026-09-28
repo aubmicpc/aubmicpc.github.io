@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 6 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 6: arrays, reading and changing elements, searching, and looping backwards in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=13">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 6</h1>
+      <p>Arrays: storing many values, searching them, changing them, and going through them backwards.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Summation</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Searching</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">Replacement</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#D"><span class="letter">D</span><span class="pname">Reversing</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Summation</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Arrays</h3>
+            <p>An array stores many values of the same type under one name. In C++, the easiest way to make one is a <code>vector</code>:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>vector&lt;<span class="ty">int</span>&gt; a(n);   <span class="com">// n ints, all starting at 0</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>Each value in the array is called an element, and you reach it by its position, called its index: <code>a[0]</code> is the first element, <code>a[1]</code> the second, and <code>a[n - 1]</code> the last. Indexes start at 0, not 1.</p>
+            <p>To read N numbers into the array, loop over every index:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    cin &gt;&gt; a[i];
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>The loop goes from 0 to <code>n - 1</code>, which is why the condition is <code>i &lt; n</code>.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Absolute value</h3>
+            <p><code>abs(x)</code> returns x without its minus sign: <code>abs(-5)</code> is 5 and <code>abs(7)</code> is 7.</p>
+            <p>Here the sum can reach 10<sup>5</sup> &times; 10<sup>9</sup> = 10<sup>14</sup>, so it needs to be a <code>long long</code>.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="ty">long</span> <span class="ty">long</span> sum = <span class="num-l">0</span>;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        sum += a[i];
+    }
+    cout &lt;&lt; abs(sum) &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Read the array, add up its elements in a <code>long long</code>, and print the absolute value of the sum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Searching</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Searching an array</h3>
+            <p>To find X, check the elements one by one from the start. Keep the answer in a variable that starts at -1, which is what we print if X is never found. When X is found, save its index and <code>break</code>, so that the first position is kept:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> pos = -<span class="num-l">1</span>;
+<span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="kw">if</span> (a[i] == x) {
+        pos = i;
+        <span class="kw">break</span>;
+    }
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+    <span class="ty">int</span> x;
+    cin &gt;&gt; x;
+
+    <span class="ty">int</span> pos = -<span class="num-l">1</span>;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="kw">if</span> (a[i] == x) {
+            pos = i;
+            <span class="kw">break</span>;
+        }
+    }
+    cout &lt;&lt; pos &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Go through the array from the start and stop at the first element equal to X. If none is found, <code>pos</code> stays -1.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>Replacement</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Changing elements</h3>
+            <p>An element of an array works like a normal variable, so you can assign a new value to it:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>a[i] = <span class="num-l">1</span>;</code></pre>
+          </div>
+          <div class="prose">
+            <p>Go through the array, replace each element according to its sign, and then print the array. Zeros are neither positive nor negative, so they stay as they are.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-c" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="kw">if</span> (a[i] &gt; <span class="num-l">0</span>) a[i] = <span class="num-l">1</span>;
+        <span class="kw">else</span> <span class="kw">if</span> (a[i] &lt; <span class="num-l">0</span>) a[i] = <span class="num-l">2</span>;
+    }
+
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cout &lt;&lt; a[i] &lt;&lt; <span class="str">" "</span>;
+    }
+    cout &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Replace positive elements with 1 and negative elements with 2, leave zeros alone, then print the array.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="D">
+      <header class="problem-head">
+        <span class="letter">D</span>
+        <h2>Reversing</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Going through an array backwards</h3>
+            <p>The last element is at index <code>n - 1</code> and the first is at index 0. To print the array in reverse, start the loop at <code>n - 1</code> and count down to 0:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = n - <span class="num-l">1</span>; i &gt;= <span class="num-l">0</span>; i--) {
+    cout &lt;&lt; a[i] &lt;&lt; <span class="str">" "</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-d" aria-controls="sol-d">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-d" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="kw">for</span> (<span class="ty">int</span> i = n - <span class="num-l">1</span>; i &gt;= <span class="num-l">0</span>; i--) {
+        cout &lt;&lt; a[i] &lt;&lt; <span class="str">" "</span>;
+    }
+    cout &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Read the array, then print it from the last index down to the first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day5.html"><span aria-hidden="true">&larr;</span> Day 5</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=13"></script>
+</body>
+</html>
