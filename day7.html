@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 7 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 7: 1-indexed positions, bool flags, 2D arrays, and palindrome arrays in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=13">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 7</h1>
+      <p>More arrays: 1-indexed positions, <code>bool</code> flags, 2D arrays, and palindrome arrays.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">The Bottles</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Minimize Number</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">Matrix</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#D"><span class="letter">D</span><span class="pname">Palindrome Array</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>The Bottles</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">1-indexed positions</h3>
+            <p>The positions in the queries start at 1, but array indexes start at 0. Position <code>x</code> in the statement is <code>a[x - 1]</code> in the array, so subtract 1 before using it.</p>
+            <p>To swap the two bottles, use <code>swap</code> from Day 5. It works on array elements too:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>swap(a[x - <span class="num-l">1</span>], a[y - <span class="num-l">1</span>]);</code></pre>
+          </div>
+          <div class="prose">
+            <p>After each query, print the whole array on its own line.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n, q;
+    cin &gt;&gt; n &gt;&gt; q;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="kw">while</span> (q--) {
+        <span class="ty">int</span> x, y;
+        cin &gt;&gt; x &gt;&gt; y;
+        swap(a[x - <span class="num-l">1</span>], a[y - <span class="num-l">1</span>]);
+        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+            cout &lt;&lt; a[i] &lt;&lt; <span class="str">" "</span>;
+        }
+        cout &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">For each query, swap the elements at indexes <code>x - 1</code> and <code>y - 1</code>, then print the array.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Minimize Number</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title"><code>bool</code> flags</h3>
+            <p>A <code>bool</code> is a type that holds only <code>true</code> or <code>false</code>. It's useful for remembering whether something happened while going through an array. To check that all numbers are even, start by assuming they are, and change your mind if you find an odd one:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">bool</span> allEven = <span class="kw">true</span>;
+<span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="kw">if</span> (a[i] % <span class="num-l">2</span> == <span class="num-l">1</span>) allEven = <span class="kw">false</span>;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>A variable used like this is called a flag. After the loop, <code>if (allEven)</code> runs only if no odd number was found.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Repeating the operation</h3>
+            <p>We don't know in advance how many times the operation can be done, so repeat it in a <code>while (true)</code> loop, which only ends with <code>break</code>. Each time, check the flag first. If an odd number was found, stop; otherwise divide every element by 2 and count one operation.</p>
+            <p>Each operation halves every number, and 10<sup>9</sup> can only be halved about 30 times, so the loop ends quickly.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="ty">int</span> ops = <span class="num-l">0</span>;
+    <span class="kw">while</span> (<span class="kw">true</span>) {
+        <span class="ty">bool</span> allEven = <span class="kw">true</span>;
+        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+            <span class="kw">if</span> (a[i] % <span class="num-l">2</span> == <span class="num-l">1</span>) allEven = <span class="kw">false</span>;
+        }
+        <span class="kw">if</span> (!allEven) <span class="kw">break</span>;
+
+        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+            a[i] /= <span class="num-l">2</span>;
+        }
+        ops++;
+    }
+    cout &lt;&lt; ops &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Keep halving every element while they are all even, and count how many times you did it. <code>!allEven</code> means &ldquo;not <code>allEven</code>&rdquo;.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>Matrix</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">2D arrays</h3>
+            <p>A 2D array, or matrix, is an array of rows, where each row is itself an array. With vectors, an N &times; N matrix is written as:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>vector&lt;vector&lt;<span class="ty">int</span>&gt;&gt; a(n, vector&lt;<span class="ty">int</span>&gt;(n));</code></pre>
+          </div>
+          <div class="prose">
+            <p><code>a[i][j]</code> is the element in row <code>i</code> and column <code>j</code>, both starting at 0. To read the matrix, use two nested loops, one for the rows and one for the columns:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="kw">for</span> (<span class="ty">int</span> j = <span class="num-l">0</span>; j &lt; n; j++) {
+        cin &gt;&gt; a[i][j];
+    }
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The diagonals</h3>
+            <p>The primary diagonal goes from the top left to the bottom right. Its elements are the ones where the row and column are equal: <code>a[0][0]</code>, <code>a[1][1]</code>, and so on up to <code>a[n - 1][n - 1]</code>.</p>
+            <p>The secondary diagonal goes from the top right to the bottom left. In row <code>i</code>, its element is in column <code>n - 1 - i</code>: <code>a[0][n - 1]</code>, <code>a[1][n - 2]</code>, and so on up to <code>a[n - 1][0]</code>.</p>
+            <p>So a single loop over <code>i</code> can add up both diagonals at the same time.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-c" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;vector&lt;<span class="ty">int</span>&gt;&gt; a(n, vector&lt;<span class="ty">int</span>&gt;(n));
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="kw">for</span> (<span class="ty">int</span> j = <span class="num-l">0</span>; j &lt; n; j++) {
+            cin &gt;&gt; a[i][j];
+        }
+    }
+
+    <span class="ty">int</span> primary = <span class="num-l">0</span>, secondary = <span class="num-l">0</span>;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        primary += a[i][i];
+        secondary += a[i][n - <span class="num-l">1</span> - i];
+    }
+    cout &lt;&lt; abs(primary - secondary) &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Add up <code>a[i][i]</code> and <code>a[i][n - 1 - i]</code> for every row, then print the absolute difference of the two sums.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="D">
+      <header class="problem-head">
+        <span class="letter">D</span>
+        <h2>Palindrome Array</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Comparing from both ends</h3>
+            <p>An array is a palindrome when the first element equals the last, the second equals the second to last, and so on. The element matching <code>a[i]</code> from the other end is <code>a[n - 1 - i]</code>, just like the secondary diagonal in Matrix.</p>
+            <p>Use a <code>bool</code> flag that starts as <code>true</code>, and set it to <code>false</code> if any pair doesn't match.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-d" aria-controls="sol-d">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-d" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="ty">bool</span> palindrome = <span class="kw">true</span>;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="kw">if</span> (a[i] != a[n - <span class="num-l">1</span> - i]) palindrome = <span class="kw">false</span>;
+    }
+
+    <span class="kw">if</span> (palindrome) cout &lt;&lt; <span class="str">"YES"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">else</span> cout &lt;&lt; <span class="str">"NO"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Compare every element with the one at the same distance from the other end. If any pair differs, the array is not a palindrome.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day6.html"><span aria-hidden="true">&larr;</span> Day 6</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=13"></script>
+</body>
+</html>

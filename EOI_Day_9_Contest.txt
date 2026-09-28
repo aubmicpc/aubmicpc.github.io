@@ -1,0 +1,210 @@
+A. Operations
+time limit per test2 seconds
+memory limit per test256 megabytes
+Given 2 numbers a and b, we need to determine which operation we should apply in order to maximize the value. The operations are addition(+), subtraction(-), and multiplication(*). That means we may use (a + b) or (a - b) or (a * b).
+
+Can you determine which operation should be used?
+
+If multiple operations lead to same maximum value print the higher in priority. Assume multiplication(*) has highest priority then addition(+) then subtraction(-).
+
+Input
+The first line will contain (1 <  = T <  = 105) the number of test cases. Each test case will be on a separate line containing two integers a and b.
+
+Output
+For each test case, print the operation that maximizes the value.
+
+Scoring
+Sub task #1 (30 points): (0 < T <  = 100000) ( - 1000 <  = a, b <  = 1000).
+
+Sub task #2 (30 points): (0 < T <  = 100000) ( - 109 <  = a, b <  = 109).
+
+Sub task #3 (40 points): (0 < T <  = 100000) ( - 1018 <  = a, b <  = 1018).
+
+Example
+InputCopy
+3
+2 3
+-4 5
+3 -7
+OutputCopy
+*
++
+-
+
+
+B. Cake
+time limit per test1 second
+memory limit per test256 megabytes
+You have N
+ Apples and M
+ Oranges, you can make two types of cakes:
+
+Use one Apple.
+Or, use one Apple and one Orange.
+Your task is to print the maximum number of cakes you can make.
+
+Input
+Only one line containing two numbers N
+ and M
+. Number of Apples and Oranges respectively.
+
+Output
+Print the maximum number of cakes you can make.
+
+Scoring
+You get the points of the subtask if you passed all cases in this subtask and also all subtasks that this subtask depends on.
+
+Subtask #1 (12 points):
+
+0≤N,M≤10,N=M
+Depends on: none
+Subtask #2 (16 points):
+
+0≤N,M≤103
+Depends on: subtask #1
+Subtask #3 (21 points):
+
+0≤N,M≤1018
+Depends on: subtask #1 and subtask #2
+Subtask #4 (26 points):
+
+0≤N,M≤10100000
+Depends on: subtask #1, subtask #2 and subtask #3
+Example
+InputCopy
+3 4
+OutputCopy
+3
+
+
+
+C. Minimum Number
+time limit per test1 second
+memory limit per test256 megabytes
+You will be given a non negative integer A
+. Your task is to find a minimum integer X
+ to make the following statement correct:
+
+(A+X)
+ divisible by 10
+In another words let (A+X)%10=0
+. Such that X
+ is a non negative integer.
+
+Input
+Only one integer A
+.
+
+Output
+Output the minimum integer X
+ that make the above equation correct.
+
+Scoring
+You get the points of the subtask if you passed all cases in this subtask and also all subtasks that this subtask depends on.
+
+Subtask #1 (9 points):
+
+0≤A≤100
+A is always a multiple of 10.
+Depends on: none
+Subtask #2 (17 points):
+
+0≤A≤103
+Depends on: Subtask #1
+Subtask #3 (22 points):
+
+0≤A≤1012
+Depends on: Subtask #1 and Subtask #2
+Subtask #4 (27 points):
+
+0≤A≤10100000
+Depends on: Subtask #1, Subtask #2 and Subtask #3
+Example
+InputCopy
+9
+OutputCopy
+1
+
+
+
+D. Most Repeated Divisor
+time limit per test1 second
+memory limit per test256 megabytes
+You are given two integers L
+ and R
+. For all integers from L
+ to R
+ inclusive, we wrote down all of their integer divisors except 1
+.
+
+Find the divisor that we wrote down the maximum number of times.
+
+NOTE: If there are more than one correct solution print the minimum number.
+
+Input
+Only one line containing two integers L
+ and R
+.
+
+Output
+Output one number, the most repeated divisor.
+
+Scoring
+You get the points of the subtask if you passed all cases in this subtask and also all subtasks that this subtask depends on.
+
+Subtask #1 (15 points):
+
+2≤L=R≤100
+Depends on: none
+Subtask #2 (25 points):
+
+2≤L≤R≤103
+Depends on: Subtask #1
+Subtask #3 (32 points):
+
+2≤L≤R≤106
+Depends on: Subtask #1 and Subtask #2
+Subtask #4 (53 points):
+
+2≤L≤R≤1012
+Depends on: Subtask #1, Subtask #2 and Subtask #3
+Example
+InputCopy
+3 10
+OutputCopy
+2
+Note
+Example solution:
+
+First we need to write all the divisors for all numbers starting from 3
+ to 10
+ inclusive:
+
+Divisors of 3
+ : {3
+}
+Divisors of 4
+ : {2,4
+}
+Divisors of 5
+ : {5
+}
+Divisors of 6
+ : {2,3,6
+}
+Divisors of 7
+ : {7
+}
+Divisors of 8
+ : {2,4,8
+}
+Divisors of 9
+ : {3,9
+}
+Divisors of 10
+ : {2,5,10
+}
+We can easily figure out that 2
+ is the most repeated divisor with 4
+ times, so the answer 2
+.
