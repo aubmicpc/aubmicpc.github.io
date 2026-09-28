@@ -53,15 +53,17 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">1-indexed positions</h3>
-            <p>The positions in the queries start at 1, but array indexes start at 0. Position <code>x</code> in the statement is <code>a[x - 1]</code> in the array, so subtract 1 before using it.</p>
-            <p>To swap the two bottles, use <code>swap</code> from Day 5. It works on array elements too:</p>
+            <h3 class="concept-title">Queries</h3>
+            <p>Many problems give you an array and then a list of queries: small instructions that each change the array or ask something about it. Handle them one at a time, in the order they're given. Read a query, apply it, print what it asks for, and only then move on to the next one:</p>
           </div>
           <div class="code-wrap">
-            <pre class="code"><code>swap(a[x - <span class="num-l">1</span>], a[y - <span class="num-l">1</span>]);</code></pre>
+            <pre class="code"><code><span class="kw">while</span> (q--) {
+    <span class="com">// read one query, apply it, print the result</span>
+}</code></pre>
           </div>
           <div class="prose">
-            <p>After each query, print the whole array on its own line.</p>
+            <p>This is the same <code>while (q--)</code> loop used for test cases, but with one important difference: the array is <em>not</em> reset between queries. Every swap is done on the array as the previous queries left it, which is why the second line of the first sample starts from <code>3 1 2 4 5</code> and not from the original array.</p>
+            <p>The swap itself is done with <code>swap</code> from Day 5, which works on array elements too.</p>
           </div>
         </div>
 
@@ -97,7 +99,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">For each query, swap the elements at indexes <code>x - 1</code> and <code>y - 1</code>, then print the array.</p>
+            <p class="sol-note" style="margin-top:.9rem">For each query, swap the two bottles, then print the whole array.</p>
           </div>
         </div>
       </div>
@@ -111,25 +113,26 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title"><code>bool</code> flags</h3>
-            <p>A <code>bool</code> is a type that holds only <code>true</code> or <code>false</code>. It's useful for remembering whether something happened while going through an array. To check that all numbers are even, start by assuming they are, and change your mind if you find an odd one:</p>
+            <h3 class="concept-title">Looking at one number at a time</h3>
+            <p>The operation divides every number by 2 together, and it stops as soon as any one of them becomes odd. So instead of simulating the whole array, look at each number on its own and count how many times it can be divided by 2 before it becomes odd:</p>
           </div>
           <div class="code-wrap">
-            <pre class="code"><code><span class="ty">bool</span> allEven = <span class="kw">true</span>;
-<span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
-    <span class="kw">if</span> (a[i] % <span class="num-l">2</span> == <span class="num-l">1</span>) allEven = <span class="kw">false</span>;
+            <pre class="code"><code><span class="ty">int</span> count = <span class="num-l">0</span>;
+<span class="kw">while</span> (x % <span class="num-l">2</span> == <span class="num-l">0</span>) {
+    x /= <span class="num-l">2</span>;
+    count++;
 }</code></pre>
           </div>
           <div class="prose">
-            <p>A variable used like this is called a flag. After the loop, <code>if (allEven)</code> runs only if no odd number was found.</p>
+            <p>For the first sample, 8 can be halved 3 times, 12 can be halved 2 times, and 40 can be halved 3 times.</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">Repeating the operation</h3>
-            <p>We don't know in advance how many times the operation can be done, so repeat it in a <code>while (true)</code> loop, which only ends with <code>break</code>. Each time, check the flag first. If an odd number was found, stop; otherwise divide every element by 2 and count one operation.</p>
-            <p>Each operation halves every number, and 10<sup>9</sup> can only be halved about 30 times, so the loop ends quickly.</p>
+            <h3 class="concept-title">The answer is the minimum</h3>
+            <p>The operations stop as soon as the number with the smallest count runs out. In the first sample that's 12, which becomes odd after 2 halvings, so the answer is 2 even though 8 and 40 could go further.</p>
+            <p>So the answer is the smallest count over all the numbers. Keep it in a variable that starts very large and update it with <code>min</code> after each number.</p>
           </div>
         </div>
 
@@ -153,24 +156,20 @@
         cin &gt;&gt; a[i];
     }
 
-    <span class="ty">int</span> ops = <span class="num-l">0</span>;
-    <span class="kw">while</span> (<span class="kw">true</span>) {
-        <span class="ty">bool</span> allEven = <span class="kw">true</span>;
-        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
-            <span class="kw">if</span> (a[i] % <span class="num-l">2</span> == <span class="num-l">1</span>) allEven = <span class="kw">false</span>;
-        }
-        <span class="kw">if</span> (!allEven) <span class="kw">break</span>;
-
-        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="ty">int</span> ans = <span class="num-l">100</span>;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="ty">int</span> count = <span class="num-l">0</span>;
+        <span class="kw">while</span> (a[i] % <span class="num-l">2</span> == <span class="num-l">0</span>) {
             a[i] /= <span class="num-l">2</span>;
+            count++;
         }
-        ops++;
+        ans = min(ans, count);
     }
-    cout &lt;&lt; ops &lt;&lt; <span class="str">"\n"</span>;
+    cout &lt;&lt; ans &lt;&lt; <span class="str">"\n"</span>;
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Keep halving every element while they are all even, and count how many times you did it. <code>!allEven</code> means &ldquo;not <code>allEven</code>&rdquo;.</p>
+            <p class="sol-note" style="margin-top:.9rem">Count how many times each number can be halved and print the smallest count. <code>ans</code> starts at 100, which is bigger than any possible count (a number up to 10<sup>9</sup> can be halved at most 29 times).</p>
           </div>
         </div>
       </div>
@@ -258,7 +257,22 @@
           <div class="prose">
             <h3 class="concept-title">Comparing from both ends</h3>
             <p>An array is a palindrome when the first element equals the last, the second equals the second to last, and so on. The element matching <code>a[i]</code> from the other end is <code>a[n - 1 - i]</code>, just like the secondary diagonal in Matrix.</p>
-            <p>Use a <code>bool</code> flag that starts as <code>true</code>, and set it to <code>false</code> if any pair doesn't match.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title"><code>bool</code> flags</h3>
+            <p>A <code>bool</code> is a type that holds only <code>true</code> or <code>false</code>. It's useful for remembering whether something happened while going through an array. Start by assuming the array is a palindrome, and change your mind if you find a pair that doesn't match:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">bool</span> palindrome = <span class="kw">true</span>;
+<span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="kw">if</span> (a[i] != a[n - <span class="num-l">1</span> - i]) palindrome = <span class="kw">false</span>;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>A variable used like this is called a flag. After the loop, <code>if (palindrome)</code> is true only if every pair matched. <code>!=</code> means &ldquo;not equal&rdquo;.</p>
           </div>
         </div>
 
