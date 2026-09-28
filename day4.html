@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 4 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 4: while loops, for loops, reversing a number, and multiple test cases in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=13">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 4</h1>
+      <p>Loops: repeating code with <code>while</code> and <code>for</code>, reversing a number, and multiple test cases.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Palindrome</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Factorial</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">1 to N</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Palindrome</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The <code>while</code> loop</h3>
+            <p>So far, every line of a program ran exactly once. A <code>while</code> loop runs a block of code again and again, as long as its condition is true:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> x = <span class="num-l">3</span>;
+<span class="kw">while</span> (x &gt; <span class="num-l">0</span>) {
+    cout &lt;&lt; x &lt;&lt; <span class="str">"\n"</span>;
+    x--;
+}
+<span class="com">// prints 3, 2, 1</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>Before each repetition, the condition <code>x &gt; 0</code> is checked. If it's true, the block runs; if it's false, the loop ends and the program continues after it. <code>x--</code> is short for <code>x = x - 1</code>.</p>
+            <p>Something inside the loop has to change the condition eventually. If <code>x</code> never decreased, the condition would stay true forever and the program would never finish.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Reversing a number</h3>
+            <p>On Day 2 you saw that <code>n % 10</code> gives the last digit of <code>n</code>, and <code>n / 10</code> removes it. With a loop, we can repeat this until no digits are left, which takes the digits off <code>n</code> from right to left.</p>
+            <p>To build the reversed number, start with <code>rev = 0</code> and attach each digit to its end. Multiplying by 10 shifts every digit one place left and makes room for the new digit:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> rev = <span class="num-l">0</span>;
+<span class="kw">while</span> (n &gt; <span class="num-l">0</span>) {
+    rev = rev * <span class="num-l">10</span> + n % <span class="num-l">10</span>;
+    n /= <span class="num-l">10</span>;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>Here's how it runs for <code>n = 160</code>:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th><code>n</code></th><th><code>n % 10</code></th><th>New <code>rev</code></th></tr></thead>
+              <tbody>
+                <tr><td>160</td><td>0</td><td>0 &times; 10 + 0 = 0</td></tr>
+                <tr><td>16</td><td>6</td><td>0 &times; 10 + 6 = 6</td></tr>
+                <tr><td>1</td><td>1</td><td>6 &times; 10 + 1 = 61</td></tr>
+                <tr><td>0</td><td colspan="2">Condition is false, loop ends</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>The leading zero disappears on its own: attaching a 0 to an empty <code>rev</code> just leaves it at 0, and a number never stores leading zeros anyway.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Keeping a copy</h3>
+            <p>A number is a palindrome exactly when it equals its reverse. But the loop above divides <code>n</code> all the way down to 0, so by the time it finishes, the original value is gone. Save a copy before the loop and compare the reverse with that copy.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    <span class="ty">int</span> original = n;
+
+    <span class="ty">int</span> rev = <span class="num-l">0</span>;
+    <span class="kw">while</span> (n &gt; <span class="num-l">0</span>) {
+        rev = rev * <span class="num-l">10</span> + n % <span class="num-l">10</span>;
+        n /= <span class="num-l">10</span>;
+    }
+
+    cout &lt;&lt; rev &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">if</span> (rev == original) cout &lt;&lt; <span class="str">"YES"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">else</span> cout &lt;&lt; <span class="str">"NO"</span> &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Reverse the number digit by digit, print it, then compare it with the saved original. N is at most 10<sup>7</sup>, so the reverse always fits in an <code>int</code>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Factorial</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The <code>for</code> loop</h3>
+            <p>Very often, a loop needs a counter that goes through the numbers 1, 2, 3, and so on. A <code>for</code> loop puts everything about that counter on one line:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">1</span>; i &lt;= <span class="num-l">5</span>; i++) {
+    <span class="com">// runs with i = 1, 2, 3, 4, 5</span>
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>The line has three parts, separated by semicolons:</p>
+            <ul>
+              <li><code>int i = 1</code> runs once, before the loop starts.</li>
+              <li><code>i &lt;= 5</code> is checked before every repetition, just like the condition of a <code>while</code> loop.</li>
+              <li><code>i++</code> runs after every repetition. It's short for <code>i = i + 1</code>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Computing a product</h3>
+            <p>To multiply the numbers from 1 to n, keep a running result and multiply it by <code>i</code> on each step. Start the result at 1, since multiplying by 1 changes nothing:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">long</span> <span class="ty">long</span> f = <span class="num-l">1</span>;
+<span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">1</span>; i &lt;= n; i++) {
+    f *= i;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>This handles 0! = 1 without any special case: when <code>n = 0</code>, the condition <code>1 &lt;= 0</code> is false from the start, the loop never runs, and <code>f</code> stays 1.</p>
+            <p>Factorials grow very fast. 20! = 2,432,902,008,176,640,000, which is about 2.4 &times; 10<sup>18</sup>. That's far too big for an <code>int</code>, but it fits in a <code>long long</code>, which goes up to about 9.2 &times; 10<sup>18</sup>.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Multiple test cases</h3>
+            <p>Many problems give several inputs in one file. The first number T says how many test cases follow, and you solve each one separately. Put the whole solution inside a loop that runs T times:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> t;
+cin &gt;&gt; t;
+<span class="kw">while</span> (t--) {
+    <span class="com">// read one test case, solve it, print its answer</span>
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p><code>while (t--)</code> is a common shortcut. It checks whether <code>t</code> is nonzero and then decreases it by 1, so the loop runs exactly T times.</p>
+            <p>You don't have to read all the input first. Print each answer as soon as you compute it; the judge only looks at the final output.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> t;
+    cin &gt;&gt; t;
+    <span class="kw">while</span> (t--) {
+        <span class="ty">int</span> n;
+        cin &gt;&gt; n;
+        <span class="ty">long</span> <span class="ty">long</span> f = <span class="num-l">1</span>;
+        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">1</span>; i &lt;= n; i++) {
+            f *= i;
+        }
+        cout &lt;&lt; f &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">For each test case, multiply 1 &times; 2 &times; &hellip; &times; N. <code>f</code> must be a <code>long long</code> and must be reset to 1 inside the loop, so each test case starts fresh.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>1 to N</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Using the counter</h3>
+            <p>The counter of a <code>for</code> loop is a normal variable, so you can use it inside the loop like any other. On each step it holds the current number, which here is exactly what needs to be printed.</p>
+            <p>Two small details decide whether the output is right:</p>
+            <ul>
+              <li>Print <code>i</code>, not <code>n</code>. Printing <code>n</code> would print the same number N times.</li>
+              <li>Use <code>i &lt;= n</code>, not <code>i &lt; n</code>. With <code>&lt;</code>, the loop stops one step early and never prints N itself.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-c" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">1</span>; i &lt;= n; i++) {
+        cout &lt;&lt; i &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Loop <code>i</code> from 1 to N and print it on its own line each time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day3.html"><span aria-hidden="true">&larr;</span> Day 3</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=13"></script>
+</body>
+</html>
