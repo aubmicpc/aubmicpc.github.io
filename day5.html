@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 5 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 5: nested loops, odd numbers, digits, GCD, and divisors in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=13">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 5</h1>
+      <p>Nested loops, odd numbers, digits, the greatest common divisor, and divisors.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Three Numbers</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Sum of Consecutive Odd Numbers</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">Digits</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#D"><span class="letter">D</span><span class="pname">GCD</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#E"><span class="letter">E</span><span class="pname">Divisors</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Three Numbers</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Nested loops</h3>
+            <p>A loop can go inside another loop. For every step of the outer loop, the inner loop runs all the way through:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> x = <span class="num-l">0</span>; x &lt;= <span class="num-l">2</span>; x++) {
+    <span class="kw">for</span> (<span class="ty">int</span> y = <span class="num-l">0</span>; y &lt;= <span class="num-l">2</span>; y++) {
+        cout &lt;&lt; x &lt;&lt; <span class="str">" "</span> &lt;&lt; y &lt;&lt; <span class="str">"\n"</span>;
+    }
+}
+<span class="com">// prints 0 0, 0 1, 0 2, 1 0, 1 1, 1 2, 2 0, 2 1, 2 2</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>This goes through every pair (x, y), so the inner line runs 3 &times; 3 = 9 times. With three nested loops you get every triple, which is the obvious way to try all values of X, Y and Z and count the ones that add up to S.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Counting the operations</h3>
+            <p>Remember the rule of thumb from Day 3: about 10<sup>7</sup> operations is fine, and more than 10<sup>8</sup> will never pass. Three nested loops from 0 to K run about K<sup>3</sup> times, and with K = 3000 that's 2.7 &times; 10<sup>10</sup>. Far too slow.</p>
+            <p>But the third loop isn't needed. Once X and Y are chosen, Z has to be S &minus; X &minus; Y, so there's only one value to check instead of K + 1. The only question is whether that value is allowed, meaning 0 &le; Z &le; K.</p>
+            <p>That leaves two nested loops, about K<sup>2</sup> = 9 &times; 10<sup>6</sup> operations, which is fast enough.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> k, s;
+    cin &gt;&gt; k &gt;&gt; s;
+    <span class="ty">int</span> count = <span class="num-l">0</span>;
+    <span class="kw">for</span> (<span class="ty">int</span> x = <span class="num-l">0</span>; x &lt;= k; x++) {
+        <span class="kw">for</span> (<span class="ty">int</span> y = <span class="num-l">0</span>; y &lt;= k; y++) {
+            <span class="ty">int</span> z = s - x - y;
+            <span class="kw">if</span> (z &gt;= <span class="num-l">0</span> &amp;&amp; z &lt;= k) count++;
+        }
+    }
+    cout &lt;&lt; count &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Try every X and Y, compute the only Z that works, and count it if it's between 0 and K.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Sum of Consecutive Odd Numbers</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Putting the numbers in order</h3>
+            <p>X can be bigger than Y, like in the second sample (<code>10 4</code>). A loop from X up to Y would then never run. The easiest fix is to make sure the smaller number comes first, and <code>swap</code> exchanges the values of two variables:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">if</span> (x &gt; y) swap(x, y);
+<span class="com">// now x &lt;= y</span></code></pre>
+          </div>
+          <div class="prose">
+            <p>The numbers strictly between them are then <code>x + 1</code> up to <code>y - 1</code>. If there are none, such as between 5 and 6, the loop simply doesn't run.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Checking for odd numbers</h3>
+            <p>A number is even when it divides by 2 with no remainder, and odd otherwise. So <code>i % 2 == 1</code> means <code>i</code> is odd, for any number that isn't negative.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> t;
+    cin &gt;&gt; t;
+    <span class="kw">while</span> (t--) {
+        <span class="ty">int</span> x, y;
+        cin &gt;&gt; x &gt;&gt; y;
+        <span class="kw">if</span> (x &gt; y) swap(x, y);
+        <span class="ty">int</span> sum = <span class="num-l">0</span>;
+        <span class="kw">for</span> (<span class="ty">int</span> i = x + <span class="num-l">1</span>; i &lt; y; i++) {
+            <span class="kw">if</span> (i % <span class="num-l">2</span> == <span class="num-l">1</span>) sum += i;
+        }
+        cout &lt;&lt; sum &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Swap so that X &le; Y, then add up the odd numbers from X + 1 to Y &minus; 1. Declare <code>sum</code> inside the test case loop so it starts at 0 for each test case.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>Digits</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The <code>do</code>&ndash;<code>while</code> loop</h3>
+            <p>Taking digits off from right to left is exactly what the loop in Day 4's Palindrome did, except this time each digit is printed instead of added to a reversed number. Because the digits are printed one by one, the zeros in <code>1200</code> show up as they should.</p>
+            <p>There is one catch. For N = 0 the answer is <code>0</code>, but the condition <code>n &gt; 0</code> is false from the start, so a <code>while</code> loop prints nothing. A <code>do</code>&ndash;<code>while</code> loop checks its condition <em>after</em> each repetition instead of before, so its body always runs at least once:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">do</span> {
+    cout &lt;&lt; n % <span class="num-l">10</span> &lt;&lt; <span class="str">" "</span>;
+    n /= <span class="num-l">10</span>;
+} <span class="kw">while</span> (n &gt; <span class="num-l">0</span>);</code></pre>
+          </div>
+          <div class="prose">
+            <p>Note the semicolon after <code>while (n &gt; 0)</code>. It's required here, unlike in a normal <code>while</code> loop.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Extra spaces</h3>
+            <p>The loop above prints a space after every digit, including the last one. That's fine: Codeforces ignores spaces at the end of a line, so you don't need any extra code to avoid them.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-c" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> t;
+    cin &gt;&gt; t;
+    <span class="kw">while</span> (t--) {
+        <span class="ty">int</span> n;
+        cin &gt;&gt; n;
+        <span class="kw">do</span> {
+            cout &lt;&lt; n % <span class="num-l">10</span> &lt;&lt; <span class="str">" "</span>;
+            n /= <span class="num-l">10</span>;
+        } <span class="kw">while</span> (n &gt; <span class="num-l">0</span>);
+        cout &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Print the last digit and remove it until nothing is left. The <code>do</code>&ndash;<code>while</code> makes sure N = 0 still prints <code>0</code>. End each test case with a new line.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="D">
+      <header class="problem-head">
+        <span class="letter">D</span>
+        <h2>GCD</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Checking divisibility</h3>
+            <p><code>i</code> divides <code>a</code> exactly when the remainder is 0, so the check is <code>a % i == 0</code>. A common divisor of A and B has to pass the check for both numbers:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">if</span> (a % i == <span class="num-l">0</span> &amp;&amp; b % i == <span class="num-l">0</span>) {
+    <span class="com">// i divides both a and b</span>
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>A common divisor can't be bigger than the smaller of the two numbers, so the candidates are 1 up to <code>min(a, b)</code>.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Counting down and <code>break</code></h3>
+            <p>We want the <em>greatest</em> common divisor, so go through the candidates from largest to smallest. The counter starts high and decreases with <code>i--</code>. The first common divisor found is the answer.</p>
+            <p>Once it's found, there's no reason to keep looping. <code>break</code> ends the loop immediately and continues after it:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = min(a, b); i &gt;= <span class="num-l">1</span>; i--) {
+    <span class="kw">if</span> (a % i == <span class="num-l">0</span> &amp;&amp; b % i == <span class="num-l">0</span>) {
+        cout &lt;&lt; i &lt;&lt; <span class="str">"\n"</span>;
+        <span class="kw">break</span>;
+    }
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>The loop always finds an answer, because 1 divides every number.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-d" aria-controls="sol-d">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-d" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+    <span class="kw">for</span> (<span class="ty">int</span> i = min(a, b); i &gt;= <span class="num-l">1</span>; i--) {
+        <span class="kw">if</span> (a % i == <span class="num-l">0</span> &amp;&amp; b % i == <span class="num-l">0</span>) {
+            cout &lt;&lt; i &lt;&lt; <span class="str">"\n"</span>;
+            <span class="kw">break</span>;
+        }
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Count down from the smaller number and stop at the first number that divides both A and B.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="E">
+      <header class="problem-head">
+        <span class="letter">E</span>
+        <h2>Divisors</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Finding every divisor</h3>
+            <p>Every divisor of N is between 1 and N, so go through all of them and use the same check as in GCD, <code>n % i == 0</code>. Counting upwards from 1 means the divisors come out in ascending order on their own.</p>
+            <p>N is at most 10<sup>4</sup>, so that's at most 10<sup>4</sup> checks, which is well within the time limit.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-e" aria-controls="sol-e">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-e" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">1</span>; i &lt;= n; i++) {
+        <span class="kw">if</span> (n % i == <span class="num-l">0</span>) cout &lt;&lt; i &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Check every number from 1 to N and print the ones that divide N.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day4.html"><span aria-hidden="true">&larr;</span> Day 4</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=13"></script>
+</body>
+</html>
