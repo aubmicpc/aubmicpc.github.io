@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 8 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 8: sorting, binary search, and lower_bound, upper_bound and binary_search in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=13">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 8</h1>
+      <p>Sorting and binary search, by hand and with the built-in functions.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Binary Search</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Binary Search STL</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Binary Search</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Why searching the array is too slow</h3>
+            <p>On Day 6 you searched an array by checking every element. Doing that for each query takes up to N &times; Q = 10<sup>5</sup> &times; 10<sup>5</sup> = 10<sup>10</sup> operations, which is far too slow. We need a much faster way to answer each query.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Sorting</h3>
+            <p><code>sort</code> puts the elements of an array in increasing order:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>vector&lt;<span class="ty">int</span>&gt; a = {<span class="num-l">1</span>, <span class="num-l">5</span>, <span class="num-l">4</span>, <span class="num-l">3</span>, <span class="num-l">2</span>};
+sort(a.begin(), a.end());
+<span class="com">// a is now {1, 2, 3, 4, 5}</span></code></pre>
+          </div>
+          <div class="prose">
+            <p><code>a.begin()</code> and <code>a.end()</code> tell <code>sort</code> to sort the whole array. Sorting N elements takes about N &times; log<sub>2</sub> N operations, which for N = 10<sup>5</sup> is under 2 &times; 10<sup>6</sup>.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Binary search</h3>
+            <p>Once the array is sorted, you don't need to check every element. Look at the middle element of the part you're searching:</p>
+            <ul>
+              <li>If it equals X, you've found it.</li>
+              <li>If it's smaller than X, X can only be to its right, so throw away the left half.</li>
+              <li>If it's bigger than X, X can only be to its left, so throw away the right half.</li>
+            </ul>
+            <p>Keep the part you're still searching between two indexes, <code>lo</code> and <code>hi</code>. Each step cuts it in half, and when <code>lo</code> passes <code>hi</code> there's nothing left, so X isn't in the array:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> lo = <span class="num-l">0</span>, hi = n - <span class="num-l">1</span>;
+<span class="ty">bool</span> found = <span class="kw">false</span>;
+<span class="kw">while</span> (lo &lt;= hi) {
+    <span class="ty">int</span> mid = (lo + hi) / <span class="num-l">2</span>;
+    <span class="kw">if</span> (a[mid] == x) {
+        found = <span class="kw">true</span>;
+        <span class="kw">break</span>;
+    }
+    <span class="kw">else</span> <span class="kw">if</span> (a[mid] &lt; x) lo = mid + <span class="num-l">1</span>;
+    <span class="kw">else</span> hi = mid - <span class="num-l">1</span>;
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>Here's how it runs for X = 6 in the sorted sample array <code>{1, 2, 3, 4, 5}</code>:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th><code>lo</code></th><th><code>hi</code></th><th><code>mid</code></th><th><code>a[mid]</code></th><th>Next</th></tr></thead>
+              <tbody>
+                <tr><td>0</td><td>4</td><td>2</td><td>3</td><td>3 &lt; 6, so <code>lo = 3</code></td></tr>
+                <tr><td>3</td><td>4</td><td>3</td><td>4</td><td>4 &lt; 6, so <code>lo = 4</code></td></tr>
+                <tr><td>4</td><td>4</td><td>4</td><td>5</td><td>5 &lt; 6, so <code>lo = 5</code></td></tr>
+                <tr><td>5</td><td>4</td><td></td><td></td><td><code>lo &gt; hi</code>, not found</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>Because the search space halves every step, an array of 10<sup>5</sup> elements needs at most about 17 steps. All Q queries together take around 1.7 &times; 10<sup>6</sup> operations.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n, q;
+    cin &gt;&gt; n &gt;&gt; q;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+    sort(a.begin(), a.end());
+
+    <span class="kw">while</span> (q--) {
+        <span class="ty">int</span> x;
+        cin &gt;&gt; x;
+        <span class="ty">int</span> lo = <span class="num-l">0</span>, hi = n - <span class="num-l">1</span>;
+        <span class="ty">bool</span> found = <span class="kw">false</span>;
+        <span class="kw">while</span> (lo &lt;= hi) {
+            <span class="ty">int</span> mid = (lo + hi) / <span class="num-l">2</span>;
+            <span class="kw">if</span> (a[mid] == x) {
+                found = <span class="kw">true</span>;
+                <span class="kw">break</span>;
+            }
+            <span class="kw">else</span> <span class="kw">if</span> (a[mid] &lt; x) lo = mid + <span class="num-l">1</span>;
+            <span class="kw">else</span> hi = mid - <span class="num-l">1</span>;
+        }
+        <span class="kw">if</span> (found) cout &lt;&lt; <span class="str">"found"</span> &lt;&lt; <span class="str">"\n"</span>;
+        <span class="kw">else</span> cout &lt;&lt; <span class="str">"not found"</span> &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Sort the array once, then answer each query with a binary search.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Binary Search STL</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Reading words</h3>
+            <p>Each query starts with a word saying its type. A word is read into a <code>string</code>, and it can be compared with text in double quotes:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code>string type;
+<span class="ty">int</span> x;
+cin &gt;&gt; type &gt;&gt; x;
+<span class="kw">if</span> (type == <span class="str">"lower_bound"</span>) {
+    <span class="com">// ...</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The built-in binary searches</h3>
+            <p>C++ has binary search built in, as part of the Standard Template Library (STL). All three functions below only work on a sorted array, so sort it first.</p>
+            <p><code>binary_search</code> returns <code>true</code> if X is in the array and <code>false</code> otherwise, which is exactly what you wrote by hand in problem A:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">if</span> (binary_search(a.begin(), a.end(), x)) cout &lt;&lt; <span class="str">"found"</span> &lt;&lt; <span class="str">"\n"</span>;</code></pre>
+          </div>
+          <div class="prose">
+            <p><code>lower_bound</code> finds the first element that is greater than or equal to X, and <code>upper_bound</code> finds the first element that is strictly greater than X. Subtracting <code>a.begin()</code> turns the result into an index:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> i = lower_bound(a.begin(), a.end(), x) - a.begin();</code></pre>
+          </div>
+          <div class="prose">
+            <p>If no such element exists, the index is <code>n</code>, one past the last element. In that case print -1; otherwise the answer is <code>a[i]</code>.</p>
+            <p>For example, in the sorted array <code>{1, 2, 3, 4, 5}</code>, <code>lower_bound</code> of 3 gives index 2 (the 3 itself) and <code>upper_bound</code> of 3 gives index 3 (the 4). <code>upper_bound</code> of 5 gives index 5, which is <code>n</code>, so the answer is -1.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n, q;
+    cin &gt;&gt; n &gt;&gt; q;
+    vector&lt;<span class="ty">int</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+    sort(a.begin(), a.end());
+
+    <span class="kw">while</span> (q--) {
+        string type;
+        <span class="ty">int</span> x;
+        cin &gt;&gt; type &gt;&gt; x;
+        <span class="kw">if</span> (type == <span class="str">"binary_search"</span>) {
+            <span class="kw">if</span> (binary_search(a.begin(), a.end(), x)) cout &lt;&lt; <span class="str">"found"</span> &lt;&lt; <span class="str">"\n"</span>;
+            <span class="kw">else</span> cout &lt;&lt; <span class="str">"not found"</span> &lt;&lt; <span class="str">"\n"</span>;
+        }
+        <span class="kw">else</span> {
+            <span class="ty">int</span> i;
+            <span class="kw">if</span> (type == <span class="str">"lower_bound"</span>) i = lower_bound(a.begin(), a.end(), x) - a.begin();
+            <span class="kw">else</span> i = upper_bound(a.begin(), a.end(), x) - a.begin();
+
+            <span class="kw">if</span> (i == n) cout &lt;&lt; -<span class="num-l">1</span> &lt;&lt; <span class="str">"\n"</span>;
+            <span class="kw">else</span> cout &lt;&lt; a[i] &lt;&lt; <span class="str">"\n"</span>;
+        }
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Sort the array, read each query's type, and call the matching built-in function. For <code>lower_bound</code> and <code>upper_bound</code>, an index of <code>n</code> means there is no such element.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day7.html"><span aria-hidden="true">&larr;</span> Day 7</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=13"></script>
+</body>
+</html>
