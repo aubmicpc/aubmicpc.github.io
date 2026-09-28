@@ -73,8 +73,8 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Counting the operations</h3>
-            <p>Remember the rule of thumb from Day 3: about 10<sup>7</sup> operations is fine, and more than 10<sup>8</sup> will never pass. Three nested loops from 0 to K run about K<sup>3</sup> times, and with K = 3000 that's 2.7 &times; 10<sup>10</sup>. Far too slow.</p>
-            <p>But the third loop isn't needed. Once X and Y are chosen, Z has to be S &minus; X &minus; Y, so there's only one value to check instead of K + 1. The only question is whether that value is allowed, meaning 0 &le; Z &le; K.</p>
+            <p>Remember the rule of thumb from Day 3: about 10<sup>7</sup> operations is fine, and more than 10<sup>8</sup> will never pass. Three nested loops from 0 to K run K<sup>3</sup> times, and with K = 3000 that's 2.7 &times; 10<sup>10</sup>. Far too slow.</p>
+            <p>But the third loop isn't needed. Once X and Y are chosen, Z has to be S &minus; X &minus; Y, so there's only one value to check instead of K. The only question is whether that value is allowed, meaning 0 &le; Z &le; K.</p>
             <p>That leaves two nested loops, about K<sup>2</sup> = 9 &times; 10<sup>6</sup> operations, which is fast enough.</p>
           </div>
         </div>
@@ -131,13 +131,6 @@
           </div>
         </div>
 
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Checking for odd numbers</h3>
-            <p>A number is even when it divides by 2 with no remainder, and odd otherwise. So <code>i % 2 == 1</code> means <code>i</code> is odd, for any number that isn't negative.</p>
-          </div>
-        </div>
-
         <div class="solution">
           <h3 class="concept-title">Solution</h3>
           <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
@@ -180,18 +173,17 @@
       <div class="problem-body">
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">The <code>do</code>&ndash;<code>while</code> loop</h3>
+            <h3 class="concept-title">Printing the digits</h3>
             <p>Taking digits off from right to left is exactly what the loop in Day 4's Palindrome did, except this time each digit is printed instead of added to a reversed number. Because the digits are printed one by one, the zeros in <code>1200</code> show up as they should.</p>
-            <p>There is one catch. For N = 0 the answer is <code>0</code>, but the condition <code>n &gt; 0</code> is false from the start, so a <code>while</code> loop prints nothing. A <code>do</code>&ndash;<code>while</code> loop checks its condition <em>after</em> each repetition instead of before, so its body always runs at least once:</p>
           </div>
           <div class="code-wrap">
-            <pre class="code"><code><span class="kw">do</span> {
+            <pre class="code"><code><span class="kw">while</span> (n &gt; <span class="num-l">0</span>) {
     cout &lt;&lt; n % <span class="num-l">10</span> &lt;&lt; <span class="str">" "</span>;
     n /= <span class="num-l">10</span>;
-} <span class="kw">while</span> (n &gt; <span class="num-l">0</span>);</code></pre>
+}</code></pre>
           </div>
           <div class="prose">
-            <p>Note the semicolon after <code>while (n &gt; 0)</code>. It's required here, unlike in a normal <code>while</code> loop.</p>
+            <p>There is one catch. For N = 0 the answer is <code>0</code>, but the condition <code>n &gt; 0</code> is false from the start, so the loop prints nothing. Handle this case separately with an <code>if</code> before the loop.</p>
           </div>
         </div>
 
@@ -220,16 +212,17 @@
     <span class="kw">while</span> (t--) {
         <span class="ty">int</span> n;
         cin &gt;&gt; n;
-        <span class="kw">do</span> {
+        <span class="kw">if</span> (n == <span class="num-l">0</span>) cout &lt;&lt; <span class="num-l">0</span>;
+        <span class="kw">while</span> (n &gt; <span class="num-l">0</span>) {
             cout &lt;&lt; n % <span class="num-l">10</span> &lt;&lt; <span class="str">" "</span>;
             n /= <span class="num-l">10</span>;
-        } <span class="kw">while</span> (n &gt; <span class="num-l">0</span>);
+        }
         cout &lt;&lt; <span class="str">"\n"</span>;
     }
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Print the last digit and remove it until nothing is left. The <code>do</code>&ndash;<code>while</code> makes sure N = 0 still prints <code>0</code>. End each test case with a new line.</p>
+            <p class="sol-note" style="margin-top:.9rem">Print the last digit and remove it until nothing is left. N = 0 is handled separately, since the loop wouldn't print anything for it. End each test case with a new line.</p>
           </div>
         </div>
       </div>
