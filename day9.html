@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Day 9 - Practice Sheet - ICPC at AUBM</title>
+<meta name="description" content="Day 9: OI-style scoring with subtasks, large numbers, the two largest values, grid paths, and pair sums in C++.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="practice.css?v=13">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0S48DGS53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0S48DGS53');
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html#top">ICPC at AUBM</a>
+    <nav class="links" aria-label="Sections">
+      <a class="current" href="practice.html" aria-current="page">Practice</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Day 9</h1>
+      <p>OI-style problems with subtasks: large numbers, the two largest values, paths in a grid, and pairs that add up to a number.</p>
+    </div>
+  </section>
+
+  <div class="wrap content">
+    <ol class="problem-list">
+      <li><a href="#scoring"><span class="letter step">1</span><span class="pname">How scoring works</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#A"><span class="letter">A</span><span class="pname">Missing Area</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#B"><span class="letter">B</span><span class="pname">Unique Game</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#C"><span class="letter">C</span><span class="pname">Magic Cells</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="#D"><span class="letter">D</span><span class="pname">Back to School</span><span class="go" aria-hidden="true">&rarr;</span></a></li>
+    </ol>
+
+    <section class="problem" id="scoring">
+      <header class="problem-head">
+        <span class="letter step">1</span>
+        <h2>How scoring works</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">OI-style problems</h3>
+            <p>From today on, the problems are set up in OI style, which is how the AUB contest will be run. This is different from the official ICPC contest, where a problem only counts if your solution passes every test.</p>
+            <p>In OI style, each problem is worth 100 points, split into <strong>subtasks</strong>. Each subtask has its own group of tests with extra limits, such as a smaller N or a special case that's easier to handle. The Scoring section of each statement lists the subtasks, their limits, and how many points each is worth.</p>
+            <p>This means you can earn points on a problem even if you can't solve all of it. If you don't see the full solution, a simpler solution that only handles the smaller subtasks is still worth submitting.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Points don't add up by themselves</h3>
+            <p>You get a subtask's points only if your solution passes <em>every</em> test in that subtask. Failing even one test gives you 0 for that subtask.</p>
+            <p>The points next to a subtask are what that subtask alone is worth, and each subtask is judged separately. Getting a subtask does <strong>not</strong> mean you also get the subtasks before it. Your score on the problem is the sum of the subtasks you actually passed.</p>
+            <p>For example, Back to School (problem D) has three subtasks:</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Subtask</th><th>Limits</th><th>Points</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>N = 2</td><td>10</td></tr>
+                <tr><td>2</td><td>N &le; 100</td><td>30</td></tr>
+                <tr><td>3</td><td>N &le; 10<sup>5</sup></td><td>60</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>A solution that passes all three gets 10 + 30 + 60 = 100. A solution that passes subtasks 1 and 2 but is too slow for subtask 3 gets 40. And a solution that passes subtask 3 but has a bug when N = 2 gets only 60, not 100, even though subtask 3 has the biggest limits.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Subtasks that depend on others</h3>
+            <p>Some subtasks say <strong>Depends on</strong>, followed by a list of other subtasks. You only get the points for such a subtask if you also pass every subtask it depends on.</p>
+            <p>For example, in Magic Cells (problem C), subtask 4 is worth 39 points and depends on subtasks 1, 2 and 3. If your solution passes all the tests of subtask 4 but fails a test in subtask 2, you get 0 points for subtask 4 as well as for subtask 2.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Submitting more than once</h3>
+            <p>You can submit a problem as many times as you like, and your score on it is the highest score of any single submission. Scores from separate submissions are never added together.</p>
+            <p>For example, if one submission passes subtasks 1 and 2 of Back to School for 40 points, and another passes only subtask 3 for 60 points, your score is 60, not 100. To get 100, one submission has to pass all three.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="A">
+      <header class="problem-head">
+        <span class="letter">A</span>
+        <h2>Missing Area</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Choosing the right type</h3>
+            <p>The four parts make up the whole circle, so A + B + C + D = X, and the answer is D = X &minus; A &minus; B &minus; C.</p>
+            <p>The two subtasks only differ in how big the numbers are. In subtask 1 they are at most 10<sup>3</sup>, so an <code>int</code> works. In subtask 2 they can reach 10<sup>18</sup>, which is far beyond an <code>int</code> but still fits in a <code>long long</code> (up to about 9.2 &times; 10<sup>18</sup>).</p>
+            <p>A solution using <code>int</code> would get 49 points. Using <code>long long</code> gets all 100.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-a" aria-controls="sol-a">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-a" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">long</span> <span class="ty">long</span> x, a, b, c;
+    cin &gt;&gt; x &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    cout &lt;&lt; x - a - b - c &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Subtract the three known areas from the whole circle, using <code>long long</code> for subtask 2.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="B">
+      <header class="problem-head">
+        <span class="letter">B</span>
+        <h2>Unique Game</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">The largest and the second largest</h3>
+            <p>Find the answer in two passes over the array. The first pass finds the largest value. The second pass finds the largest value that is strictly smaller than it:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">long</span> <span class="ty">long</span> second = LLONG_MIN;
+<span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="kw">if</span> (a[i] &lt; first) second = max(second, a[i]);
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p><code>LLONG_MIN</code> is the smallest possible <code>long long</code>, so any value in the array replaces it. Checking <code>a[i] &lt; first</code> skips every copy of the largest value, which is why the sample <code>4 4 1 1 2</code> gives 2 and not 4.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">What each subtask adds</h3>
+            <p>Each subtask adds one more thing your solution has to handle:</p>
+            <ul>
+              <li>Subtask 1: only two cards, so the answer is just the bigger one and then the smaller one.</li>
+              <li>Subtask 2: more cards, so you need a loop.</li>
+              <li>Subtask 3: values can repeat and can be negative. A solution that just takes the two biggest cards fails on <code>4 4 1</code>, and one that starts <code>second</code> at 0 fails when all values are negative.</li>
+              <li>Subtask 4: values up to 10<sup>15</sup>, so they need a <code>long long</code>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-b" aria-controls="sol-b">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-b" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n;
+    cin &gt;&gt; n;
+    vector&lt;<span class="ty">long</span> <span class="ty">long</span>&gt; a(n);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+    }
+
+    <span class="ty">long</span> <span class="ty">long</span> first = LLONG_MIN;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        first = max(first, a[i]);
+    }
+
+    <span class="ty">long</span> <span class="ty">long</span> second = LLONG_MIN;
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="kw">if</span> (a[i] &lt; first) second = max(second, a[i]);
+    }
+
+    cout &lt;&lt; first &lt;&lt; <span class="str">"\n"</span> &lt;&lt; second &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Find the largest value, then the largest value strictly smaller than it. Both are <code>long long</code> for subtask 4.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="C">
+      <header class="problem-head">
+        <span class="letter">C</span>
+        <h2>Magic Cells</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Counting steps in a grid</h3>
+            <p>Since you can only move down or right, every path from (1, 1) to a cell (i, j) takes exactly the same number of steps: i &minus; 1 steps down and j &minus; 1 steps right, so (i &minus; 1) + (j &minus; 1) in total. The order doesn't matter.</p>
+            <p>Without magic cells, that's the whole problem: reaching (N, M) takes (N &minus; 1) + (M &minus; 1) steps. This solves subtask 2.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Using the magic cells</h3>
+            <p>Every magic cell is a shortcut: once you reach it, you are at (N, M) with no more steps. So the answer is the smallest of:</p>
+            <ul>
+              <li>(N &minus; 1) + (M &minus; 1), walking all the way, and</li>
+              <li>(i &minus; 1) + (j &minus; 1) for every magic cell (i, j).</li>
+            </ul>
+            <p>In the sample, the magic cell (3, 1) takes only 2 + 0 = 2 steps to reach, which is the answer.</p>
+            <p>With 0-indexed loops over the rows and columns, the steps to reach cell <code>[i][j]</code> are simply <code>i + j</code>. You don't even need to store the grid: check each value as you read it.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-c" aria-controls="sol-c">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-c" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> n, m;
+    cin &gt;&gt; n &gt;&gt; m;
+    <span class="ty">int</span> ans = (n - <span class="num-l">1</span>) + (m - <span class="num-l">1</span>);
+    <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+        <span class="kw">for</span> (<span class="ty">int</span> j = <span class="num-l">0</span>; j &lt; m; j++) {
+            <span class="ty">int</span> cell;
+            cin &gt;&gt; cell;
+            <span class="kw">if</span> (cell == <span class="num-l">1</span>) ans = min(ans, i + j);
+        }
+    }
+    cout &lt;&lt; ans &lt;&lt; <span class="str">"\n"</span>;
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Start with the steps to walk all the way to (N, M), and lower the answer whenever a magic cell is closer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="D">
+      <header class="problem-head">
+        <span class="letter">D</span>
+        <h2>Back to School</h2>
+      </header>
+      <div class="problem-body">
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Trying every pair</h3>
+            <p>The direct approach is to try every pair of different indexes with two nested loops. Starting <code>j</code> at <code>i + 1</code> makes sure <code>i</code> and <code>j</code> are never equal, and checks each pair only once:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+    <span class="kw">for</span> (<span class="ty">int</span> j = i + <span class="num-l">1</span>; j &lt; n; j++) {
+        <span class="kw">if</span> (a[j] == x - a[i]) good = <span class="kw">true</span>;
+    }
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>That's about N<sup>2</sup> / 2 checks per test case. For N &le; 100 it's instant, so this passes subtasks 1 and 2 for 40 points. For N = 10<sup>5</sup> it's 5 &times; 10<sup>9</sup> checks per test case, which is far too slow for subtask 3.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Binary search for the partner</h3>
+            <p>For each element <code>a[i]</code>, there's only one value it can be paired with: <code>x - a[i]</code>. So instead of looping over every <code>j</code>, sort the array and use binary search from Day 8 to check whether that value is there.</p>
+            <p>To keep <code>j</code> different from <code>i</code>, only search the part of the array after index <code>i</code>. <code>a.begin() + i + 1</code> means &ldquo;start at index <code>i + 1</code>&rdquo;:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="kw">if</span> (binary_search(a.begin() + i + <span class="num-l">1</span>, a.end(), x - a[i])) good = <span class="kw">true</span>;</code></pre>
+          </div>
+          <div class="prose">
+            <p>Searching only to the right is enough: if the pair is at indexes <code>j &lt; i</code>, it was already found when the loop was at <code>j</code>. It also stops an element from being paired with itself: for <code>{1, 2, 5}</code> and X = 4, the partner of 2 would be 2, but there's no second 2 after it, so the answer is correctly NO.</p>
+            <p>Now each test case takes about N &times; log<sub>2</sub> N &asymp; 1.7 &times; 10<sup>6</sup> operations, which passes all three subtasks.</p>
+          </div>
+        </div>
+
+        <div class="lesson">
+          <div class="prose">
+            <h3 class="concept-title">Fast input and output</h3>
+            <p>In the biggest tests, the input has 20 &times; 10<sup>5</sup> = 2 &times; 10<sup>6</sup> numbers. At that size, just reading the input with <code>cin</code> can take most of the time limit, because by default <code>cin</code> and <code>cout</code> are slowed down to stay in sync with C's input and output functions. Two lines at the start of <code>main</code> turn that off:</p>
+          </div>
+          <div class="code-wrap">
+            <pre class="code"><code><span class="ty">int</span> <span class="fn">main</span>() {
+    ios::sync_with_stdio(<span class="kw">false</span>);
+    cin.tie(<span class="kw">nullptr</span>);
+    <span class="com">// the rest of your code</span>
+}</code></pre>
+          </div>
+          <div class="prose">
+            <p>For this problem, that makes the solution about three times faster. It doesn't change anything else about how you use <code>cin</code> and <code>cout</code>, so it's a good habit to add these two lines to every solution. Just don't mix <code>cin</code>/<code>cout</code> with <code>scanf</code>/<code>printf</code> in the same program after adding them.</p>
+            <p>For fast output, end lines with <code>"\n"</code> rather than <code>endl</code>. <code>endl</code> forces the output to be written out immediately every time, which is slow when printing many lines. <code>"\n"</code> lets it be written out in large chunks.</p>
+          </div>
+        </div>
+
+        <div class="solution">
+          <h3 class="concept-title">Solution</h3>
+          <p class="sol-note">Try the problem on Codeforces before revealing the solution.</p>
+          <button class="reveal-btn" type="button" data-target="sol-d" aria-controls="sol-d">
+            <span class="label">Show solution</span><span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="solution-body" id="sol-d" hidden>
+            <div class="code-wrap">
+              <button class="copy-btn" type="button">Copy</button>
+              <pre class="code"><code><span class="kw">#include</span> &lt;bits/stdc++.h&gt;
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    ios::sync_with_stdio(<span class="kw">false</span>);
+    cin.tie(<span class="kw">nullptr</span>);
+
+    <span class="ty">int</span> t;
+    cin &gt;&gt; t;
+    <span class="kw">while</span> (t--) {
+        <span class="ty">int</span> n, x;
+        cin &gt;&gt; n &gt;&gt; x;
+        vector&lt;<span class="ty">int</span>&gt; a(n);
+        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+            cin &gt;&gt; a[i];
+        }
+        sort(a.begin(), a.end());
+
+        <span class="ty">bool</span> good = <span class="kw">false</span>;
+        <span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
+            <span class="kw">if</span> (binary_search(a.begin() + i + <span class="num-l">1</span>, a.end(), x - a[i])) {
+                good = <span class="kw">true</span>;
+                <span class="kw">break</span>;
+            }
+        }
+
+        <span class="kw">if</span> (good) cout &lt;&lt; <span class="str">"YES"</span> &lt;&lt; <span class="str">"\n"</span>;
+        <span class="kw">else</span> cout &lt;&lt; <span class="str">"NO"</span> &lt;&lt; <span class="str">"\n"</span>;
+    }
+    <span class="kw">return</span> <span class="num-l">0</span>;
+}</code></pre>
+            </div>
+            <p class="sol-note" style="margin-top:.9rem">Sort the array, then for each element binary search for <code>x - a[i]</code> among the elements after it. The first two lines of <code>main</code> make reading the input fast.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="day-nav" aria-label="Day navigation">
+      <a class="prev" href="day8.html"><span aria-hidden="true">&larr;</span> Day 8</a>
+      <a class="home" href="practice.html">Practice Sheet</a>
+      <span></span>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">ICPC at AUBM, 2026 season. American University of Beirut &ndash; Mediterraneo, Paphos.</div>
+</footer>
+
+<script src="practice.js?v=13"></script>
+</body>
+</html>
