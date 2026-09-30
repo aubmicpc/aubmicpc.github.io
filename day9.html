@@ -310,7 +310,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Fast input and output</h3>
-            <p>In the biggest tests, the input has 20 &times; 10<sup>5</sup> = 2 &times; 10<sup>6</sup> numbers. At that size, just reading the input with <code>cin</code> can take most of the time limit, because by default <code>cin</code> and <code>cout</code> are slowed down to stay in sync with C's input and output functions. Two lines at the start of <code>main</code> turn that off:</p>
+            <p>Keep these two lines at the top of your <code>main</code> function. They speed up <code>cin</code> and <code>cout</code>, which helps with big tests like the ones in this problem:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">int</span> <span class="fn">main</span>() {
@@ -318,10 +318,6 @@
     cin.tie(<span class="kw">nullptr</span>);
     <span class="com">// the rest of your code</span>
 }</code></pre>
-          </div>
-          <div class="prose">
-            <p>For this problem, that makes the solution about three times faster. It doesn't change anything else about how you use <code>cin</code> and <code>cout</code>, so it's a good habit to add these two lines to every solution. Just don't mix <code>cin</code>/<code>cout</code> with <code>scanf</code>/<code>printf</code> in the same program after adding them.</p>
-            <p>For fast output, end lines with <code>"\n"</code> rather than <code>endl</code>. <code>endl</code> forces the output to be written out immediately every time, which is slow when printing many lines. <code>"\n"</code> lets it be written out in large chunks.</p>
           </div>
         </div>
 
