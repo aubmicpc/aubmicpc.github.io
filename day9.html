@@ -55,7 +55,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">OI-style problems</h3>
-            <p>From today on, the problems are set up in OI style, which is how the AUB contest will be run. This is different from the official ICPC contest, where a problem only counts if your solution passes every test.</p>
+            <p>Today's problems are set up in OI style, which is how the AUB contest will be run. This is different from the official ICPC contest, where a problem only counts if your solution passes every test.</p>
             <p>In OI style, each problem is worth 100 points, split into <strong>subtasks</strong>. Each subtask has its own group of tests with extra limits, such as a smaller N or a special case that's easier to handle. The Scoring section of each statement lists the subtasks, their limits, and how many points each is worth.</p>
             <p>This means you can earn points on a problem even if you can't solve all of it. If you don't see the full solution, a simpler solution that only handles the smaller subtasks is still worth submitting.</p>
           </div>
@@ -66,28 +66,21 @@
             <h3 class="concept-title">Points don't add up by themselves</h3>
             <p>You get a subtask's points only if your solution passes <em>every</em> test in that subtask. Failing even one test gives you 0 for that subtask.</p>
             <p>The points next to a subtask are what that subtask alone is worth, and each subtask is judged separately. Getting a subtask does <strong>not</strong> mean you also get the subtasks before it. Your score on the problem is the sum of the subtasks you actually passed.</p>
-            <p>For example, Back to School (problem D) has three subtasks:</p>
+            <p>For example, Magic Cells (problem C) has four subtasks:</p>
           </div>
           <div class="table-wrap">
             <table class="table">
               <thead><tr><th>Subtask</th><th>Limits</th><th>Points</th></tr></thead>
               <tbody>
-                <tr><td>1</td><td>N = 2</td><td>10</td></tr>
-                <tr><td>2</td><td>N &le; 100</td><td>30</td></tr>
-                <tr><td>3</td><td>N &le; 10<sup>5</sup></td><td>60</td></tr>
+                <tr><td>1</td><td>N = M = 2</td><td>10</td></tr>
+                <tr><td>2</td><td>N, M &le; 100, no magic cells</td><td>24</td></tr>
+                <tr><td>3</td><td>N, M &le; 100, exactly two magic cells</td><td>27</td></tr>
+                <tr><td>4</td><td>N, M &le; 10<sup>3</sup></td><td>39</td></tr>
               </tbody>
             </table>
           </div>
           <div class="prose">
-            <p>A solution that passes all three gets 10 + 30 + 60 = 100. A solution that passes subtasks 1 and 2 but is too slow for subtask 3 gets 40. And a solution that passes subtask 3 but has a bug when N = 2 gets only 60, not 100, even though subtask 3 has the biggest limits.</p>
-          </div>
-        </div>
-
-        <div class="lesson">
-          <div class="prose">
-            <h3 class="concept-title">Subtasks that depend on others</h3>
-            <p>Some subtasks say <strong>Depends on</strong>, followed by a list of other subtasks. You only get the points for such a subtask if you also pass every subtask it depends on.</p>
-            <p>For example, in Magic Cells (problem C), subtask 4 is worth 39 points and depends on subtasks 1, 2 and 3. If your solution passes all the tests of subtask 4 but fails a test in subtask 2, you get 0 points for subtask 4 as well as for subtask 2.</p>
+            <p>A solution that passes all four gets 10 + 24 + 27 + 39 = 100. A solution that ignores the magic cells and always prints (N &minus; 1) + (M &minus; 1) passes subtask 2, where there are no magic cells, and gets 24 points. It doesn't get subtask 1's 10 points just because subtask 1 comes first: subtask 1 can have magic cells, so that solution fails some of its tests.</p>
           </div>
         </div>
 
@@ -95,7 +88,7 @@
           <div class="prose">
             <h3 class="concept-title">Submitting more than once</h3>
             <p>You can submit a problem as many times as you like, and your score on it is the highest score of any single submission. Scores from separate submissions are never added together.</p>
-            <p>For example, if one submission passes subtasks 1 and 2 of Back to School for 40 points, and another passes only subtask 3 for 60 points, your score is 60, not 100. To get 100, one submission has to pass all three.</p>
+            <p>For example, if one submission to Magic Cells passes only subtask 2 for 24 points, and another passes subtasks 1 and 3 for 37 points, your score is 37, not 61. To get 100, one submission has to pass all four subtasks.</p>
           </div>
         </div>
       </div>
