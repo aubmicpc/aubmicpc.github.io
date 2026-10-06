@@ -54,8 +54,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Choosing the right type</h3>
-            <p>The four parts make up the whole circle, so A + B + C + D = X, and the answer is D = X &minus; A &minus; B &minus; C.</p>
-            <p>The numbers can reach 10<sup>18</sup>, which is far beyond an <code>int</code> but still fits in a <code>long long</code> (up to about 9.2 &times; 10<sup>18</sup>).</p>
+            <p>D = X &minus; A &minus; B &minus; C. The values reach 10<sup>18</sup>, so use <code>long long</code>.</p>
           </div>
         </div>
 
@@ -78,7 +77,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Subtract the three known areas from the whole circle, using <code>long long</code> since the areas can reach 10<sup>18</sup>.</p>
+            <p class="sol-note" style="margin-top:.9rem">D = X &minus; A &minus; B &minus; C, in <code>long long</code>.</p>
           </div>
         </div>
       </div>
@@ -93,7 +92,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">The largest and the second largest</h3>
-            <p>Find the answer in two passes over the array. The first pass finds the largest value. The second pass finds the largest value that is strictly smaller than it:</p>
+            <p>Two passes: one for the maximum, one for the largest value strictly below it:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">long</span> <span class="ty">long</span> second = LLONG_MIN;
@@ -102,7 +101,7 @@
 }</code></pre>
           </div>
           <div class="prose">
-            <p><code>LLONG_MIN</code> is the smallest possible <code>long long</code>, so any value in the array replaces it. Checking <code>a[i] &lt; first</code> skips every copy of the largest value, which is why the sample <code>4 4 1 1 2</code> gives 2 and not 4.</p>
+            <p><code>LLONG_MIN</code> is the smallest possible <code>long long</code>. The <code>a[i] &lt; first</code> check skips every copy of the maximum.</p>
           </div>
         </div>
 
@@ -110,9 +109,9 @@
           <div class="prose">
             <h3 class="concept-title">Things to watch out for</h3>
             <ul>
-              <li>Values can repeat, so just taking the two biggest cards fails on <code>4 4 1</code>.</li>
-              <li>Values can be negative, so starting <code>second</code> at 0 fails when all values are negative. That's why it starts at <code>LLONG_MIN</code>.</li>
-              <li>Values can reach 10<sup>15</sup>, so they need a <code>long long</code>.</li>
+              <li>Duplicates: taking the two largest cards fails on <code>4 4 1</code>.</li>
+              <li>Negatives: initializing <code>second</code> to 0 fails, hence <code>LLONG_MIN</code>.</li>
+              <li>Values reach 10<sup>15</sup>: <code>long long</code>.</li>
             </ul>
           </div>
         </div>
@@ -151,7 +150,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Find the largest value, then the largest value strictly smaller than it. Both are <code>long long</code> since the values can reach 10<sup>15</sup>.</p>
+            <p class="sol-note" style="margin-top:.9rem">The maximum, then the largest value strictly below it.</p>
           </div>
         </div>
       </div>
@@ -166,21 +165,21 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Counting steps in a grid</h3>
-            <p>Since you can only move down or right, every path from (1, 1) to a cell (i, j) takes exactly the same number of steps: i &minus; 1 steps down and j &minus; 1 steps right, so (i &minus; 1) + (j &minus; 1) in total. The order doesn't matter.</p>
-            <p>Without magic cells, that's the whole problem: reaching (N, M) takes (N &minus; 1) + (M &minus; 1) steps.</p>
+            <p>Moving only down or right, every path from (1, 1) to (i, j) takes exactly (i &minus; 1) + (j &minus; 1) steps, regardless of order.</p>
+            <p>Without magic cells, the answer is (N &minus; 1) + (M &minus; 1).</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Using the magic cells</h3>
-            <p>Every magic cell is a shortcut: once you reach it, you are at (N, M) with no more steps. So the answer is the smallest of:</p>
+            <p>A magic cell ends the walk the moment you reach it, so the answer is the minimum of:</p>
             <ul>
               <li>(N &minus; 1) + (M &minus; 1), walking all the way, and</li>
               <li>(i &minus; 1) + (j &minus; 1) for every magic cell (i, j).</li>
             </ul>
-            <p>In the sample, the magic cell (3, 1) takes only 2 + 0 = 2 steps to reach, which is the answer.</p>
-            <p>With 0-indexed loops over the rows and columns, the steps to reach cell <code>[i][j]</code> are simply <code>i + j</code>. You don't even need to store the grid: check each value as you read it.</p>
+            <p>In the sample, (3, 1) is reached in 2 steps.</p>
+            <p>With 0-indexed loops, cell <code>[i][j]</code> is <code>i + j</code> steps away. No need to store the grid; check each value as it&rsquo;s read.</p>
           </div>
         </div>
 
@@ -211,7 +210,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Start with the steps to walk all the way to (N, M), and lower the answer whenever a magic cell is closer.</p>
+            <p class="sol-note" style="margin-top:.9rem">Start from the full walk and take the minimum with every magic cell.</p>
           </div>
         </div>
       </div>
@@ -226,7 +225,7 @@
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Trying every pair</h3>
-            <p>The direct approach is to try every pair of different indexes with two nested loops. Starting <code>j</code> at <code>i + 1</code> makes sure <code>i</code> and <code>j</code> are never equal, and checks each pair only once:</p>
+            <p>Brute force: check every pair with nested loops. Starting <code>j</code> at <code>i + 1</code> guarantees <code>i &ne; j</code> and visits each pair once:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="kw">for</span> (<span class="ty">int</span> i = <span class="num-l">0</span>; i &lt; n; i++) {
@@ -236,29 +235,29 @@
 }</code></pre>
           </div>
           <div class="prose">
-            <p>That's about N<sup>2</sup> / 2 checks per test case. With N up to 10<sup>5</sup>, that's 5 &times; 10<sup>9</sup> checks per test case, which is far too slow.</p>
+            <p>That&rsquo;s about N<sup>2</sup> / 2 = 5 &times; 10<sup>9</sup> checks per test case at N = 10<sup>5</sup>. Too slow.</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Binary search for the partner</h3>
-            <p>For each element <code>a[i]</code>, there's only one value it can be paired with: <code>x - a[i]</code>. So instead of looping over every <code>j</code>, sort the array and use binary search from Day 8 to check whether that value is there.</p>
-            <p>To keep <code>j</code> different from <code>i</code>, only search the part of the array after index <code>i</code>. <code>a.begin() + i + 1</code> means &ldquo;start at index <code>i + 1</code>&rdquo;:</p>
+            <p>Each <code>a[i]</code> has exactly one possible partner, <code>x - a[i]</code>. Sort the array and binary search for it (Day 8).</p>
+            <p>Searching only after index <code>i</code> keeps <code>j &ne; i</code>. <code>a.begin() + i + 1</code> is the start of that range:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="kw">if</span> (binary_search(a.begin() + i + <span class="num-l">1</span>, a.end(), x - a[i])) good = <span class="kw">true</span>;</code></pre>
           </div>
           <div class="prose">
-            <p>Searching only to the right is enough: if the pair is at indexes <code>j &lt; i</code>, it was already found when the loop was at <code>j</code>. It also stops an element from being paired with itself: for <code>{1, 2, 5}</code> and X = 4, the partner of 2 would be 2, but there's no second 2 after it, so the answer is correctly NO.</p>
-            <p>Now each test case takes about N &times; log<sub>2</sub> N &asymp; 1.7 &times; 10<sup>6</sup> operations, which is fast enough.</p>
+            <p>Pairs with <code>j &lt; i</code> were already checked when the loop was at <code>j</code>, so nothing is missed. It also prevents pairing an element with itself, e.g. 2 + 2 for <code>{1, 2, 5}</code> and X = 4.</p>
+            <p>Total: about N log<sub>2</sub> N &asymp; 1.7 &times; 10<sup>6</sup> operations per test case.</p>
           </div>
         </div>
 
         <div class="lesson">
           <div class="prose">
             <h3 class="concept-title">Fast input and output</h3>
-            <p>Keep these two lines at the top of your <code>main</code> function. They speed up <code>cin</code> and <code>cout</code>, which helps with big tests like the ones in this problem:</p>
+            <p>Put these two lines at the top of <code>main</code>. They speed up <code>cin</code> and <code>cout</code>, which matters for inputs this large:</p>
           </div>
           <div class="code-wrap">
             <pre class="code"><code><span class="ty">int</span> <span class="fn">main</span>() {
@@ -310,7 +309,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Sort the array, then for each element binary search for <code>x - a[i]</code> among the elements after it. The first two lines of <code>main</code> make reading the input fast.</p>
+            <p class="sol-note" style="margin-top:.9rem">Sort, then binary search for <code>x - a[i]</code> to the right of each <code>i</code>.</p>
           </div>
         </div>
       </div>
