@@ -55,8 +55,7 @@
           <div class="prose">
             <h3 class="concept-title">Choosing the right type</h3>
             <p>The four parts make up the whole circle, so A + B + C + D = X, and the answer is D = X &minus; A &minus; B &minus; C.</p>
-            <p>The two subtasks only differ in how big the numbers are. In subtask 1 they are at most 10<sup>3</sup>, so an <code>int</code> works. In subtask 2 they can reach 10<sup>18</sup>, which is far beyond an <code>int</code> but still fits in a <code>long long</code> (up to about 9.2 &times; 10<sup>18</sup>).</p>
-            <p>A solution using <code>int</code> would get 49 points. Using <code>long long</code> gets all 100.</p>
+            <p>The numbers can reach 10<sup>18</sup>, which is far beyond an <code>int</code> but still fits in a <code>long long</code> (up to about 9.2 &times; 10<sup>18</sup>).</p>
           </div>
         </div>
 
@@ -79,7 +78,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Subtract the three known areas from the whole circle, using <code>long long</code> for subtask 2.</p>
+            <p class="sol-note" style="margin-top:.9rem">Subtract the three known areas from the whole circle, using <code>long long</code> since the areas can reach 10<sup>18</sup>.</p>
           </div>
         </div>
       </div>
@@ -109,13 +108,11 @@
 
         <div class="lesson">
           <div class="prose">
-            <h3 class="concept-title">What each subtask adds</h3>
-            <p>Each subtask adds one more thing your solution has to handle:</p>
+            <h3 class="concept-title">Things to watch out for</h3>
             <ul>
-              <li>Subtask 1: only two cards, so the answer is just the bigger one and then the smaller one.</li>
-              <li>Subtask 2: more cards, so you need a loop.</li>
-              <li>Subtask 3: values can repeat and can be negative. A solution that just takes the two biggest cards fails on <code>4 4 1</code>, and one that starts <code>second</code> at 0 fails when all values are negative.</li>
-              <li>Subtask 4: values up to 10<sup>15</sup>, so they need a <code>long long</code>.</li>
+              <li>Values can repeat, so just taking the two biggest cards fails on <code>4 4 1</code>.</li>
+              <li>Values can be negative, so starting <code>second</code> at 0 fails when all values are negative. That's why it starts at <code>LLONG_MIN</code>.</li>
+              <li>Values can reach 10<sup>15</sup>, so they need a <code>long long</code>.</li>
             </ul>
           </div>
         </div>
@@ -154,7 +151,7 @@
     <span class="kw">return</span> <span class="num-l">0</span>;
 }</code></pre>
             </div>
-            <p class="sol-note" style="margin-top:.9rem">Find the largest value, then the largest value strictly smaller than it. Both are <code>long long</code> for subtask 4.</p>
+            <p class="sol-note" style="margin-top:.9rem">Find the largest value, then the largest value strictly smaller than it. Both are <code>long long</code> since the values can reach 10<sup>15</sup>.</p>
           </div>
         </div>
       </div>
@@ -170,7 +167,7 @@
           <div class="prose">
             <h3 class="concept-title">Counting steps in a grid</h3>
             <p>Since you can only move down or right, every path from (1, 1) to a cell (i, j) takes exactly the same number of steps: i &minus; 1 steps down and j &minus; 1 steps right, so (i &minus; 1) + (j &minus; 1) in total. The order doesn't matter.</p>
-            <p>Without magic cells, that's the whole problem: reaching (N, M) takes (N &minus; 1) + (M &minus; 1) steps. This solves subtask 2.</p>
+            <p>Without magic cells, that's the whole problem: reaching (N, M) takes (N &minus; 1) + (M &minus; 1) steps.</p>
           </div>
         </div>
 
@@ -239,7 +236,7 @@
 }</code></pre>
           </div>
           <div class="prose">
-            <p>That's about N<sup>2</sup> / 2 checks per test case. For N &le; 100 it's instant, so this passes subtasks 1 and 2 for 40 points. For N = 10<sup>5</sup> it's 5 &times; 10<sup>9</sup> checks per test case, which is far too slow for subtask 3.</p>
+            <p>That's about N<sup>2</sup> / 2 checks per test case. With N up to 10<sup>5</sup>, that's 5 &times; 10<sup>9</sup> checks per test case, which is far too slow.</p>
           </div>
         </div>
 
@@ -254,7 +251,7 @@
           </div>
           <div class="prose">
             <p>Searching only to the right is enough: if the pair is at indexes <code>j &lt; i</code>, it was already found when the loop was at <code>j</code>. It also stops an element from being paired with itself: for <code>{1, 2, 5}</code> and X = 4, the partner of 2 would be 2, but there's no second 2 after it, so the answer is correctly NO.</p>
-            <p>Now each test case takes about N &times; log<sub>2</sub> N &asymp; 1.7 &times; 10<sup>6</sup> operations, which passes all three subtasks.</p>
+            <p>Now each test case takes about N &times; log<sub>2</sub> N &asymp; 1.7 &times; 10<sup>6</sup> operations, which is fast enough.</p>
           </div>
         </div>
 
